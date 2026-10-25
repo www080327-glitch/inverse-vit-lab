@@ -1,0 +1,9 @@
+# Observed P2 L40 environment; install the matching PyTorch CUDA 12.4 wheel separately.
+numpy==2.3.5
+Pillow==13.0.0
+pyarrow==26.0.0
+safetensors==0.8.0
+huggingface-hub==2.3.0
+tokenizers==0.23.3
+transformers==5.20.2
+torch==2.6.0+cu124

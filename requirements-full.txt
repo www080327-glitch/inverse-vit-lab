@@ -1,0 +1,8 @@
+numpy>=1.24
+Pillow>=10
+torch>=2.2
+matplotlib>=3.8
+transformers>=5.0
+huggingface_hub>=0.25
+pyarrow>=14
+pytest>=8

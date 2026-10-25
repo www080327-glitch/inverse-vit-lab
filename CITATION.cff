@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "Please cite this repository snapshot and preserve the reported scope and limitations."
+title: "Inverse-ViT Lab"
+type: software
+license: MIT
+authors:
+  - name: "Inverse-ViT Lab contributors"
+repository-code: "https://github.com/www080327-glitch/inverse-vit-lab"

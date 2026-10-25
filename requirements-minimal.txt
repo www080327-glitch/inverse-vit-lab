@@ -1,0 +1,4 @@
+# Offline CPU smoke test; install a PyTorch build matching your Python/platform.
+numpy>=1.24
+Pillow>=10
+torch>=2.2

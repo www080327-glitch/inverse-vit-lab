@@ -1,0 +1,13 @@
+{
+  "name": "main_20m",
+  "condition_dim": 64,
+  "image_size": 48,
+  "patch_size": 12,
+  "dim": 576,
+  "depth": 5,
+  "heads": 9,
+  "ff_dim": 2304,
+  "dropout": 0.0,
+  "data": "./data/p0",
+  "out": "./runs/p0/main"
+}

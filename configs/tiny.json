@@ -1,0 +1,13 @@
+{
+  "name": "tiny_cpu_only",
+  "condition_dim": 64,
+  "image_size": 48,
+  "patch_size": 12,
+  "dim": 128,
+  "depth": 2,
+  "heads": 4,
+  "ff_dim": 512,
+  "dropout": 0.0,
+  "data": "./data/p0/tiny",
+  "out": "./runs/p0/tiny"
+}

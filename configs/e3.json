@@ -1,0 +1,101 @@
+{
+  "name": "e3_fixed_circle_coordinate_generalization",
+  "model_config": "configs/main.json",
+  "seeds": [
+    1701,
+    1702,
+    1703
+  ],
+  "image_size": 48,
+  "background_rgb": [
+    24,
+    32,
+    40
+  ],
+  "circle_rgb": [
+    64,
+    192,
+    240
+  ],
+  "radius_pixels": 8,
+  "grid_axis_pixels": [
+    9,
+    13,
+    17,
+    21,
+    25,
+    29,
+    33,
+    37
+  ],
+  "interpolation_row_col": [
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      5,
+      2
+    ],
+    [
+      5,
+      5
+    ]
+  ],
+  "extrapolation_columns": [
+    7
+  ],
+  "coordinate_normalization": "2 * xy_pixels / 47 - 1",
+  "projection_seed": 61023,
+  "projection": "normalized_xy @ fixed_standard_normal_matrix_2_by_64; no bias; float32",
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 0.0003,
+    "weight_decay": 0.01,
+    "batch_size": 16,
+    "foreach": false
+  },
+  "loss": "unclipped pixel MSE; unchanged",
+  "max_steps": 5000,
+  "authorized_max_training_seconds": 180,
+  "training_loop_budget_seconds": 179,
+  "log_every": 25,
+  "eval_every": 100,
+  "checkpoint_every": 250,
+  "checkpoint_selection": "last only; no early stopping or holdout access during training",
+  "foreground_score": "dot(output-background, circle-background) / squared_norm(circle-background)",
+  "foreground_threshold": 0.5,
+  "centroid_method": "unweighted centroid of pixels with foreground_score >= 0.5",
+  "invalid_centroid_penalty_pixels": "47 * sqrt(2); invalid count also reported",
+  "shape_error": "1 - IoU after integer centroid alignment using numpy.rint and zero padding",
+  "nearest_coordinate_tie_break": "lowest global row-major grid ID",
+  "quality_thresholds": {
+    "mean_centroid_error_pixels_max": 1.0,
+    "mean_relative_area_error_max": 0.1,
+    "mean_aligned_shape_error_max": 0.1,
+    "mean_mask_iou_min": 0.75
+  },
+  "success_rule": "all 3 seeds must strictly beat both baselines on holdout full-image MSE, foreground MSE, centroid error, and raw mask IoU, and meet fixed geometry quality thresholds; apply separately to interpolation/extrapolation; all holdout centroids must be valid; no seed selection",
+  "data": "./data/p0/e3",
+  "out": "./runs/p0/e3"
+}
