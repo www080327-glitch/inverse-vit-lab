@@ -1,0 +1,77 @@
+{
+  "schema_version": "c12.prior_art_review.v1",
+  "task": "C12",
+  "date": "2026-10-27",
+  "status": "COMPLETED_SCOPED_REVIEW",
+  "repository": "www080327-glitch/inverse-vit-lab",
+  "branch": "research/c12-prior-art-20261027",
+  "task_path": "research/C12_prior_art_20261027",
+  "deliverables": [
+    "HANDOFF.md",
+    "REPORT_ZH.md",
+    "EVIDENCE_MATRIX.md",
+    "EXPERIMENTS.md",
+    "GITHUB_DELIVERY_POLICY.md",
+    "RESULT.json"
+  ],
+  "research_questions": [
+    "Frozen pretrained VLM vision encoder, learned mirrored decoder, then continuous non-diffusion visual output adaptation",
+    "Recoverable high-resolution detail with query-dependent internal access rather than irreversible pruning or external cropping alone"
+  ],
+  "paper_count": 12,
+  "sources": [
+    {"id": "A1", "name": "RAE", "arxiv_version": "2510.11690v1", "url": "https://arxiv.org/html/2510.11690v1", "read_scope": "Sections 3 and 4.3, relevant implementation and normalization context"},
+    {"id": "A2", "name": "Argus-Unified", "arxiv_version": "2607.25527v1", "url": "https://arxiv.org/html/2607.25527v1", "read_scope": "Sections 3.1-3.2, Figure 3, Appendix A.1"},
+    {"id": "A3", "name": "UniFluid", "arxiv_version": "2503.13436v1", "url": "https://arxiv.org/html/2503.13436v1", "read_scope": "Sections 3.1-3.2 and 4.1-4.2"},
+    {"id": "A4", "name": "STARFlow2", "arxiv_version": "2605.08029v1", "url": "https://arxiv.org/pdf/2605.08029v1", "read_scope": "Sections 2-3; PDF Figures 2 and 3 on pages 3 and 5 inspected"},
+    {"id": "A5", "name": "GIVT", "arxiv_version": "2312.02116v4", "url": "https://arxiv.org/html/2312.02116v4", "read_scope": "Sections 3.1-3.2 and mixture-output mechanism, extending previously reviewed project references"},
+    {"id": "A6", "name": "EAR", "arxiv_version": "2505.07812v1", "url": "https://arxiv.org/html/2505.07812v1", "read_scope": "Section 4 and energy-score/output-head mechanism, extending previously reviewed project references"},
+    {"id": "B1", "name": "VISOR", "arxiv_version": "2603.23495v1", "url": "https://arxiv.org/html/2603.23495v1", "read_scope": "Sections 4.1-4.4; PDF Figure 5 on page 5 inspected"},
+    {"id": "B2", "name": "FocusLLaVA", "arxiv_version": "2411.14228v1", "url": "https://arxiv.org/html/2411.14228v1", "read_scope": "Sections 3.1-3.3"},
+    {"id": "B3", "name": "Hierarchical and Query-Aware Visual Token Pruning for High-Resolution LVLMs", "arxiv_version": "2610.24102v1", "url": "https://arxiv.org/html/2610.24102v1", "read_scope": "Sections III-A to III-E"},
+    {"id": "B4", "name": "LLaVA-UHD", "arxiv_version": "2403.11703v1", "url": "https://arxiv.org/html/2403.11703v1", "read_scope": "Sections 3.1-3.3"},
+    {"id": "B5", "name": "ZoomEye", "arxiv_version": "2411.16044v3", "url": "https://arxiv.org/html/2411.16044v3", "read_scope": "Sections 3.1-3.5 and official implementation entry points"},
+    {"id": "B6", "name": "AdaptVision: Efficient Vision-Language Models via Adaptive Visual Acquisition", "arxiv_version": "2512.03794v1", "url": "https://arxiv.org/html/2512.03794v1", "read_scope": "Adaptive acquisition and DTPO methods; official repository identification"}
+  ],
+  "code_content_identifiers": [
+    {"repository": "bytetriper/RAE", "path": "README.md", "blob_sha": "ffd68279d0944c49aeb09ea30fef77716c9a3c8f", "inspection": "README_READ"},
+    {"repository": "bytetriper/RAE", "path": "src/stage1/rae.py", "blob_sha": "add53bac5d5862e4cf02478300a5ff9b7bb2086d", "inspection": "SOURCE_READ_NOT_EXECUTED"},
+    {"repository": "apple-aiml-research/ml-starflow", "path": "README.md", "blob_sha": "ff0b36be6dc99a0d14ea9eff16ea3a7bf6c64084", "inspection": "STARFLOW2_CODE_TBD_AT_REVIEW"},
+    {"repository": "om-ai-lab/ZoomEye", "path": "README.md", "blob_sha": "8fc37539f99a216f13270595eb5728bb695c3530", "inspection": "README_READ"},
+    {"repository": "AdaptVision/AdaptVision", "path": "README.md", "blob_sha": "d7bdcf2d64f82010f098758e6a86175e80df2787", "inspection": "README_READ"}
+  ],
+  "existing_public_delivery_reviewed": {
+    "repository": "www080327-glitch/inverse-vit-lab",
+    "pull_request": 7,
+    "head_sha": "338f4ec6ef6bfe17dca01cf5eac4d754086d6daf",
+    "review_scope": "PR metadata and HANDOFF_A.md, not a full source audit",
+    "reported_status": "CPU-checked implementation; real-model training not executed by that delivery",
+    "modified_or_merged_by_C12": false
+  },
+  "execution": {
+    "model_weights_downloaded": false,
+    "model_inference": "NOT_RUN",
+    "training": "NOT_RUN",
+    "paper_benchmark_replication": "NOT_RUN",
+    "gpu_or_dcu_connection": "NOT_RUN",
+    "user_workstation_modified": false,
+    "existing_jobs_reconfigured": false,
+    "existing_pull_requests_merged": false,
+    "new_resource_authorization": false
+  },
+  "evidence_levels": {
+    "paper_experimental_results": "AUTHOR_REPORT_NOT_INDEPENDENTLY_REPLICATED",
+    "method_comparison": "SOURCE_GROUNDED_ANALYSIS",
+    "H1_H2": "RESEARCH_PROPOSALS_NOT_RUN",
+    "novelty_claim": "NO_FIRST_OR_UNIQUE_CLAIM"
+  },
+  "limitations": [
+    "Not an exhaustive systematic review or legal patent search",
+    "Not every later paper revision or release channel was checked",
+    "Some large PDFs could not be fetched by the web reader; accessible official HTML used instead",
+    "Container PDF download fallback encountered DNS failure and did not produce local PDF snapshots",
+    "Official complete code or checkpoints not confirmed for Argus-Unified, UniFluid, VISOR, FocusLLaVA or B3; absence was not inferred",
+    "Only selected paper figures were visually inspected",
+    "Public deliverables contain original analysis and source links, not copied full papers, weights or private project assets"
+  ]
+}
