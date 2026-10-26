@@ -67,7 +67,7 @@
           "env": {
             "C13_BRANCH": "experiments/c13-reverse-init"
           },
-          "run": "git config user.name \"github-actions[bot]\"\ngit config user.email \"41898282+github-actions[bot]@users.noreply.github.com\"\ngit add experiments/c13/RESULT.json experiments/c13/PARAMETER_MAPPING.json experiments/c13/HANDOFF_ZH.md experiments/c13/MANIFEST.sha256 experiments/c13/C13_DELIVERY.zip experiments/c13/learning_curves.svg experiments/c13/reconstructions.svg\ngit commit -m \"C13: record measured two-seed CPU results and delivery\"\ngit push origin \"HEAD:refs/heads/$C13_BRANCH\""
+          "run": "git config user.name \"github-actions[bot]\"\ngit config user.email \"41898282+github-actions[bot]@users.noreply.github.com\"\ngit add experiments/c13/RESULT.json experiments/c13/PARAMETER_MAPPING.json experiments/c13/HANDOFF_ZH.md experiments/c13/MANIFEST.sha256 experiments/c13/learning_curves.svg experiments/c13/reconstructions.svg\ngit add -f experiments/c13/C13_DELIVERY.zip\ngit commit -m \"C13: record measured two-seed CPU results and delivery\"\ngit push origin \"HEAD:refs/heads/$C13_BRANCH\""
         }
       ]
     }
