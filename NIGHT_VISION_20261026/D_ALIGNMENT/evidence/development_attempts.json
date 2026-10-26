@@ -1,0 +1,8 @@
+{
+  "attempt01": "Test reporter stream lacked writeln(); corrected by using unittest.TextTestRunner. It stopped after the first passing check.",
+  "attempt02": "12 of 13 checks passed; independent-decode fixture serialization shared storage. Corrected fixture clones.",
+  "policy": "Final cpu_checks.json is the acceptance record. Earlier fixture/tooling errors are preserved as development history, not model outcomes.",
+  "attempt03": "13/13 passed before adding manifest and paired-runner tests.",
+  "attempt04": "14/15 passed; a test assertion was placed in the wrong test method. Moved it back.",
+  "final": "15/15 core checks passed, including a fully mocked CPU paired runner; separate ~1M-parameter random Qwen architecture check passed. No real model training."
+}

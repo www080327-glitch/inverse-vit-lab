@@ -1,0 +1,126 @@
+{
+  "schema": "alignment.manifest.v1",
+  "version": "0.1.0",
+  "seed": 20261027,
+  "resource_lock": {
+    "executor": "A",
+    "status": "UNLOCKED_TEMPLATE",
+    "scope": "full"
+  },
+  "local_python_paths": [],
+  "geometry": {
+    "tokens": 64,
+    "width": 1024,
+    "pre_grid_thw": [
+      1,
+      16,
+      16
+    ],
+    "post_grid_hw": [
+      8,
+      8
+    ]
+  },
+  "model": {
+    "path": "private/official_qwen",
+    "repository": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "origin": "official_original_no_p2",
+    "files": {}
+  },
+  "representation": {
+    "repository": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "feature_kind": "post_merger_pooler_output",
+    "order": "merged_row_major",
+    "encoder_dtype": "float32",
+    "preprocessing": "square_rgb_256_pil_bicubic_official_processor",
+    "processor_sha256": "FILL_OFFICIAL_PREPROCESSOR_CONFIG_FILE_SHA256"
+  },
+  "encoder": {
+    "weights": null,
+    "representation_sha256": "FILLED_BY_LOCK_MANIFEST"
+  },
+  "decoder": {
+    "weights": {
+      "path": "private/D_export/decoder.safetensors",
+      "sha256": "FILL_SHA256"
+    },
+    "source": {
+      "path": "private/D_code/mirror_decoder/decoder.py",
+      "sha256": "FILL_SHA256"
+    },
+    "dependency_sources": [
+      {
+        "path": "private/D_code/mirror_decoder/config.py",
+        "sha256": "FILL_SHA256"
+      },
+      {
+        "path": "private/D_code/mirror_decoder/layout.py",
+        "sha256": "FILL_SHA256"
+      }
+    ],
+    "factory": "mirror_decoder.decoder:MirrorDecoder",
+    "kwargs": {},
+    "call": "features_grid",
+    "input_space": "raw",
+    "representation_sha256": "FILLED_BY_LOCK_MANIFEST",
+    "normalization_sha256": "FILLED_BY_LOCK_MANIFEST"
+  },
+  "normalization": {
+    "kind": "raw",
+    "decoder_space": "raw"
+  },
+  "mlp_width": 256,
+  "data": {
+    "snapshot": {
+      "path": "private/joined/snapshot.json",
+      "sha256": "FILL_SHA256"
+    },
+    "counts": {
+      "train": 640,
+      "val": 80
+    }
+  },
+  "training": {
+    "scope": "full",
+    "mode": "redraw",
+    "steps": 40,
+    "batch_size": 1,
+    "gradient_accumulation": 1,
+    "lr": 1e-05,
+    "weight_decay": 0.01,
+    "max_grad_norm": 1.0,
+    "pixel_loss_weight": 0.0,
+    "checkpoint_every": 10,
+    "dtype": "bfloat16",
+    "gradient_checkpointing": true
+  },
+  "replay": {
+    "train": {
+      "path": "private/instruction_train.jsonl",
+      "sha256": "FILL_SHA256"
+    },
+    "eval": {
+      "path": "private/instruction_eval.jsonl",
+      "sha256": "FILL_SHA256"
+    },
+    "every": 4,
+    "weight": 0.1,
+    "max_new_tokens": 128
+  },
+  "evaluation": {
+    "modes": [
+      "redraw",
+      "description",
+      "class_only"
+    ],
+    "val_samples": 8
+  },
+  "limits": {
+    "wall_seconds_per_interface": 900,
+    "maximum_steps_per_interface": 200,
+    "source_tokens": 2048,
+    "output_features": 64
+  }
+}

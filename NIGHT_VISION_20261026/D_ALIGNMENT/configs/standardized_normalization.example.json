@@ -1,0 +1,11 @@
+{
+  "kind": "channel_standardize",
+  "decoder_space": "model",
+  "statistics_split": "train",
+  "statistics_split_sha256": "AUTHORITATIVE_DATA_PARTITION_HASH",
+  "statistics": {
+    "path": "private/D_export/train_channel_statistics.safetensors",
+    "sha256": "FILL_SHA256"
+  },
+  "stored_std": "effective_std_after_D_training_floor; never refit on val or independently for direct/MLP"
+}

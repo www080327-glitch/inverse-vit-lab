@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+*.pt
+*.safetensors
+*.png
+*.jpg
+*.zip
+*.locked.json
+runs/
+data/
+models/
+private/

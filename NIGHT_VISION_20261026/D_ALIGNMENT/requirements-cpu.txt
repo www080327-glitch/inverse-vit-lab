@@ -1,0 +1,6 @@
+# Tested here: Python 3.14.6 / torch 2.14.1 / safetensors 0.8.0.
+# A must use a ROCm-compatible torch build; do not replace A's runtime blindly.
+torch>=2.5
+safetensors>=0.4
+numpy>=1.26
+Pillow>=10

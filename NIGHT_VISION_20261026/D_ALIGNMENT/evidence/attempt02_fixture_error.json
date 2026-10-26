@@ -1,0 +1,83 @@
+{
+  "status": "FAIL",
+  "fixture_only": true,
+  "real_Qwen_loaded": false,
+  "DCU_connected": false,
+  "MPS_used": false,
+  "torch_threads": 1,
+  "interop_threads": 1,
+  "torch_version": "2.14.1",
+  "elapsed_seconds": 4.370457333001468,
+  "tests_run": 13,
+  "checks": [
+    {
+      "name": "test_01_shift_and_causality",
+      "passed": true,
+      "seconds": 0.3042504579989327
+    },
+    {
+      "name": "test_02_condition_switch_and_no_target_leak",
+      "passed": true,
+      "seconds": 0.04165412500151433
+    },
+    {
+      "name": "test_03_shapes_and_identical_numeric_contract",
+      "passed": true,
+      "seconds": 0.02968220900038432
+    },
+    {
+      "name": "test_04_frozen_D_gradient_reaches_M_pixel_only",
+      "passed": true,
+      "seconds": 3.58810079199975
+    },
+    {
+      "name": "test_05_free_generation_64_uses_own_history",
+      "passed": true,
+      "seconds": 0.1307304590009153
+    },
+    {
+      "name": "test_06_scopes",
+      "passed": true,
+      "seconds": 0.044264415999350604
+    },
+    {
+      "name": "test_07_save_restore_optimizer_next_step",
+      "passed": true,
+      "seconds": 0.19980416599901218
+    },
+    {
+      "name": "test_08_independent_decode_without_M_E_targets",
+      "passed": false,
+      "seconds": 0.006817416999183479
+    },
+    {
+      "name": "test_09_immutable_join_and_inference_separation",
+      "passed": true,
+      "seconds": 0.009298416998717585
+    },
+    {
+      "name": "test_10_join_rejects_hash_and_split_mismatch",
+      "passed": true,
+      "seconds": 0.007328542000323068
+    },
+    {
+      "name": "test_11_instruction_replay_disjoint_and_keeps_head",
+      "passed": true,
+      "seconds": 0.006737000001521665
+    },
+    {
+      "name": "test_12_attribute_metrics_explicit_only",
+      "passed": true,
+      "seconds": 0.001177583000753657
+    },
+    {
+      "name": "test_13_real_execution_guard",
+      "passed": true,
+      "seconds": 0.0002365830005146563
+    }
+  ],
+  "errors": [
+    "Fixture used the same storage for two safetensors keys; corrected with clone(). No real model was loaded."
+  ],
+  "real_model_training_complete": false
+}

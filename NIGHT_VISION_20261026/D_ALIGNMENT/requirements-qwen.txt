@@ -1,0 +1,4 @@
+-r requirements-cpu.txt
+# Adapter developed against the inspected 5.20.2 implementation; real runtime untested.
+transformers==5.20.2
+accelerate>=1.0
