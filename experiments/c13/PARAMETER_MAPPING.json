@@ -1,0 +1,161 @@
+{
+  "A": [
+    {
+      "decoder": "W0",
+      "shape": [
+        24,
+        64
+      ],
+      "encoder": null,
+      "operation": "independent paired random baseline"
+    },
+    {
+      "decoder": "b0",
+      "shape": [
+        64
+      ],
+      "encoder": null,
+      "operation": "paired zero bias"
+    },
+    {
+      "decoder": "W1",
+      "shape": [
+        64,
+        64
+      ],
+      "encoder": null,
+      "operation": "independent paired random baseline"
+    },
+    {
+      "decoder": "b1",
+      "shape": [
+        64
+      ],
+      "encoder": null,
+      "operation": "paired zero bias"
+    },
+    {
+      "decoder": "W2",
+      "shape": [
+        64,
+        256
+      ],
+      "encoder": null,
+      "operation": "independent paired random baseline"
+    },
+    {
+      "decoder": "b2",
+      "shape": [
+        256
+      ],
+      "encoder": null,
+      "operation": "paired zero bias"
+    }
+  ],
+  "B": [
+    {
+      "decoder": "W0",
+      "shape": [
+        24,
+        64
+      ],
+      "encoder": "W2",
+      "operation": "transpose"
+    },
+    {
+      "decoder": "b0",
+      "shape": [
+        64
+      ],
+      "encoder": "b2, W2",
+      "operation": "-encoder_bias @ reverse_weight (linear affine heuristic)"
+    },
+    {
+      "decoder": "W1",
+      "shape": [
+        64,
+        64
+      ],
+      "encoder": "W1",
+      "operation": "transpose"
+    },
+    {
+      "decoder": "b1",
+      "shape": [
+        64
+      ],
+      "encoder": "b1, W1",
+      "operation": "-encoder_bias @ reverse_weight (linear affine heuristic)"
+    },
+    {
+      "decoder": "W2",
+      "shape": [
+        64,
+        256
+      ],
+      "encoder": "W0",
+      "operation": "transpose"
+    },
+    {
+      "decoder": "b2",
+      "shape": [
+        256
+      ],
+      "encoder": "b0, W0",
+      "operation": "-encoder_bias @ reverse_weight (linear affine heuristic)"
+    }
+  ],
+  "C": [
+    {
+      "decoder": "W0",
+      "shape": [
+        24,
+        64
+      ],
+      "encoder": "W2",
+      "operation": "Moore-Penrose pseudoinverse (truncated SVD rcond=0.001)"
+    },
+    {
+      "decoder": "b0",
+      "shape": [
+        64
+      ],
+      "encoder": "b2, W2",
+      "operation": "-encoder_bias @ reverse_weight (linear affine heuristic)"
+    },
+    {
+      "decoder": "W1",
+      "shape": [
+        64,
+        64
+      ],
+      "encoder": null,
+      "operation": "independent paired random baseline"
+    },
+    {
+      "decoder": "b1",
+      "shape": [
+        64
+      ],
+      "encoder": null,
+      "operation": "paired zero bias"
+    },
+    {
+      "decoder": "W2",
+      "shape": [
+        64,
+        256
+      ],
+      "encoder": "W0",
+      "operation": "Moore-Penrose pseudoinverse (truncated SVD rcond=0.001)"
+    },
+    {
+      "decoder": "b2",
+      "shape": [
+        256
+      ],
+      "encoder": "b0, W0",
+      "operation": "-encoder_bias @ reverse_weight (linear affine heuristic)"
+    }
+  ]
+}
