@@ -1,0 +1,3127 @@
+{
+  "task": "C09",
+  "scope": "synthetic CPU mathematical/numerical reference only",
+  "execution": {
+    "python": "3.12.3",
+    "platform": "Linux",
+    "mant_dig": 53,
+    "max_exp": 1024,
+    "reference_dtype": "IEEE754 binary64 (Python float)",
+    "maximum_fine_tokens": 1024,
+    "seed": 9027,
+    "single_query": true,
+    "key_dimension": 8,
+    "value_dimension": 6,
+    "elapsed_seconds": 0.8717049170000024,
+    "process_cpu_seconds": 0.871629108,
+    "ten_minute_budget": 600,
+    "models_loaded": false,
+    "data_downloaded": false,
+    "gpu_used": false,
+    "dependencies": "Python standard library only"
+  },
+  "tests": {
+    "run": 22,
+    "failures": 0,
+    "errors": 0,
+    "passed": true
+  },
+  "dense_hierarchical_max_abs_error": 1.1102230246251565e-16,
+  "topk_rows": [
+    {
+      "case": "uniform_unequal",
+      "mode": "mean_key",
+      "k": 1,
+      "selected_regions": [
+        0
+      ],
+      "retained_mass": 0.0009765625,
+      "omitted_mass": 0.9990234375,
+      "l2_output_error": 1.0010720969545293,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 1.9980468750000004,
+      "selected_fine_tokens": 1,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 1,
+        "qk_scalar_multiply_add_pairs": 56,
+        "av_scalar_multiply_add_pairs": 6,
+        "exp_evaluations": 1,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "uniform_unequal",
+      "mode": "mean_key",
+      "k": 2,
+      "selected_regions": [
+        0,
+        1
+      ],
+      "retained_mass": 0.00390625,
+      "omitted_mass": 0.99609375,
+      "l2_output_error": 0.5158482600442811,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 1.9921875000000004,
+      "selected_fine_tokens": 4,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 4,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 4,
+        "qk_scalar_multiply_add_pairs": 80,
+        "av_scalar_multiply_add_pairs": 24,
+        "exp_evaluations": 4,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "uniform_unequal",
+      "mode": "mean_key",
+      "k": 4,
+      "selected_regions": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "retained_mass": 0.06640625,
+      "omitted_mass": 0.93359375,
+      "l2_output_error": 0.12235613252081985,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 1.8671875000000004,
+      "selected_fine_tokens": 68,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 68,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 68,
+        "qk_scalar_multiply_add_pairs": 592,
+        "av_scalar_multiply_add_pairs": 408,
+        "exp_evaluations": 68,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "uniform_unequal",
+      "mode": "mean_key",
+      "k": 6,
+      "selected_regions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "retained_mass": 1.0,
+      "omitted_mass": 0.0,
+      "l2_output_error": 0.0,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.0,
+      "selected_fine_tokens": 1024,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 1024,
+        "qk_scalar_multiply_add_pairs": 8240,
+        "av_scalar_multiply_add_pairs": 6144,
+        "exp_evaluations": 1024,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "uniform_unequal",
+      "mode": "max",
+      "k": 1,
+      "selected_regions": [
+        0
+      ],
+      "retained_mass": 0.0009765625,
+      "omitted_mass": 0.9990234375,
+      "l2_output_error": 1.0010720969545293,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 1.9980468750000004,
+      "selected_fine_tokens": 1,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 1,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 6,
+        "exp_evaluations": 1,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "uniform_unequal",
+      "mode": "max",
+      "k": 2,
+      "selected_regions": [
+        0,
+        1
+      ],
+      "retained_mass": 0.00390625,
+      "omitted_mass": 0.99609375,
+      "l2_output_error": 0.5158482600442811,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 1.9921875000000004,
+      "selected_fine_tokens": 4,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 4,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 24,
+        "exp_evaluations": 4,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "uniform_unequal",
+      "mode": "max",
+      "k": 4,
+      "selected_regions": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "retained_mass": 0.06640625,
+      "omitted_mass": 0.93359375,
+      "l2_output_error": 0.12235613252081985,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 1.8671875000000004,
+      "selected_fine_tokens": 68,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 68,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 408,
+        "exp_evaluations": 68,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "uniform_unequal",
+      "mode": "max",
+      "k": 6,
+      "selected_regions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "retained_mass": 1.0,
+      "omitted_mass": 0.0,
+      "l2_output_error": 0.0,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.0,
+      "selected_fine_tokens": 1024,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 1024,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 6144,
+        "exp_evaluations": 1024,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "uniform_unequal",
+      "mode": "logsumexp",
+      "k": 1,
+      "selected_regions": [
+        5
+      ],
+      "retained_mass": 0.75,
+      "omitted_mass": 0.25,
+      "l2_output_error": 0.016998921857053102,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.5000000000000001,
+      "selected_fine_tokens": 768,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 768,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 4608,
+        "exp_evaluations": 1792,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "uniform_unequal",
+      "mode": "logsumexp",
+      "k": 2,
+      "selected_regions": [
+        5,
+        4
+      ],
+      "retained_mass": 0.93359375,
+      "omitted_mass": 0.06640625,
+      "l2_output_error": 0.008703155869681744,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.13281250000000003,
+      "selected_fine_tokens": 956,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 956,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 5736,
+        "exp_evaluations": 1980,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "uniform_unequal",
+      "mode": "logsumexp",
+      "k": 4,
+      "selected_regions": [
+        5,
+        4,
+        3,
+        2
+      ],
+      "retained_mass": 0.99609375,
+      "omitted_mass": 0.00390625,
+      "l2_output_error": 0.002022934353114828,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.007812500000000002,
+      "selected_fine_tokens": 1020,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 1020,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 6120,
+        "exp_evaluations": 2044,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "uniform_unequal",
+      "mode": "logsumexp",
+      "k": 6,
+      "selected_regions": [
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "retained_mass": 1.0,
+      "omitted_mass": 0.0,
+      "l2_output_error": 0.0,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.0,
+      "selected_fine_tokens": 1024,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 1024,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 6144,
+        "exp_evaluations": 2048,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "uniform_unequal",
+      "mode": "mean_log_size",
+      "k": 1,
+      "selected_regions": [
+        5
+      ],
+      "retained_mass": 0.75,
+      "omitted_mass": 0.25,
+      "l2_output_error": 0.016998921857053102,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.5000000000000001,
+      "selected_fine_tokens": 768,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 768,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 768,
+        "qk_scalar_multiply_add_pairs": 6192,
+        "av_scalar_multiply_add_pairs": 4608,
+        "exp_evaluations": 768,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "uniform_unequal",
+      "mode": "mean_log_size",
+      "k": 2,
+      "selected_regions": [
+        5,
+        4
+      ],
+      "retained_mass": 0.93359375,
+      "omitted_mass": 0.06640625,
+      "l2_output_error": 0.008703155869681744,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.13281250000000003,
+      "selected_fine_tokens": 956,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 956,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 956,
+        "qk_scalar_multiply_add_pairs": 7696,
+        "av_scalar_multiply_add_pairs": 5736,
+        "exp_evaluations": 956,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "uniform_unequal",
+      "mode": "mean_log_size",
+      "k": 4,
+      "selected_regions": [
+        5,
+        4,
+        3,
+        2
+      ],
+      "retained_mass": 0.99609375,
+      "omitted_mass": 0.00390625,
+      "l2_output_error": 0.002022934353114828,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.007812500000000002,
+      "selected_fine_tokens": 1020,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1020,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 1020,
+        "qk_scalar_multiply_add_pairs": 8208,
+        "av_scalar_multiply_add_pairs": 6120,
+        "exp_evaluations": 1020,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "uniform_unequal",
+      "mode": "mean_log_size",
+      "k": 6,
+      "selected_regions": [
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "retained_mass": 1.0,
+      "omitted_mass": 0.0,
+      "l2_output_error": 0.0,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.0,
+      "selected_fine_tokens": 1024,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 1024,
+        "qk_scalar_multiply_add_pairs": 8240,
+        "av_scalar_multiply_add_pairs": 6144,
+        "exp_evaluations": 1024,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "gaussian",
+      "mode": "mean_key",
+      "k": 1,
+      "selected_regions": [
+        5
+      ],
+      "retained_mass": 0.776397570894253,
+      "omitted_mass": 0.223602429105747,
+      "l2_output_error": 0.046370526713896576,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.44720485821149414,
+      "selected_fine_tokens": 768,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 768,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 768,
+        "qk_scalar_multiply_add_pairs": 6192,
+        "av_scalar_multiply_add_pairs": 4608,
+        "exp_evaluations": 768,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "gaussian",
+      "mode": "mean_key",
+      "k": 2,
+      "selected_regions": [
+        5,
+        4
+      ],
+      "retained_mass": 0.9513613488430367,
+      "omitted_mass": 0.048638651156963364,
+      "l2_output_error": 0.01648198084488291,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.09727730231392676,
+      "selected_fine_tokens": 956,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 956,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 956,
+        "qk_scalar_multiply_add_pairs": 7696,
+        "av_scalar_multiply_add_pairs": 5736,
+        "exp_evaluations": 956,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "gaussian",
+      "mode": "mean_key",
+      "k": 4,
+      "selected_regions": [
+        5,
+        4,
+        1,
+        3
+      ],
+      "retained_mass": 0.9939284995184965,
+      "omitted_mass": 0.006071500481503498,
+      "l2_output_error": 0.002545589106691944,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.012143000963007,
+      "selected_fine_tokens": 1011,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1011,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 1011,
+        "qk_scalar_multiply_add_pairs": 8136,
+        "av_scalar_multiply_add_pairs": 6066,
+        "exp_evaluations": 1011,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "gaussian",
+      "mode": "mean_key",
+      "k": 6,
+      "selected_regions": [
+        5,
+        4,
+        1,
+        3,
+        2,
+        0
+      ],
+      "retained_mass": 1.0,
+      "omitted_mass": 0.0,
+      "l2_output_error": 0.0,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.0,
+      "selected_fine_tokens": 1024,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 1024,
+        "qk_scalar_multiply_add_pairs": 8240,
+        "av_scalar_multiply_add_pairs": 6144,
+        "exp_evaluations": 1024,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "gaussian",
+      "mode": "max",
+      "k": 1,
+      "selected_regions": [
+        5
+      ],
+      "retained_mass": 0.776397570894253,
+      "omitted_mass": 0.223602429105747,
+      "l2_output_error": 0.046370526713896576,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.44720485821149414,
+      "selected_fine_tokens": 768,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 768,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 4608,
+        "exp_evaluations": 768,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "gaussian",
+      "mode": "max",
+      "k": 2,
+      "selected_regions": [
+        5,
+        4
+      ],
+      "retained_mass": 0.9513613488430367,
+      "omitted_mass": 0.048638651156963364,
+      "l2_output_error": 0.01648198084488291,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.09727730231392676,
+      "selected_fine_tokens": 956,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 956,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 5736,
+        "exp_evaluations": 956,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "gaussian",
+      "mode": "max",
+      "k": 4,
+      "selected_regions": [
+        5,
+        4,
+        3,
+        2
+      ],
+      "retained_mass": 0.9972950435384992,
+      "omitted_mass": 0.0027049564615007947,
+      "l2_output_error": 0.002281767052726159,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.00540991292300159,
+      "selected_fine_tokens": 1020,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 1020,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 6120,
+        "exp_evaluations": 1020,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "gaussian",
+      "mode": "max",
+      "k": 6,
+      "selected_regions": [
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "retained_mass": 1.0,
+      "omitted_mass": 0.0,
+      "l2_output_error": 0.0,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.0,
+      "selected_fine_tokens": 1024,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 1024,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 6144,
+        "exp_evaluations": 1024,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "gaussian",
+      "mode": "logsumexp",
+      "k": 1,
+      "selected_regions": [
+        5
+      ],
+      "retained_mass": 0.776397570894253,
+      "omitted_mass": 0.223602429105747,
+      "l2_output_error": 0.046370526713896576,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.44720485821149414,
+      "selected_fine_tokens": 768,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 768,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 4608,
+        "exp_evaluations": 1792,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "gaussian",
+      "mode": "logsumexp",
+      "k": 2,
+      "selected_regions": [
+        5,
+        4
+      ],
+      "retained_mass": 0.9513613488430367,
+      "omitted_mass": 0.048638651156963364,
+      "l2_output_error": 0.01648198084488291,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.09727730231392676,
+      "selected_fine_tokens": 956,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 956,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 5736,
+        "exp_evaluations": 1980,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "gaussian",
+      "mode": "logsumexp",
+      "k": 4,
+      "selected_regions": [
+        5,
+        4,
+        3,
+        2
+      ],
+      "retained_mass": 0.9972950435384992,
+      "omitted_mass": 0.0027049564615007947,
+      "l2_output_error": 0.002281767052726159,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.00540991292300159,
+      "selected_fine_tokens": 1020,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 1020,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 6120,
+        "exp_evaluations": 2044,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "gaussian",
+      "mode": "logsumexp",
+      "k": 6,
+      "selected_regions": [
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "retained_mass": 1.0,
+      "omitted_mass": 0.0,
+      "l2_output_error": 0.0,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.0,
+      "selected_fine_tokens": 1024,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 1024,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 6144,
+        "exp_evaluations": 2048,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "gaussian",
+      "mode": "mean_log_size",
+      "k": 1,
+      "selected_regions": [
+        5
+      ],
+      "retained_mass": 0.776397570894253,
+      "omitted_mass": 0.223602429105747,
+      "l2_output_error": 0.046370526713896576,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.44720485821149414,
+      "selected_fine_tokens": 768,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 768,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 768,
+        "qk_scalar_multiply_add_pairs": 6192,
+        "av_scalar_multiply_add_pairs": 4608,
+        "exp_evaluations": 768,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "gaussian",
+      "mode": "mean_log_size",
+      "k": 2,
+      "selected_regions": [
+        5,
+        4
+      ],
+      "retained_mass": 0.9513613488430367,
+      "omitted_mass": 0.048638651156963364,
+      "l2_output_error": 0.01648198084488291,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.09727730231392676,
+      "selected_fine_tokens": 956,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 956,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 956,
+        "qk_scalar_multiply_add_pairs": 7696,
+        "av_scalar_multiply_add_pairs": 5736,
+        "exp_evaluations": 956,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "gaussian",
+      "mode": "mean_log_size",
+      "k": 4,
+      "selected_regions": [
+        5,
+        4,
+        3,
+        2
+      ],
+      "retained_mass": 0.9972950435384992,
+      "omitted_mass": 0.0027049564615007947,
+      "l2_output_error": 0.002281767052726159,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.00540991292300159,
+      "selected_fine_tokens": 1020,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1020,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 1020,
+        "qk_scalar_multiply_add_pairs": 8208,
+        "av_scalar_multiply_add_pairs": 6120,
+        "exp_evaluations": 1020,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "gaussian",
+      "mode": "mean_log_size",
+      "k": 6,
+      "selected_regions": [
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "retained_mass": 1.0,
+      "omitted_mass": 0.0,
+      "l2_output_error": 0.0,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.0,
+      "selected_fine_tokens": 1024,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 1024,
+        "qk_scalar_multiply_add_pairs": 8240,
+        "av_scalar_multiply_add_pairs": 6144,
+        "exp_evaluations": 1024,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "hidden_peak",
+      "mode": "mean_key",
+      "k": 1,
+      "selected_regions": [
+        0
+      ],
+      "retained_mass": 0.0009107667188316998,
+      "omitted_mass": 0.9990892332811682,
+      "l2_output_error": 1.2706771101717282,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 1.9981784665623368,
+      "selected_fine_tokens": 1,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 1,
+        "qk_scalar_multiply_add_pairs": 56,
+        "av_scalar_multiply_add_pairs": 6,
+        "exp_evaluations": 1,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "hidden_peak",
+      "mode": "mean_key",
+      "k": 2,
+      "selected_regions": [
+        0,
+        5
+      ],
+      "retained_mass": 0.999922090309789,
+      "omitted_mass": 7.790969021088468e-05,
+      "l2_output_error": 7.434324369957417e-05,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.00015581938042176938,
+      "selected_fine_tokens": 769,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 769,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 769,
+        "qk_scalar_multiply_add_pairs": 6200,
+        "av_scalar_multiply_add_pairs": 4614,
+        "exp_evaluations": 769,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "hidden_peak",
+      "mode": "mean_key",
+      "k": 4,
+      "selected_regions": [
+        0,
+        5,
+        4,
+        1
+      ],
+      "retained_mass": 0.9999804461953979,
+      "omitted_mass": 1.9553804601947528e-05,
+      "l2_output_error": 1.8703509288734957e-05,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 3.910760920389506e-05,
+      "selected_fine_tokens": 960,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 960,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 960,
+        "qk_scalar_multiply_add_pairs": 7728,
+        "av_scalar_multiply_add_pairs": 5760,
+        "exp_evaluations": 960,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "hidden_peak",
+      "mode": "mean_key",
+      "k": 6,
+      "selected_regions": [
+        0,
+        5,
+        4,
+        1,
+        2,
+        3
+      ],
+      "retained_mass": 0.9999999999999999,
+      "omitted_mass": 0.0,
+      "l2_output_error": 0.0,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.0,
+      "selected_fine_tokens": 1024,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 1024,
+        "qk_scalar_multiply_add_pairs": 8240,
+        "av_scalar_multiply_add_pairs": 6144,
+        "exp_evaluations": 1024,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "hidden_peak",
+      "mode": "max",
+      "k": 1,
+      "selected_regions": [
+        5
+      ],
+      "retained_mass": 0.9990113235909573,
+      "omitted_mass": 0.0009886764090425845,
+      "l2_output_error": 0.001204632009298785,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.0019773528180851694,
+      "selected_fine_tokens": 768,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 768,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 4608,
+        "exp_evaluations": 768,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "hidden_peak",
+      "mode": "max",
+      "k": 2,
+      "selected_regions": [
+        5,
+        0
+      ],
+      "retained_mass": 0.999922090309789,
+      "omitted_mass": 7.790969021088468e-05,
+      "l2_output_error": 7.434324369957417e-05,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.00015581938042176938,
+      "selected_fine_tokens": 769,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 769,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 4614,
+        "exp_evaluations": 769,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "hidden_peak",
+      "mode": "max",
+      "k": 4,
+      "selected_regions": [
+        5,
+        0,
+        1,
+        2
+      ],
+      "retained_mass": 0.9999266732327426,
+      "omitted_mass": 7.332676725730323e-05,
+      "l2_output_error": 6.997049779993465e-05,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.0001466535345146065,
+      "selected_fine_tokens": 784,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 784,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 4704,
+        "exp_evaluations": 784,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "hidden_peak",
+      "mode": "max",
+      "k": 6,
+      "selected_regions": [
+        5,
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "retained_mass": 0.9999999999999999,
+      "omitted_mass": 0.0,
+      "l2_output_error": 0.0,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.0,
+      "selected_fine_tokens": 1024,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 1024,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 6144,
+        "exp_evaluations": 1024,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "hidden_peak",
+      "mode": "logsumexp",
+      "k": 1,
+      "selected_regions": [
+        5
+      ],
+      "retained_mass": 0.9990113235909573,
+      "omitted_mass": 0.0009886764090425845,
+      "l2_output_error": 0.001204632009298785,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.0019773528180851694,
+      "selected_fine_tokens": 768,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 768,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 4608,
+        "exp_evaluations": 1792,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "hidden_peak",
+      "mode": "logsumexp",
+      "k": 2,
+      "selected_regions": [
+        5,
+        0
+      ],
+      "retained_mass": 0.999922090309789,
+      "omitted_mass": 7.790969021088468e-05,
+      "l2_output_error": 7.434324369957417e-05,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.00015581938042176938,
+      "selected_fine_tokens": 769,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 769,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 4614,
+        "exp_evaluations": 1793,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "hidden_peak",
+      "mode": "logsumexp",
+      "k": 4,
+      "selected_regions": [
+        5,
+        0,
+        4,
+        3
+      ],
+      "retained_mass": 0.9999954170770463,
+      "omitted_mass": 4.582922953581452e-06,
+      "l2_output_error": 4.473143324773292e-06,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 9.165845907162906e-06,
+      "selected_fine_tokens": 1009,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 1009,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 6054,
+        "exp_evaluations": 2033,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "hidden_peak",
+      "mode": "logsumexp",
+      "k": 6,
+      "selected_regions": [
+        5,
+        0,
+        4,
+        3,
+        2,
+        1
+      ],
+      "retained_mass": 0.9999999999999999,
+      "omitted_mass": 0.0,
+      "l2_output_error": 0.0,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.0,
+      "selected_fine_tokens": 1024,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 1024,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 6144,
+        "exp_evaluations": 2048,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "hidden_peak",
+      "mode": "mean_log_size",
+      "k": 1,
+      "selected_regions": [
+        0
+      ],
+      "retained_mass": 0.0009107667188316998,
+      "omitted_mass": 0.9990892332811682,
+      "l2_output_error": 1.2706771101717282,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 1.9981784665623368,
+      "selected_fine_tokens": 1,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 1,
+        "qk_scalar_multiply_add_pairs": 56,
+        "av_scalar_multiply_add_pairs": 6,
+        "exp_evaluations": 1,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "hidden_peak",
+      "mode": "mean_log_size",
+      "k": 2,
+      "selected_regions": [
+        0,
+        5
+      ],
+      "retained_mass": 0.999922090309789,
+      "omitted_mass": 7.790969021088468e-05,
+      "l2_output_error": 7.434324369957417e-05,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.00015581938042176938,
+      "selected_fine_tokens": 769,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 769,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 769,
+        "qk_scalar_multiply_add_pairs": 6200,
+        "av_scalar_multiply_add_pairs": 4614,
+        "exp_evaluations": 769,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "hidden_peak",
+      "mode": "mean_log_size",
+      "k": 4,
+      "selected_regions": [
+        0,
+        5,
+        4,
+        3
+      ],
+      "retained_mass": 0.9999954170770463,
+      "omitted_mass": 4.582922953581452e-06,
+      "l2_output_error": 4.473143324773292e-06,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 9.165845907162906e-06,
+      "selected_fine_tokens": 1009,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1009,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 1009,
+        "qk_scalar_multiply_add_pairs": 8120,
+        "av_scalar_multiply_add_pairs": 6054,
+        "exp_evaluations": 1009,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "hidden_peak",
+      "mode": "mean_log_size",
+      "k": 6,
+      "selected_regions": [
+        0,
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "retained_mass": 0.9999999999999999,
+      "omitted_mass": 0.0,
+      "l2_output_error": 0.0,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.0,
+      "selected_fine_tokens": 1024,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 1024,
+        "qk_scalar_multiply_add_pairs": 8240,
+        "av_scalar_multiply_add_pairs": 6144,
+        "exp_evaluations": 1024,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "extreme_logits",
+      "mode": "mean_key",
+      "k": 1,
+      "selected_regions": [
+        0
+      ],
+      "retained_mass": 0.7310585786300049,
+      "omitted_mass": 0.2689414213699951,
+      "l2_output_error": 0.4039631077689499,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.5378828427399903,
+      "selected_fine_tokens": 1,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 1,
+        "qk_scalar_multiply_add_pairs": 56,
+        "av_scalar_multiply_add_pairs": 6,
+        "exp_evaluations": 1,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "extreme_logits",
+      "mode": "mean_key",
+      "k": 2,
+      "selected_regions": [
+        0,
+        1
+      ],
+      "retained_mass": 1.0,
+      "omitted_mass": 0.0,
+      "l2_output_error": 0.0,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.0,
+      "selected_fine_tokens": 4,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 4,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 4,
+        "qk_scalar_multiply_add_pairs": 80,
+        "av_scalar_multiply_add_pairs": 24,
+        "exp_evaluations": 4,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "extreme_logits",
+      "mode": "mean_key",
+      "k": 4,
+      "selected_regions": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "retained_mass": 1.0,
+      "omitted_mass": 0.0,
+      "l2_output_error": 0.0,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.0,
+      "selected_fine_tokens": 68,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 68,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 68,
+        "qk_scalar_multiply_add_pairs": 592,
+        "av_scalar_multiply_add_pairs": 408,
+        "exp_evaluations": 68,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "extreme_logits",
+      "mode": "mean_key",
+      "k": 6,
+      "selected_regions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "retained_mass": 1.0,
+      "omitted_mass": 0.0,
+      "l2_output_error": 0.0,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.0,
+      "selected_fine_tokens": 1024,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 1024,
+        "qk_scalar_multiply_add_pairs": 8240,
+        "av_scalar_multiply_add_pairs": 6144,
+        "exp_evaluations": 1024,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "extreme_logits",
+      "mode": "max",
+      "k": 1,
+      "selected_regions": [
+        0
+      ],
+      "retained_mass": 0.7310585786300049,
+      "omitted_mass": 0.2689414213699951,
+      "l2_output_error": 0.4039631077689499,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.5378828427399903,
+      "selected_fine_tokens": 1,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 1,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 6,
+        "exp_evaluations": 1,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "extreme_logits",
+      "mode": "max",
+      "k": 2,
+      "selected_regions": [
+        0,
+        1
+      ],
+      "retained_mass": 1.0,
+      "omitted_mass": 0.0,
+      "l2_output_error": 0.0,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.0,
+      "selected_fine_tokens": 4,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 4,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 24,
+        "exp_evaluations": 4,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "extreme_logits",
+      "mode": "max",
+      "k": 4,
+      "selected_regions": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "retained_mass": 1.0,
+      "omitted_mass": 0.0,
+      "l2_output_error": 0.0,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.0,
+      "selected_fine_tokens": 68,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 68,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 408,
+        "exp_evaluations": 68,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "extreme_logits",
+      "mode": "max",
+      "k": 6,
+      "selected_regions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "retained_mass": 1.0,
+      "omitted_mass": 0.0,
+      "l2_output_error": 0.0,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.0,
+      "selected_fine_tokens": 1024,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 1024,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 6144,
+        "exp_evaluations": 1024,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "extreme_logits",
+      "mode": "logsumexp",
+      "k": 1,
+      "selected_regions": [
+        0
+      ],
+      "retained_mass": 0.7310585786300049,
+      "omitted_mass": 0.2689414213699951,
+      "l2_output_error": 0.4039631077689499,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.5378828427399903,
+      "selected_fine_tokens": 1,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 1,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 6,
+        "exp_evaluations": 1025,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "extreme_logits",
+      "mode": "logsumexp",
+      "k": 2,
+      "selected_regions": [
+        0,
+        1
+      ],
+      "retained_mass": 1.0,
+      "omitted_mass": 0.0,
+      "l2_output_error": 0.0,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.0,
+      "selected_fine_tokens": 4,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 4,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 24,
+        "exp_evaluations": 1028,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "extreme_logits",
+      "mode": "logsumexp",
+      "k": 4,
+      "selected_regions": [
+        0,
+        1,
+        5,
+        4
+      ],
+      "retained_mass": 1.0,
+      "omitted_mass": 0.0,
+      "l2_output_error": 0.0,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.0,
+      "selected_fine_tokens": 960,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 960,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 5760,
+        "exp_evaluations": 1984,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "extreme_logits",
+      "mode": "logsumexp",
+      "k": 6,
+      "selected_regions": [
+        0,
+        1,
+        5,
+        4,
+        3,
+        2
+      ],
+      "retained_mass": 1.0,
+      "omitted_mass": 0.0,
+      "l2_output_error": 0.0,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.0,
+      "selected_fine_tokens": 1024,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 0,
+        "online_fine_value_rows_read": 1024,
+        "qk_scalar_multiply_add_pairs": 8192,
+        "av_scalar_multiply_add_pairs": 6144,
+        "exp_evaluations": 2048,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 1024,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": false,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "extreme_logits",
+      "mode": "mean_log_size",
+      "k": 1,
+      "selected_regions": [
+        0
+      ],
+      "retained_mass": 0.7310585786300049,
+      "omitted_mass": 0.2689414213699951,
+      "l2_output_error": 0.4039631077689499,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.5378828427399903,
+      "selected_fine_tokens": 1,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 1,
+        "qk_scalar_multiply_add_pairs": 56,
+        "av_scalar_multiply_add_pairs": 6,
+        "exp_evaluations": 1,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "extreme_logits",
+      "mode": "mean_log_size",
+      "k": 2,
+      "selected_regions": [
+        0,
+        1
+      ],
+      "retained_mass": 1.0,
+      "omitted_mass": 0.0,
+      "l2_output_error": 0.0,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.0,
+      "selected_fine_tokens": 4,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 4,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 4,
+        "qk_scalar_multiply_add_pairs": 80,
+        "av_scalar_multiply_add_pairs": 24,
+        "exp_evaluations": 4,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "extreme_logits",
+      "mode": "mean_log_size",
+      "k": 4,
+      "selected_regions": [
+        0,
+        1,
+        5,
+        4
+      ],
+      "retained_mass": 1.0,
+      "omitted_mass": 0.0,
+      "l2_output_error": 0.0,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.0,
+      "selected_fine_tokens": 960,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 960,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 960,
+        "qk_scalar_multiply_add_pairs": 7728,
+        "av_scalar_multiply_add_pairs": 5760,
+        "exp_evaluations": 960,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    },
+    {
+      "case": "extreme_logits",
+      "mode": "mean_log_size",
+      "k": 6,
+      "selected_regions": [
+        0,
+        1,
+        5,
+        4,
+        3,
+        2
+      ],
+      "retained_mass": 1.0,
+      "omitted_mass": 0.0,
+      "l2_output_error": 0.0,
+      "value_norm_bound": 1.0000000000000002,
+      "error_bound_2B_epsilon": 0.0,
+      "selected_fine_tokens": 1024,
+      "diagnostic_reads_all_keys_and_values": true,
+      "online_cost": {
+        "online_fine_key_rows_read": 1024,
+        "online_centroid_rows_read": 6,
+        "online_fine_value_rows_read": 1024,
+        "qk_scalar_multiply_add_pairs": 8240,
+        "av_scalar_multiply_add_pairs": 6144,
+        "exp_evaluations": 1024,
+        "region_rank_items": 6,
+        "fine_key_scans_for_max_or_lse": 0,
+        "cost_is_analytical_counts_not_timing": true
+      },
+      "offline_centroid_preparation": {
+        "needed": true,
+        "fine_key_scalars_read_per_K_or_partition_change": 8192,
+        "stored_centroid_scalars": 48,
+        "amortization_not_assumed": true
+      },
+      "separate_full_reference_diagnostic_cost": {
+        "fine_key_rows": 1024,
+        "fine_value_rows": 1024,
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      },
+      "dense_baseline_cost": {
+        "qk_scalar_pairs": 8192,
+        "av_scalar_pairs": 6144
+      }
+    }
+  ],
+  "approximation_counterexamples": [
+    {
+      "name": "uniform_1_vs_9",
+      "region_sizes": [
+        1,
+        9
+      ],
+      "true_region_probabilities": [
+        0.09999999999999998,
+        0.8999999999999999
+      ],
+      "approximations": {
+        "mean_key": {
+          "region_probabilities": [
+            0.5,
+            0.5
+          ],
+          "top1": 0,
+          "probability_l1_error": 0.7999999999999999
+        },
+        "max": {
+          "region_probabilities": [
+            0.5,
+            0.5
+          ],
+          "top1": 0,
+          "probability_l1_error": 0.7999999999999999
+        },
+        "logsumexp": {
+          "region_probabilities": [
+            0.09999999999999998,
+            0.8999999999999999
+          ],
+          "top1": 1,
+          "probability_l1_error": 0.0
+        },
+        "mean_log_size": {
+          "region_probabilities": [
+            0.09999999999999998,
+            0.8999999999999999
+          ],
+          "top1": 1,
+          "probability_l1_error": 0.0
+        }
+      }
+    },
+    {
+      "name": "size_defeats_max",
+      "region_sizes": [
+        1,
+        64
+      ],
+      "true_region_probabilities": [
+        0.23887029396667656,
+        0.7611297060333234
+      ],
+      "approximations": {
+        "mean_key": {
+          "region_probabilities": [
+            0.9525741268224334,
+            0.04742587317756679
+          ],
+          "top1": 0,
+          "probability_l1_error": 1.4274076657115136
+        },
+        "max": {
+          "region_probabilities": [
+            0.9525741268224334,
+            0.04742587317756679
+          ],
+          "top1": 0,
+          "probability_l1_error": 1.4274076657115136
+        },
+        "logsumexp": {
+          "region_probabilities": [
+            0.23887029396667656,
+            0.7611297060333234
+          ],
+          "top1": 1,
+          "probability_l1_error": 0.0
+        },
+        "mean_log_size": {
+          "region_probabilities": [
+            0.23887029396667656,
+            0.7611297060333234
+          ],
+          "top1": 1,
+          "probability_l1_error": 0.0
+        }
+      }
+    },
+    {
+      "name": "dispersion_defeats_mean_log_size",
+      "region_sizes": [
+        1,
+        64
+      ],
+      "true_region_probabilities": [
+        0.0009110447412366841,
+        0.9990889552587634
+      ],
+      "approximations": {
+        "mean_key": {
+          "region_probabilities": [
+            0.9998415637808975,
+            0.00015843621910252594
+          ],
+          "top1": 0,
+          "probability_l1_error": 1.9978610380793218
+        },
+        "max": {
+          "region_probabilities": [
+            0.0009110511944006454,
+            0.9990889488055994
+          ],
+          "top1": 1,
+          "probability_l1_error": 1.2906327964473316e-08
+        },
+        "logsumexp": {
+          "region_probabilities": [
+            0.0009110447412366841,
+            0.9990889552587634
+          ],
+          "top1": 1,
+          "probability_l1_error": 0.0
+        },
+        "mean_log_size": {
+          "region_probabilities": [
+            0.9899602931288843,
+            0.01003970687111556
+          ],
+          "top1": 0,
+          "probability_l1_error": 1.9780984967752955
+        }
+      }
+    },
+    {
+      "name": "single_token_regions",
+      "region_sizes": [
+        1,
+        1,
+        1
+      ],
+      "true_region_probabilities": [
+        0.8756005950630876,
+        0.005899750401902781,
+        0.11849965453500959
+      ],
+      "approximations": {
+        "mean_key": {
+          "region_probabilities": [
+            0.8756005950630876,
+            0.005899750401902781,
+            0.11849965453500959
+          ],
+          "top1": 0,
+          "probability_l1_error": 0.0
+        },
+        "max": {
+          "region_probabilities": [
+            0.8756005950630876,
+            0.005899750401902781,
+            0.11849965453500959
+          ],
+          "top1": 0,
+          "probability_l1_error": 0.0
+        },
+        "logsumexp": {
+          "region_probabilities": [
+            0.8756005950630876,
+            0.005899750401902781,
+            0.11849965453500959
+          ],
+          "top1": 0,
+          "probability_l1_error": 0.0
+        },
+        "mean_log_size": {
+          "region_probabilities": [
+            0.8756005950630876,
+            0.005899750401902781,
+            0.11849965453500959
+          ],
+          "top1": 0,
+          "probability_l1_error": 0.0
+        }
+      }
+    }
+  ],
+  "bound_tight_example": {
+    "retained_mass": 0.8999999999999999,
+    "omitted_mass": 0.10000000000000003,
+    "l2_output_error": 0.20000000000000018,
+    "value_norm_bound": 1.0,
+    "error_bound_2B_epsilon": 0.20000000000000007,
+    "selected_fine_tokens": 1,
+    "diagnostic_reads_all_keys_and_values": true
+  },
+  "missing_norm_assumption_counterexample": {
+    "retained_mass": 0.999999,
+    "omitted_mass": 1.0000000000000008e-06,
+    "l2_output_error": 1.0000000000000009,
+    "value_norm_bound": 1000000.0,
+    "error_bound_2B_epsilon": 2.0000000000000018,
+    "selected_fine_tokens": 1,
+    "diagnostic_reads_all_keys_and_values": true
+  },
+  "jensen_checks": [
+    {
+      "requested_width": 0.0,
+      "gap": 0.0,
+      "hoeffding_bound": 0.0
+    },
+    {
+      "requested_width": 0.1,
+      "gap": 0.00040202151723097096,
+      "hoeffding_bound": 0.0012428821996275407
+    },
+    {
+      "requested_width": 1.0,
+      "gap": 0.04062186156661173,
+      "hoeffding_bound": 0.11638910793379967
+    },
+    {
+      "requested_width": 4.0,
+      "gap": 0.533742215692949,
+      "hoeffding_bound": 1.8314720454224331
+    },
+    {
+      "requested_width": 16.0,
+      "gap": 4.794872399280576,
+      "hoeffding_bound": 31.801669234456465
+    }
+  ],
+  "duplicate_content": {
+    "base_output": [
+      0.0
+    ],
+    "one_region_duplicated": [
+      0.3333333333333333
+    ],
+    "uniform_duplication": [
+      0.0
+    ],
+    "known_identical_copy_correction": [
+      0.0
+    ],
+    "correction_not_general_for_nonidentical_coarse_and_fine": true
+  },
+  "claims_not_supported": [
+    "GPU speedup",
+    "end-to-end speedup",
+    "model quality gain",
+    "learned routing accuracy"
+  ],
+  "cost_note": "Online routes are actually executed without dense logits for centroid routing. Full diagnostic reads are separately charged. Counts ignore Python overhead and memory layout; offline centroid cost is not free.",
+  "source_sha256": {
+    "reference_attention.py": "538a1cf69cb62db14ad2f4ad0cc7cedf9796ec184cce703225cce376d3cd0139",
+    "test_reference_attention.py": "4238fa2a48029c078c7a212eeb42fdbb13490a4b04db1af7cef4e262ff0d9d08",
+    "run_experiment.py": "9c92dfb52e65b39109484f8cfca87e0edd8c6073458831c8cdef790969010e33",
+    "REPORT.md": "11031786ce8b53073fc242e6c7bb1754dd04d2df9365e718470e4514170a64bc",
+    "FAILURE_EXAMPLES.md": "f6833e47cb49d1bcfe3253669868906e37d41d90d924ce2c27a1a52cc788b5e8",
+    "README.md": "672abe25d51daa2f3421395f5c390f89c8b13c3f2ae09538ca38a7b091e54a6a"
+  }
+}
