@@ -72,7 +72,7 @@ function diagnostic(m,t,train,probe,rel,seed,arm,n){
   actual_preservation_norm:arm==='A'?0:arm==='B'?norm(bg):arm==='C'?norm(cg):norm(shared(add(b,c)))};
 }
 function evaluate(m,data,rel,t){
- let exact=0,tokens=0,ce=0,mse=0,base=0,kept=0,failures=[],newFailures=[];
+ let exact=0,tokens=0,ce=0,mse=0,zeroMse=0,base=0,kept=0,failures=[],newFailures=[];
  for(let id=0;id<data.length;id++){
   let x=data[id],h=hidden(m,x),z=head(m.O,m.ob,h),v=head(m.V,m.vb,h),target=x.slice(0,4).map(v=>+(v>0)),pred=z.map(v=>+(v>0));
   let ok=pred.every((v,i)=>v===target[i]);exact+=+ok;tokens+=pred.filter((v,i)=>v===target[i]).length;
@@ -81,10 +81,11 @@ function evaluate(m,data,rel,t){
   base+=+was;kept+=+(was&&ok);
   let y=field(x,rel),e=v.reduce((s,v,i)=>s+(v-y[i])**2,0)/16;mse+=e/data.length;
   if(was&&!ok&&failures.length<8)failures.push({validation_index:id,input:x,target,teacher_prediction:tp,student_prediction:pred,student_logits:z});
+  zeroMse+=y.reduce((s,v)=>s+v*v,0)/(16*data.length);
   newFailures.push({validation_index:id,new_mse:e,input:x,target:y,prediction:v});
  }
  newFailures.sort((a,b)=>b.new_mse-a.new_mse);
- return {old_exact:exact/data.length,old_token_accuracy:tokens/(data.length*4),old_ce:ce,new_mse:mse,
+ return {old_exact:exact/data.length,old_token_accuracy:tokens/(data.length*4),old_ce:ce,new_mse:mse,zero_predictor_mse:zeroMse,
   teacher_correct:base,retained_correct:kept,retention:base?kept/base:null,old_failures:failures,new_failures:newFailures.slice(0,3)};
 }
 function checkDeadline(){assert((performance.now()-START)/1000<BUDGET,'aggregate experiment exceeded time budget');}
@@ -103,7 +104,11 @@ function finiteDifference(){
  // Diagnostics are read-only; no optimizer buffers or teacher/student arrays are changed.
  const before=hash(m),teacherBefore=hash(t);diagnostic(m,t,d,[0,1,2],'compatible',0,'D',0);
  assert.equal(hash(m),before);assert.equal(hash(t),teacherBefore);
- return {checked,max_absolute_error:maxAbs,max_relative_error:maxRel,self_kd_zero:true,diagnostic_non_mutation:true};
+ const idx=[0,1,2],cache=Object.fromEntries(idx.map(id=>[id,head(t.O,t.ob,hidden(t,d[id]))]));
+ const cached=kdCached(m,d,idx,cache),direct=lossGrad(m,d,idx,'kd','compatible',t);
+ assert(Math.abs(cached.loss-direct.loss)<1e-12);
+ for(let k in shapes)for(let i=0;i<shapes[k];i++)assert(Math.abs(cached.g[k][i]-direct.g[k][i])<1e-12);
+ return {checked,max_absolute_error:maxAbs,max_relative_error:maxRel,self_kd_zero:true,diagnostic_non_mutation:true,cached_kd_agreement:true};
 }
 const tests=finiteDifference(),rows=[],traces=[],failures=[],histories=[],pretraining=[];
 const affinity=process.env.C11_CPU_AFFINITY||'not reported';
@@ -150,7 +155,7 @@ for(const seed of SEEDS){
   let final=evaluate(student,val,rel,teacher),total=(performance.now()-timer)/1000;
   let row={seed,relation:rel,arm,parameters:Object.values(shapes).reduce((a,b)=>a+b,0),
    baseline_old_exact:base.old_exact,initial_new_mse:initial.new_mse,old_exact:final.old_exact,old_token_accuracy:final.old_token_accuracy,retention:final.retention,teacher_correct:final.teacher_correct,retained_correct:final.retained_correct,
-   old_ce:final.old_ce,new_mse:final.new_mse,new_mse_improvement:initial.new_mse-final.new_mse,
+   old_ce:final.old_ce,new_mse:final.new_mse,new_mse_improvement:initial.new_mse-final.new_mse,zero_predictor_mse:final.zero_predictor_mse,new_explained_energy:1-final.new_mse/final.zero_predictor_mse,
    mean_train_new_mse:newLoss/800,mean_train_old_ce:arm==='B'||arm==='D'?ceLoss/200:null,mean_train_kd_T2:arm==='C'||arm==='D'?kdLoss/200:null,
    new_updates:800,preservation_updates:arm==='A'?0:200,total_updates:arm==='A'?800:1000,
    new_supervised_samples:25600,old_labeled_samples:arm==='B'||arm==='D'?3200:0,old_distilled_samples:arm==='C'||arm==='D'?3200:0,old_input_presentations:arm==='A'?0:3200,
@@ -182,9 +187,9 @@ const result={status:'completed',evidence_scope:'toy mechanism evidence only; no
  limitations:['linear 4D bottleneck deliberately exposes capacity competition','two seeds, no significance claim','C and D have frozen teacher forward overhead; diagnostic overhead separately recorded','A holds new-data exposure fixed but has fewer total optimizer steps','D has stronger total preservation loss than B/C; not a matched-gradient comparison','gradient norm shares are not Adam update attribution','validation used only for fixed checks/reporting, no hyperparameter selection','vector positions are not LLM tokens or image quality','no full Qwen, no LoRA comparison, no formal replay-ratio recommendation']};
 write('RESULT.json',JSON.stringify(result,null,2)+'\n');write('results.csv',csv(rows));write('gradient_diagnostics.csv',csv(traces));write('learning_curves.csv',csv(histories));write('failures.json',JSON.stringify(failures,null,2)+'\n');
 const md=['# C11 结果表：仅 toy 机制证据','','旧任务为 4 位离散序列，新增任务为 16 维连续场。所有百分比均为验证集最终快照。','',
-'|关系|seed|方案|旧 exact %|原答对保留 %|新 MSE|旧 CE|新更新秒|旧保持秒|教师前向秒|',
-'|---|---:|---|---:|---:|---:|---:|---:|---:|---:|'];
-for(let r of rows)md.push('|'+[r.relation,r.seed,r.arm,(100*r.old_exact).toFixed(2),(100*r.retention).toFixed(2),r.new_mse.toFixed(6),r.old_ce.toFixed(4),r.seconds_new_updates.toFixed(3),r.seconds_preservation_updates.toFixed(3),r.seconds_training_teacher_forward.toFixed(3)].join('|')+'|');
+'|关系|seed|方案|旧 exact %|原答对保留 %|新 MSE|新零预测 MSE|新解释能量 %|旧 CE|新更新秒|旧保持秒|教师前向秒|',
+'|---|---:|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|'];
+for(let r of rows)md.push('|'+[r.relation,r.seed,r.arm,(100*r.old_exact).toFixed(2),(100*r.retention).toFixed(2),r.new_mse.toFixed(6),r.zero_predictor_mse.toFixed(6),(100*r.new_explained_energy).toFixed(2),r.old_ce.toFixed(4),r.seconds_new_updates.toFixed(3),r.seconds_preservation_updates.toFixed(3),r.seconds_training_teacher_forward.toFixed(3)].join('|')+'|');
 md.push('','A=new；B=new+真实旧重放；C=new+冻结旧教师 KL；D=new+重放+KL。','',
 '## 20% 更新步骤不等于 20% 监督量或梯度贡献','',
 'B/C/D 的旧保持步骤是 200/1000=20%；旧输入样本呈现 3200/(25600+3200)=11.11%。',
