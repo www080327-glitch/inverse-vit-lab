@@ -22,7 +22,7 @@ def verify(write_acceptance=False):
         'figures/viewer_failure.png','figures/viewer_oracle.png',
         'results/metrics.json','results/per_question.jsonl','results/model.pt','results/costs.json',
         'results/numerical_generic.json','results/numerical_model.json','results/unread_detail_intervention.json',
-        'results/tests_stdout.txt','results/training_budget.json','results/high_resolution.json',
+        'results/tests_stdout.txt','results/training_budget.json','results/high_resolution.json','results/cpu_seed_audit.json',
         'exchange/HANDOFF.md','exchange/protocol.json','exchange/sample_test.npz','exchange/sample_test_blind.npz',
         'sources/Transformers_LICENSE','sources/provenance.json','sources/prior_lab_boundary.txt']
     for name in required: assert (ROOT/name).is_file(),name
@@ -69,8 +69,13 @@ def verify(write_acceptance=False):
     assert charged<=1200 and all(r['status']=='completed' for r in budget['runs'])
     assert torch.get_num_threads()<=2 and torch.get_num_interop_threads()==1
     checks['cpu_and_cumulative_training_budget']=True
-    log=(ROOT/'results/tests_stdout.txt').read_text();assert 'Ran 9 tests' in log and log.strip().endswith('OK')
-    checks['nine_mechanism_tests_passed']=True
+    seed_audit=json.loads((ROOT/'results/cpu_seed_audit.json').read_text())
+    assert seed_audit['status']=='PASS' and seed_audit['all_new_state_devices']==['cpu']
+    assert seed_audit['old_cpu_tensor_digest']==seed_audit['new_cpu_tensor_digest']
+    assert json.loads((ROOT/'results/training.json').read_text())['environment']['seed_api']=='CPU default_generator only'
+    checks['cpu_specific_seed_guard_and_checkpoint_equality']=True
+    log=(ROOT/'results/tests_stdout.txt').read_text();assert 'Ran 10 tests' in log and log.strip().endswith('OK')
+    checks['ten_mechanism_tests_passed']=True
     for path in ROOT.glob('*.py'):ast.parse(path.read_text(),filename=path.name)
     checks['own_python_sources_parse']=True
     # Public export check excludes only local interpreter selector and publishing checkout.

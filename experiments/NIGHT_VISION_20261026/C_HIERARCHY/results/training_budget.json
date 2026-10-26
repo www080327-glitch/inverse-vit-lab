@@ -5,8 +5,15 @@
       "start_unix": 1793031646.947488,
       "charged_seconds": 1.7589826670009643,
       "status": "completed",
-      "end_unix": 1793031648.70681
+      "end_unix": 1793031648.70681,
+      "seed_api_note": "Historical torch.manual_seed called accelerator seed helpers; tensors and optimization remained CPU. Delivery rerun uses CPU generator only."
+    },
+    {
+      "start_unix": 1793033846.221272,
+      "charged_seconds": 1.818568332999348,
+      "status": "completed",
+      "end_unix": 1793033848.040132
     }
   ],
-  "total_charged_seconds": 1.7589826670009643
+  "total_charged_seconds": 3.5775510000003123
 }

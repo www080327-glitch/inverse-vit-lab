@@ -8,7 +8,8 @@
     "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
     "intraop_threads": 2,
     "interop_threads": 1,
-    "accelerator_calls": false
+    "accelerator_tensor_compute": false,
+    "seed_api": "CPU default_generator only"
   },
   "results": [
     {

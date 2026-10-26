@@ -2,7 +2,7 @@
 
 本原型实际分开计算全局粗索引与选中位置的细 Attention，原图另存且可精确还原。固定普通场景中，学习路由只展开 2/16 个区域就命中全部目标；粗摘要相同的极小目标场景中，它接近随机覆盖率。这个结果同时展示条件计算的可行性和粗路由的漏检边界。
 
-所有张量在 CPU；intraop 2、interop 1，未调用加速设备。模型 7,451 个参数，合成训练累计 1.758983 秒，限制 1,200 秒。代码、核查与验收的起止时间单列在 `results/acceptance.json`。
+所有张量计算在 CPU；intraop 2、interop 1。模型 7,451 个参数，合成训练累计 3.577551 秒，限制 1,200 秒。首次训练的通用 torch.manual_seed 会调用加速设备的设种子函数，未在加速设备上计算张量。交付版本改成 CPU default_generator 专用设种子，并在禁止 MPS/CUDA 设种子接口的守卫下重训，所得全部张量与初版逐位相同；两次训练时间均计入预算。代码、核查与验收的起止时间单列在 `results/acceptance.json`。
 
 ## 两次计算怎样衔接
 
@@ -95,19 +95,19 @@ FLOPs 以一次乘和加算两个操作，以上仅统计矩阵乘法。RGB 与�
 
 | 范围 | 中位数 微秒 | p90 微秒 |
 |---|---:|---:|
-| pack_raw_with_metadata | 74.166 | 77.208 |
-| summary_rgb_and_2x2_mean | 26.417 | 27.208 |
-| coarse_MLP_scores_context | 29.541 | 30.042 |
-| coarse_read_and_topk | 40.416 | 41.541 |
-| dedup_and_raw_gather | 28.250 | 30.000 |
-| selected_fine_encoder_and_KV | 99.875 | 110.667 |
-| selected_attention_QK_softmax_AV | 9.750 | 10.125 |
-| dense_attention_QK_softmax_AV | 16.625 | 17.875 |
-| hierarchical_whole_query_no_pack | 291.875 | 329.375 |
-| dense_whole_query_no_pack | 358.208 | 556.666 |
-| direct_dense_reader_no_router_no_pack | 226.084 | 304.125 |
+| pack_raw_with_metadata | 77.708 | 84.500 |
+| summary_rgb_and_2x2_mean | 26.541 | 27.375 |
+| coarse_MLP_scores_context | 30.042 | 33.292 |
+| coarse_read_and_topk | 41.333 | 43.042 |
+| dedup_and_raw_gather | 29.833 | 31.000 |
+| selected_fine_encoder_and_KV | 102.875 | 122.916 |
+| selected_attention_QK_softmax_AV | 10.167 | 10.542 |
+| dense_attention_QK_softmax_AV | 15.583 | 15.750 |
+| hierarchical_whole_query_no_pack | 374.125 | 521.542 |
+| dense_whole_query_no_pack | 430.417 | 605.000 |
+| direct_dense_reader_no_router_no_pack | 211.708 | 237.209 |
 
-这是一个固定图像和问题、预热 5 次后重复 101 次的 eager CPU 测量，不含 PNG I/O。分层整条查询为 291.875 微秒；直接 dense 读器跳过粗路由为 226.084 微秒。分层路径在这个小形状上反而慢约 1.29 倍。另一个全选区域但仍走粗路径的计时用于定位开销，不能代替直接 dense 基线。各阶段中位数也不能相加当作一次端到端测量。
+这是一个固定图像和问题、预热 5 次后重复 101 次的 eager CPU 测量，不含 PNG I/O。分层整条查询为 374.125 微秒；直接 dense 读器跳过粗路由为 211.708 微秒。分层路径在这个小形状上反而慢约 1.77 倍。另一个全选区域但仍走粗路径的计时用于定位开销，不能代替直接 dense 基线。各阶段中位数也不能相加当作一次端到端测量。
 
 因此本实验展示少做细 Attention，不建立整体同比例加速结论，更不提供 GPU、DCU 或 MPS 性能推断。
 
@@ -119,6 +119,6 @@ NASA Blue Marble 2002 卫星图像复合产品从 2,048×2,048 原文件中心�
 
 ## 验收与交接
 
-9 项机制测试覆盖 pack/unpack 含不整除边界、精确摘要盲区、dense 数值与分块 softmax、局部 softmax 错误反例、懒执行与去重、实际 Q/K/V 的像素参照、训练测试隔离、超过 1,024 像素的 Attention 拒绝，以及保留但未读取细节的干预。最后一项在未选区域改变一个答案像素而保持粗摘要相同：稀疏输出逐位相同，dense 输出改变约 0.327，直接展示“仍保存”与“本次已读取”不同。交接包含两个 NPZ 示例、独立真值文件、固定全量数据、模型、结果、结构图与最小代码。完成状态和文件 SHA256 位于 `exchange/READY.json`。
+10 项机制测试覆盖 pack/unpack 含不整除边界、精确摘要盲区、dense 数值与分块 softmax、局部 softmax 错误反例、懒执行与去重、实际 Q/K/V 的像素参照、训练测试隔离、超过 1,024 像素的 Attention 拒绝、CPU 专用设种子与参数设备，以及保留但未读取细节的干预。细节干预在未选区域改变一个答案像素而保持粗摘要相同：稀疏输出逐位相同，dense 输出改变约 0.327，直接展示“仍保存”与“本次已读取”不同。交接包含两个 NPZ 示例、独立真值文件、固定全量数据、模型、结果、结构图与最小代码。完成状态和文件 SHA256 位于 `exchange/READY.json`。
 
 对照参考的具体实现与适用范围见 [SOURCE_MAP.md](SOURCE_MAP.md)。这个完成状态只覆盖原型机制；没有将合成任务成绩写成自然语言理解、真实桌面可靠性、论文完整复现或 CSA2 实现。

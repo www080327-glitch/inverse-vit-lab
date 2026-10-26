@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "old_cpu_tensor_digest": "e46b00c6088a6ee4de156da75b5d0264447637ad0a15c2a1c42930ee1b4d1fe9",
+  "new_cpu_tensor_digest": "e46b00c6088a6ee4de156da75b5d0264447637ad0a15c2a1c42930ee1b4d1fe9",
+  "tensors_bitwise_identical": true,
+  "clean_training_guards": [
+    "torch.manual_seed",
+    "torch.cuda.manual_seed_all",
+    "torch.mps.manual_seed"
+  ],
+  "final_seed_api": "torch.random.default_generator.manual_seed",
+  "all_new_state_devices": [
+    "cpu"
+  ],
+  "historical_note": "Initial generic seed invoked accelerator seed helpers, without accelerator tensor computation. Both training runs charged in budget."
+}

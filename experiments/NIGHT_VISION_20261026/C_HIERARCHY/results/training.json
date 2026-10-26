@@ -8,7 +8,8 @@
     "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
     "intraop_threads": 2,
     "interop_threads": 1,
-    "accelerator_calls": false
+    "accelerator_tensor_compute": false,
+    "seed_api": "CPU default_generator only"
   },
   "stages": [
     {
@@ -16,18 +17,18 @@
       "steps": 700,
       "first_loss": 2.7837305068969727,
       "last_loss": 0.40582606196403503,
-      "seconds": 0.39874458400117874
+      "seconds": 0.346261417000278
     },
     {
       "name": "fine_region_type_only_no_answer_labels",
       "steps": 900,
       "first_loss": 1.5890467166900635,
       "last_loss": 0.00024354891502298415,
-      "seconds": 0.4403509160001704
+      "seconds": 0.41777462500067486
     },
     {
       "name": "prepare_train_attention_outputs",
-      "seconds": 0.39055062499937776,
+      "seconds": 0.4297162920011033,
       "examples": 1600
     },
     {
@@ -35,7 +36,7 @@
       "steps": 1000,
       "first_loss": 0.6901589035987854,
       "last_loss": 0.00012301614333409816,
-      "seconds": 0.3990730829991662
+      "seconds": 0.46230041700073343
     }
   ],
   "parameters": 7451,

@@ -6,7 +6,7 @@
 
 ## 运行小演示
 
-依赖是 Python、PyTorch、NumPy 和 Pillow。所有计算固定在 CPU，数值库最多使用 2 个计算线程，PyTorch interop 为 1；不探测或初始化 MPS、CUDA、DCU。已有环境可用 `LAB_PYTHON` 指定解释器。
+依赖是 Python、PyTorch、NumPy 和 Pillow。所有计算固定在 CPU，数值库最多使用 2 个计算线程，PyTorch interop 为 1；不使用 MPS、CUDA、DCU 做张量计算，并使用 CPU 专用设种子接口。已有环境可用 `LAB_PYTHON` 指定解释器。
 
 ```sh
 sh run.sh demo
@@ -23,7 +23,7 @@ sh run.sh test
 sh run.sh all
 ```
 
-已有固定数据和模型会保留；`all` 不会覆盖它们或再次训练。`train.py` 使用持久预算账本累计训练时间，最多 1,200 秒，每次最多预留 180 秒。首次训练累计约 1.76 秒。记录见 `results/training_budget.json`。重新训练应在复制出来的实验目录里明确移走其 `model.pt`，保留训练预算账本；无需重新训练即可复查交付。
+已有固定数据和模型会保留；`all` 不会覆盖它们或再次训练。`train.py` 使用持久预算账本累计训练时间，最多 1,200 秒，每次最多预留 180 秒。初次训练与 CPU 专用设种子重跑累计约 3.58 秒。记录见 `results/training_budget.json`。重新训练应在复制出来的实验目录里明确移走其 `model.pt`，保留训练预算账本；无需重新训练即可复查交付。
 
 ## 应先看什么
 

@@ -55,9 +55,9 @@
   "actual_gathered_pixels": 512,
   "actual_gathered_raw_bytes": 1536,
   "timing_single_observation_ms": {
-    "pack": 7.438624999849708,
-    "unpack": 1.2780840006598737,
-    "summary": 14.858500000627828
+    "pack": 6.978875000640983,
+    "unpack": 1.036540999848512,
+    "summary": 12.789207999958307
   },
   "attention_executed": false,
   "router_executed": false,

@@ -19,11 +19,12 @@ torch.use_deterministic_algorithms(True)
 ROOT = Path(__file__).resolve().parent
 
 def initialize(seed=20261026):
-    torch.manual_seed(seed)
+    # torch.manual_seed also calls accelerator seed helpers. Seed CPU only.
+    torch.random.default_generator.manual_seed(seed)
     np.random.seed(seed)
     return dict(seed=seed, device='cpu', torch=torch.__version__, numpy=np.__version__,
                 python=sys.version, platform=platform.platform(), intraop_threads=2,
-                interop_threads=1, accelerator_calls=False)
+                interop_threads=1, accelerator_tensor_compute=False,seed_api='CPU default_generator only')
 
 def write_json(path, value):
     path = Path(path)

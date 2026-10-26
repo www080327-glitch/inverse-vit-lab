@@ -2,7 +2,7 @@ import unittest
 import inspect
 from unittest.mock import patch
 from PIL import Image
-from runtime import ROOT, np, torch, read_jsonl, write_json
+from runtime import ROOT, np, torch, read_jsonl, write_json, initialize
 from memory import PixelMemory
 from model import Hierarchy, attention, streaming_attention
 from demo import load_model
@@ -28,7 +28,7 @@ class Mechanisms(unittest.TestCase):
         self.assertFalse(np.array_equal(tiles[0],tiles[2]))
 
     def test_dense_permutation_streaming_and_sparse(self):
-        torch.manual_seed(4)
+        torch.random.default_generator.manual_seed(4)
         record=[]
         for n in [256,1024]:
             q=torch.randn(3,7,dtype=torch.float64); k=torch.randn(n,7,dtype=torch.float64); v=torch.randn(n,9,dtype=torch.float64)
@@ -103,6 +103,18 @@ class Mechanisms(unittest.TestCase):
     def test_large_image_attention_rejected(self):
         m=PixelMemory.pack(np.zeros((33,32,3),dtype=np.uint8))
         with self.assertRaises(ValueError): Hierarchy()(m,0)
+
+    def test_cpu_seed_and_all_parameters_stay_cpu(self):
+        with (patch('torch.manual_seed',side_effect=AssertionError('Global seed API forbidden')),
+             patch('torch.cuda.manual_seed_all',side_effect=AssertionError('CUDA helper forbidden')),
+             patch('torch.mps.manual_seed',side_effect=AssertionError('MPS helper forbidden'))):
+            initialize(28)
+            model=load_model()
+            m=PixelMemory.pack(Image.open(ROOT/'data/images/test/test_0000.png'))
+            with torch.inference_mode():out=model(m,0,2)
+        self.assertTrue(all(p.device.type=='cpu' for p in model.parameters()))
+        self.assertTrue(all(b.device.type=='cpu' for b in model.buffers()))
+        self.assertEqual(out['output'].device.type,'cpu')
 
     def test_unread_details_preserved_and_causally_unread(self):
         model=load_model()

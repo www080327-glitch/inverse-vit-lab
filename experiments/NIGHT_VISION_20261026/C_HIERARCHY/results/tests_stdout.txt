@@ -1,4 +1,5 @@
 test_actual_qkv_dense_row_major (test_mechanisms.Mechanisms.test_actual_qkv_dense_row_major) ... ok
+test_cpu_seed_and_all_parameters_stay_cpu (test_mechanisms.Mechanisms.test_cpu_seed_and_all_parameters_stay_cpu) ... ok
 test_dense_permutation_streaming_and_sparse (test_mechanisms.Mechanisms.test_dense_permutation_streaming_and_sparse) ... ok
 test_large_image_attention_rejected (test_mechanisms.Mechanisms.test_large_image_attention_rejected) ... ok
 test_lazy_encoder_unique_regions_and_no_gold (test_mechanisms.Mechanisms.test_lazy_encoder_unique_regions_and_no_gold) ... ok
@@ -9,6 +10,6 @@ test_summary_blindness_exact (test_mechanisms.Mechanisms.test_summary_blindness_
 test_unread_details_preserved_and_causally_unread (test_mechanisms.Mechanisms.test_unread_details_preserved_and_causally_unread) ... ok
 
 ----------------------------------------------------------------------
-Ran 9 tests in 0.068s
+Ran 10 tests in 0.123s
 
 OK

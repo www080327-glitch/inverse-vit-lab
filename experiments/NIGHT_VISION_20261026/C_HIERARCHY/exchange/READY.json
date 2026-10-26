@@ -2,18 +2,18 @@
   "schema_version": 1,
   "status": "READY",
   "scope": "independent CPU mechanism prototype complete",
-  "created_utc": "2026-10-26T16:50:07.854858+00:00",
+  "created_utc": "2026-10-26T16:59:38.298899+00:00",
   "question_dim": 4,
   "regions": 16,
   "max_fine_positions": 1024,
   "device": "cpu",
   "intraop_threads": 2,
   "interop_threads": 1,
-  "mechanism_tests_passed": 9,
+  "mechanism_tests_passed": 10,
   "fixed_test_scenes": 192,
   "fixed_test_questions": 768,
   "route_budget_strategy_evaluations": 11520,
-  "train_seconds": 1.7589826670009643,
+  "train_seconds": 3.5775510000003123,
   "acceptance": "results/acceptance.json",
   "handoff": "exchange/HANDOFF.md",
   "protocol": "exchange/protocol.json",
@@ -50,20 +50,20 @@
       "sha256": "8b21a4ae84ad2963ef261f408320b87bc53b292ea4c8adcc361bad718a7ef6c2"
     },
     "DESIGN_DECISIONS.md": {
-      "bytes": 2828,
-      "sha256": "689afef7570b3d65d80144e9592eaa926198ba270ec3d396946271c0e3a96264"
+      "bytes": 3028,
+      "sha256": "e1e828555a76a14a9c12c595dd3f94575e13a1f48e3750671352c62b0d2985b6"
     },
     "LICENSE": {
       "bytes": 1085,
       "sha256": "4621abe5cea8cc6753de1d36ab3c32e68ded66fb7c9176e8323c3abbebeea07c"
     },
     "README.md": {
-      "bytes": 4237,
-      "sha256": "1e5212296d977982503e9c42d76ad0f7710bc4431aadd0783c201dee6637f55c"
+      "bytes": 4308,
+      "sha256": "d872da6165094f296ce2cb89cbac3f85004e906e643451773f13093fe71cf81f"
     },
     "REPORT.md": {
-      "bytes": 11756,
-      "sha256": "2c0a7f35a2028707e7e8ade13a00870ea001167c47b8bf8913bce6053a620fc0"
+      "bytes": 12091,
+      "sha256": "a6246b42d9a24f2474829c04d9ddb5a20cb57ed801ab43f940a1893d934000a6"
     },
     "SOURCE_MAP.md": {
       "bytes": 5436,
@@ -2535,7 +2535,7 @@
     },
     "figures/architecture.svg": {
       "bytes": 119426,
-      "sha256": "2013f9fc980942e750ad165ccf8dc9773da2d98acec3fc668b22899744757c08"
+      "sha256": "193ee763c3f0a9cee610b46d25030de9759a04bd51c114f8f8e47164d92138fc"
     },
     "figures/failures.png": {
       "bytes": 45749,
@@ -2574,12 +2574,16 @@
       "sha256": "054ba75c3a2c259e7ab49080d9208bb24fbbf1e268d15ab9845177dd833f3688"
     },
     "results/acceptance.json": {
-      "bytes": 1550,
-      "sha256": "de823b0431bb763ce4eff97416965ac41e488de93983d6967a73d62a16b97d48"
+      "bytes": 1610,
+      "sha256": "149ed32bbe632ae37813e9fad793c24c9789ef4a246899aaac5d6e9ca477ff0c"
     },
     "results/costs.json": {
-      "bytes": 5105,
-      "sha256": "adc565b5d737f6ffd511f65d95dc22ca9d0c21ac024116e33d7a7dddbff31723"
+      "bytes": 5102,
+      "sha256": "6f51b7a1e5f54e8899d34fde88c5b6c4d54e1222c2916e668b6c57458c70de24"
+    },
+    "results/cpu_seed_audit.json": {
+      "bytes": 638,
+      "sha256": "fe074ca3e2e58d1f000191a4380345355beaa3b5f50d0995df55f10b10ac2d45"
     },
     "results/demo.json": {
       "bytes": 3545,
@@ -2598,12 +2602,12 @@
       "sha256": "52df6028ede62007e2670ec29de9f1889db21024667d9cd5dbb57b53eb94cf21"
     },
     "results/high_resolution.json": {
-      "bytes": 1857,
-      "sha256": "237835ec8b4ac91c699dbd03facdb05a7840ac54d7f0b111cdaf40f6f6098a87"
+      "bytes": 1856,
+      "sha256": "b9ef273ee7c849603e677ee7f47317a4245950855927e2927d379b999a67214b"
     },
     "results/metrics.json": {
-      "bytes": 20628,
-      "sha256": "8f25722082979740f6977623a4b22b044605eea7c0f6925e3b9327f2e78bea92"
+      "bytes": 20683,
+      "sha256": "0c18712459069fc7e1660dda5159b4b5dabc9c142904b52f0f14bbdec166869b"
     },
     "results/model.pt": {
       "bytes": 50518,
@@ -2626,16 +2630,16 @@
       "sha256": "3c221af9a8e9013106f7ef8718d3a4a10869b4e73e625ccab33d40f4c92ed2f2"
     },
     "results/tests_stdout.txt": {
-      "bytes": 1070,
-      "sha256": "3383ec4fa2a98bbeb0a92ff07a4f3107acd57c6440d86514c64beec7f79802f1"
+      "bytes": 1191,
+      "sha256": "d93c08398c9b9ea0a8d34aeff53c5bdbabd32df65ebe912559accb91d80985fa"
     },
     "results/training.json": {
-      "bytes": 1430,
-      "sha256": "f0b70aa6fd0158ad2e21b3cfbf311edb61ec8cfe4ce56694f901aca3dc09193a"
+      "bytes": 1484,
+      "sha256": "2469c5b0884bcb80801248ab2e56ab5b37a0a6821c1545e14c3c8964d79cbb1f"
     },
     "results/training_budget.json": {
-      "bytes": 252,
-      "sha256": "823442936265c8ee06c768a5b340ed1a75b732aab5cd1c138fd990badbf7f5ce"
+      "bytes": 580,
+      "sha256": "a21d30cf1629ed78076a35715aa2e193baf6c6a65e011dbcf71455a5e6e2a632"
     },
     "results/unread_detail_intervention.json": {
       "bytes": 227,
@@ -2646,8 +2650,8 @@
       "sha256": "ce1243b118d0199ed2defd57f77fa188b0dd515d2957b19b4e6900288e1967ce"
     },
     "runtime.py": {
-      "bytes": 1224,
-      "sha256": "e07841a8381d7951c922a1dda56a4fdd14733af389b4ad4cdaee848497ef233e"
+      "bytes": 1372,
+      "sha256": "ad62be55c19134e60fe22238866a6bccae7207fe1e711cf01a23a6b0a1c5dab7"
     },
     "sources/Transformers_LICENSE": {
       "bytes": 11418,
@@ -2674,24 +2678,26 @@
       "sha256": "af05d0acfe79fff8aea1c75f93516a6a72bc80f6f901329a73e66a3866fe1e7c"
     },
     "test_mechanisms.py": {
-      "bytes": 7679,
-      "sha256": "d50a96c087d2789d2ab828e781042411e7e63b7b837b703efb7725309bec9bdd"
+      "bytes": 8481,
+      "sha256": "2fee980f9cd8f64ea244fb5d370bd7c89c83f50266c5f5a365914781bb575799"
     },
     "train.py": {
       "bytes": 5955,
       "sha256": "a969dfed905d301f638efc354d23a9fca1d20dc469ddb000b4050c4dd1fa5bdb"
     },
     "verify_delivery.py": {
-      "bytes": 7597,
-      "sha256": "1836a1b8b68e246922a68012709569458071e700e3f9f2f763d21bdc2fb7ac64"
+      "bytes": 8066,
+      "sha256": "3af05b23d68d348a6fd5b4a8992fad26ed00a53e5648ce4393c3741e4b61e78e"
     },
     "viewer_template.html": {
       "bytes": 5151,
       "sha256": "77c4688f57b4ea4d8e1c393e381e75f463beab747cd1f1cea13f87821eb4c5a0"
     },
     "write_report.py": {
-      "bytes": 13481,
-      "sha256": "f9c0f420bd348d98c428b30fe739fecbbab38fb2a7e52a1418394188122b9a7c"
+      "bytes": 13814,
+      "sha256": "8e3b761508c9f02319fb21f55c859c1ea550ac6316aadfc32c03df471317e450"
     }
-  }
+  },
+  "seed_audit": "results/cpu_seed_audit.json",
+  "seed_api": "CPU default_generator only"
 }

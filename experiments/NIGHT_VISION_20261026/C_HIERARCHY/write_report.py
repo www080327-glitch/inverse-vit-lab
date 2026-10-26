@@ -13,7 +13,7 @@ def main():
     timing=costs['timing']; h=timing['hierarchical_whole_query_no_pack']['median'];d=timing['direct_dense_reader_no_router_no_pack']['median']
     lines=['# 问题驱动的多分辨率视觉记忆实验结果','',
       '本原型实际分开计算全局粗索引与选中位置的细 Attention，原图另存且可精确还原。固定普通场景中，学习路由只展开 2/16 个区域就命中全部目标；粗摘要相同的极小目标场景中，它接近随机覆盖率。这个结果同时展示条件计算的可行性和粗路由的漏检边界。','',
-      f'所有张量在 CPU；intraop 2、interop 1，未调用加速设备。模型 {train["parameters"]:,} 个参数，合成训练累计 {budget["total_charged_seconds"]:.6f} 秒，限制 1,200 秒。代码、核查与验收的起止时间单列在 `results/acceptance.json`。','',
+      f'所有张量计算在 CPU；intraop 2、interop 1。模型 {train["parameters"]:,} 个参数，合成训练累计 {budget["total_charged_seconds"]:.6f} 秒，限制 1,200 秒。首次训练的通用 torch.manual_seed 会调用加速设备的设种子函数，未在加速设备上计算张量。交付版本改成 CPU default_generator 专用设种子，并在禁止 MPS/CUDA 设种子接口的守卫下重训，所得全部张量与初版逐位相同；两次训练时间均计入预算。代码、核查与验收的起止时间单列在 `results/acceptance.json`。','',
       '## 两次计算怎样衔接','',
       '输入是保存好的 32×32 RGB PNG。`PixelMemory.pack` 在必要时补零，然后使用 reshape、permute 与 contiguous 将像素排列为 `[16,8,8,3]`。反向排列并裁掉 padding 可逐字节还原；全局区域边界与有效像素掩码同时保留。细坐标由区域原点与局部整数坐标精确计算，协议标出根、区域和像素三个层级、尺度和父关系。插值与均值不在无损路径里。','',
       '每个区域的 4×4 灰度均值组成 16 维有损摘要，微型 MLP 生成 4 维 key。四维任务向量与全部 16 个 key 评分，先执行全局粗 softmax 得到上下文，再选 top-k。粗上下文用于展示全局读取，不额外给答案头一条绕过细读的通道。','',
@@ -65,7 +65,7 @@ def main():
       f'NASA Blue Marble 2002 卫星图像复合产品从 2,048×2,048 原文件中心裁取 1,920×1,080，无插值；原 JPEG、PNG 和可逆分块 NPZ 都保存。共有 {large["theoretical_only"]["fine_positions"]:,} 像素，32,400 个区域，raw RGB 占 6,220,800 字节；区域坐标占 1,036,800 字节，有效掩码占 2,073,600 字节，实际粗摘要占 2,073,600 字节。手动取 8 个区域只用于验证 gather，共 512 像素、1,536 raw 字节，没有运行高分辨率模型路由或 Attention。','',
       '账本中的全像素自注意力分数矩阵有 4,299,816,960,000 个元素，float32 约 17.20 TB。代码没有构造它。单个问题 Query 读取所有像素的分数只有 2,073,600 个，不能与上述平方矩阵混同；其理论 QK 加 AV 为 286,156,800 FLOPs，选 512 位置则为 70,656 FLOPs，另有全局索引成本。这些使用原型维度的理论值，不是生产视觉模型的实测。','',
       '## 验收与交接','',
-      '9 项机制测试覆盖 pack/unpack 含不整除边界、精确摘要盲区、dense 数值与分块 softmax、局部 softmax 错误反例、懒执行与去重、实际 Q/K/V 的像素参照、训练测试隔离、超过 1,024 像素的 Attention 拒绝，以及保留但未读取细节的干预。最后一项在未选区域改变一个答案像素而保持粗摘要相同：稀疏输出逐位相同，dense 输出改变约 0.327，直接展示“仍保存”与“本次已读取”不同。交接包含两个 NPZ 示例、独立真值文件、固定全量数据、模型、结果、结构图与最小代码。完成状态和文件 SHA256 位于 `exchange/READY.json`。','',
+      '10 项机制测试覆盖 pack/unpack 含不整除边界、精确摘要盲区、dense 数值与分块 softmax、局部 softmax 错误反例、懒执行与去重、实际 Q/K/V 的像素参照、训练测试隔离、超过 1,024 像素的 Attention 拒绝、CPU 专用设种子与参数设备，以及保留但未读取细节的干预。细节干预在未选区域改变一个答案像素而保持粗摘要相同：稀疏输出逐位相同，dense 输出改变约 0.327，直接展示“仍保存”与“本次已读取”不同。交接包含两个 NPZ 示例、独立真值文件、固定全量数据、模型、结果、结构图与最小代码。完成状态和文件 SHA256 位于 `exchange/READY.json`。','',
       '对照参考的具体实现与适用范围见 [SOURCE_MAP.md](SOURCE_MAP.md)。这个完成状态只覆盖原型机制；没有将合成任务成绩写成自然语言理解、真实桌面可靠性、论文完整复现或 CSA2 实现。'])
     (ROOT/'REPORT.md').write_text('\n'.join(lines)+'\n')
     # Aggregate each canonical task without another training/evaluation pass.

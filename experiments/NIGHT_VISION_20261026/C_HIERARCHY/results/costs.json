@@ -124,89 +124,89 @@
   "timing": {
     "pack_raw_with_metadata": {
       "unit": "microseconds",
-      "median": 74.166,
-      "p90": 77.208,
-      "minimum": 72.833,
+      "median": 77.708,
+      "p90": 84.5,
+      "minimum": 74.042,
       "warmups": 5,
       "repeats": 101
     },
     "summary_rgb_and_2x2_mean": {
       "unit": "microseconds",
-      "median": 26.417,
-      "p90": 27.208,
-      "minimum": 25.958,
+      "median": 26.541,
+      "p90": 27.375,
+      "minimum": 26.125,
       "warmups": 5,
       "repeats": 101
     },
     "coarse_MLP_scores_context": {
       "unit": "microseconds",
-      "median": 29.541,
-      "p90": 30.042,
-      "minimum": 26.875,
+      "median": 30.042,
+      "p90": 33.292,
+      "minimum": 27.042,
       "warmups": 5,
       "repeats": 101
     },
     "coarse_read_and_topk": {
       "unit": "microseconds",
-      "median": 40.416,
-      "p90": 41.541,
-      "minimum": 39.375,
+      "median": 41.333,
+      "p90": 43.042,
+      "minimum": 40.5,
       "warmups": 5,
       "repeats": 101
     },
     "dedup_and_raw_gather": {
       "unit": "microseconds",
-      "median": 28.25,
-      "p90": 30.0,
-      "minimum": 27.667,
+      "median": 29.833,
+      "p90": 31.0,
+      "minimum": 29.041,
       "warmups": 5,
       "repeats": 101
     },
     "selected_fine_encoder_and_KV": {
       "unit": "microseconds",
-      "median": 99.875,
-      "p90": 110.667,
-      "minimum": 94.833,
+      "median": 102.875,
+      "p90": 122.916,
+      "minimum": 89.583,
       "warmups": 5,
       "repeats": 101
     },
     "selected_attention_QK_softmax_AV": {
       "unit": "microseconds",
-      "median": 9.75,
-      "p90": 10.125,
-      "minimum": 9.541,
+      "median": 10.167,
+      "p90": 10.542,
+      "minimum": 9.75,
       "warmups": 5,
       "repeats": 101
     },
     "dense_attention_QK_softmax_AV": {
       "unit": "microseconds",
-      "median": 16.625,
-      "p90": 17.875,
-      "minimum": 15.541,
+      "median": 15.583,
+      "p90": 15.75,
+      "minimum": 15.375,
       "warmups": 5,
       "repeats": 101
     },
     "hierarchical_whole_query_no_pack": {
       "unit": "microseconds",
-      "median": 291.875,
-      "p90": 329.375,
-      "minimum": 273.5,
+      "median": 374.125,
+      "p90": 521.542,
+      "minimum": 282.292,
       "warmups": 5,
       "repeats": 101
     },
     "dense_whole_query_no_pack": {
       "unit": "microseconds",
-      "median": 358.208,
-      "p90": 556.666,
-      "minimum": 323.958,
+      "median": 430.417,
+      "p90": 605.0,
+      "minimum": 329.25,
       "warmups": 5,
       "repeats": 101
     },
     "direct_dense_reader_no_router_no_pack": {
       "unit": "microseconds",
-      "median": 226.084,
-      "p90": 304.125,
-      "minimum": 192.292,
+      "median": 211.708,
+      "p90": 237.209,
+      "minimum": 202.084,
       "warmups": 5,
       "repeats": 101
     }
