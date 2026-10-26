@@ -1,0 +1,30 @@
+[
+  {
+    "role": "mirror_full/best",
+    "step": 2037,
+    "name": "artifact-40a7316acb2e112590d5748126daf4092218a5c76376a34f6c0b693a81485c35.safetensors",
+    "bytes": 355195128,
+    "sha256": "40a7316acb2e112590d5748126daf4092218a5c76376a34f6c0b693a81485c35"
+  },
+  {
+    "role": "mirror_full/last",
+    "step": 10185,
+    "name": "artifact-e423b66e44a3f6e1b531f8d486c239c3056285274f43a24f99a2ef32799c2fdc.safetensors",
+    "bytes": 355195128,
+    "sha256": "e423b66e44a3f6e1b531f8d486c239c3056285274f43a24f99a2ef32799c2fdc"
+  },
+  {
+    "role": "mirror_tiny/best",
+    "step": 2037,
+    "name": "artifact-85241578dca5d72c15ea0f62d730c92978388e6bca5123ee4e6a14fb220a152e.safetensors",
+    "bytes": 11310624,
+    "sha256": "85241578dca5d72c15ea0f62d730c92978388e6bca5123ee4e6a14fb220a152e"
+  },
+  {
+    "role": "mirror_tiny/last",
+    "step": 16300,
+    "name": "artifact-e5139d0d0eff6180a408e10e50dbb8dfbec97750ba6198f118332a7d2f25cc4e.safetensors",
+    "bytes": 11310624,
+    "sha256": "e5139d0d0eff6180a408e10e50dbb8dfbec97750ba6198f118332a7d2f25cc4e"
+  }
+]

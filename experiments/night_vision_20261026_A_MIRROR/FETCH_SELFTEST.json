@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "asset_count": 16,
+  "total_asset_bytes": 2103701803,
+  "materialized_last_optimizer": true,
+  "model_execution": false,
+  "all_payload_SHA256_verified": true
+}

@@ -16,6 +16,8 @@ See [stage reports](results/) for measured limits and [methods](docs/METHODS.md)
 
 ## Repository contents
 
+An independent [frozen-Qwen vision mirror-decoder experiment](experiments/night_vision_20261026_A_MIRROR/README.md) now includes an actually trained 12-layer decoder, a matched tiny comparison, and a pre/post-merger probe. On its locked 2,000/500/500 split, full lowered final pixel MSE by about 6.0% relative to tiny; blur and grid artifacts remain. This is source-image-conditioned reconstruction, not text-to-image or free generation. [Complete checkpoint/recovery assets](https://github.com/www080327-glitch/inverse-vit-lab/releases/tag/night-vision-a-mirror-20261026) are separate from Git history. P0/P1/P2 results below are unchanged.
+
 - `p0/`, `p1/`, `p2_qwen/`: selected model, training, data-preparation, sampling and evaluation source.
 - `configs/`: portable examples with relative paths. Review and change hardware, data and output locations before a run.
 - `tests/minimal_cpu.py`: no-download CPU smoke checks for all three model paths and the P2 probability head.

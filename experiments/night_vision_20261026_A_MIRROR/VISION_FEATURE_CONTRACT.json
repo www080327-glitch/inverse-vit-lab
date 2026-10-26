@@ -1,0 +1,189 @@
+{
+  "schema": "night-vision-feature-contract-v1",
+  "model_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+  "transformers_version": "5.2.0",
+  "vision_class": "Qwen3_5VisionModel",
+  "merger_class": "Qwen3_5VisionPatchMerger",
+  "actual_forward_probe": {
+    "actual_hook_tensor_shape": [
+      4096,
+      768
+    ],
+    "actual_pooler_tensor_shape": [
+      1024,
+      1024
+    ],
+    "actual_processor_pixels_shape": [
+      4096,
+      1536
+    ],
+    "actual_grid": [
+      [
+        1,
+        16,
+        16
+      ],
+      [
+        1,
+        16,
+        16
+      ],
+      [
+        1,
+        16,
+        16
+      ],
+      [
+        1,
+        16,
+        16
+      ],
+      [
+        1,
+        16,
+        16
+      ],
+      [
+        1,
+        16,
+        16
+      ],
+      [
+        1,
+        16,
+        16
+      ],
+      [
+        1,
+        16,
+        16
+      ],
+      [
+        1,
+        16,
+        16
+      ],
+      [
+        1,
+        16,
+        16
+      ],
+      [
+        1,
+        16,
+        16
+      ],
+      [
+        1,
+        16,
+        16
+      ],
+      [
+        1,
+        16,
+        16
+      ],
+      [
+        1,
+        16,
+        16
+      ],
+      [
+        1,
+        16,
+        16
+      ],
+      [
+        1,
+        16,
+        16
+      ]
+    ],
+    "pre_dtype": "torch.float32",
+    "post_dtype": "torch.float32",
+    "hook_module": "Qwen3_5VisionPatchMerger",
+    "vision_module": "Qwen3_5VisionModel"
+  },
+  "processor": {
+    "image_processor_type": "Qwen2VLImageProcessor",
+    "min_pixels": 65536,
+    "max_pixels": 16777216,
+    "size": {
+      "longest_edge": 16777216,
+      "shortest_edge": 65536
+    },
+    "do_resize": true,
+    "resample": 3,
+    "do_rescale": true,
+    "rescale_factor": 0.00392156862745098,
+    "do_normalize": true,
+    "image_mean": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "image_std": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "patch_size": 16,
+    "temporal_patch_size": 2,
+    "merge_size": 2,
+    "do_convert_rgb": true
+  },
+  "pre_merger": {
+    "status": "ACTUAL_HOOK_CAPTURED_AND_USED",
+    "main_matched_subset_shape": [
+      1200,
+      256,
+      768
+    ],
+    "train_count": 1000,
+    "dev_count": 200,
+    "delivered_paired_sample_count": 16,
+    "dtype": "float32"
+  },
+  "post_merger": {
+    "status": "ACTUAL_POOLER_OUTPUT",
+    "per_image_shape": [
+      64,
+      1024
+    ],
+    "dtype": "float32",
+    "language_body_run": false
+  },
+  "coordinates": {
+    "pre_grid": [
+      1,
+      16,
+      16
+    ],
+    "post_grid": [
+      1,
+      8,
+      8
+    ],
+    "within_group": [
+      "top_left",
+      "top_right",
+      "bottom_left",
+      "bottom_right"
+    ],
+    "pre_sequence_index": "4*((row//2)*8+(col//2))+2*(row%2)+(col%2)",
+    "post_sequence_index": "merged_row*8+merged_col",
+    "decoder": "learned four-way unmerge, grouped_to_raster, fixed 2D sin/cos, pixel HWC to BCHW"
+  },
+  "feature_space": "raw cached activations; saved D normalizer maps raw to model space once",
+  "data": {
+    "train": 2000,
+    "dev": 500,
+    "final": 500,
+    "official_test": "never opened"
+  },
+  "scope": [
+    "Position anchors do not imply semantic equivalence to P2 raw patches.",
+    "Full 1200-activation cache was used by the matched experiment; only fixed 16 paired activations are exported. Re-extract larger caches from pinned sources/indices if needed.",
+    "Targets are official 256x256 interpolation of 32x32 source, not genuine added image detail."
+  ]
+}

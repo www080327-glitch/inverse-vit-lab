@@ -1,0 +1,100 @@
+{
+  "actual_hook_tensor_shape": [
+    4096,
+    768
+  ],
+  "actual_pooler_tensor_shape": [
+    1024,
+    1024
+  ],
+  "actual_processor_pixels_shape": [
+    4096,
+    1536
+  ],
+  "actual_grid": [
+    [
+      1,
+      16,
+      16
+    ],
+    [
+      1,
+      16,
+      16
+    ],
+    [
+      1,
+      16,
+      16
+    ],
+    [
+      1,
+      16,
+      16
+    ],
+    [
+      1,
+      16,
+      16
+    ],
+    [
+      1,
+      16,
+      16
+    ],
+    [
+      1,
+      16,
+      16
+    ],
+    [
+      1,
+      16,
+      16
+    ],
+    [
+      1,
+      16,
+      16
+    ],
+    [
+      1,
+      16,
+      16
+    ],
+    [
+      1,
+      16,
+      16
+    ],
+    [
+      1,
+      16,
+      16
+    ],
+    [
+      1,
+      16,
+      16
+    ],
+    [
+      1,
+      16,
+      16
+    ],
+    [
+      1,
+      16,
+      16
+    ],
+    [
+      1,
+      16,
+      16
+    ]
+  ],
+  "pre_dtype": "torch.float32",
+  "post_dtype": "torch.float32",
+  "hook_module": "Qwen3_5VisionPatchMerger",
+  "vision_module": "Qwen3_5VisionModel"
+}

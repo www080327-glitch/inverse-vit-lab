@@ -1,0 +1,23 @@
+{
+  "step": 2000,
+  "dev_MSE": 0.02493273059527079,
+  "status": "COMPLETE_ATOMIC_CHECKPOINT",
+  "files": {
+    "model.safetensors": {
+      "bytes": 71669328,
+      "sha256": "469475329d9c9b21486406cadaaad96c5e56e16ecddb612f74677709554be79d"
+    },
+    "normalization.safetensors": {
+      "bytes": 8336,
+      "sha256": "f3648de7be9e23a67c3fefaafb5dd1068af6f26b94e4b3f19e62840f15359f7b"
+    },
+    "restore.pt": {
+      "bytes": 143363842,
+      "sha256": "c394a924079d8240ca00f5a83de06f974d12d227254b4ede9d1c5d9e60c21352"
+    },
+    "config.json": {
+      "bytes": 520,
+      "sha256": "cfe0c0d41bc411b75c87f2087a8c5f83e565461b8dd4ed8ba9c402e9be5286f0"
+    }
+  }
+}

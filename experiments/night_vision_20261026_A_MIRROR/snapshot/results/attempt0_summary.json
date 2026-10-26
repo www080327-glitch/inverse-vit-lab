@@ -1,0 +1,14 @@
+{
+  "mirror_full": "NOT_RUN",
+  "mirror_tiny": "NOT_RUN",
+  "pre_post": "NOT_RUN",
+  "language_interface": {
+    "status": "NOT_RUN",
+    "reason": "Not checked until reconstruction is complete and resource/budget allow"
+  },
+  "status": "STOPPED_OR_BLOCKED",
+  "error": "TypeError(\"dict() got multiple values for keyword argument 'elapsed_seconds'\")",
+  "traceback": "Traceback (most recent call last):\n  File \"${REMOTE_EXPERIMENT}/night_run.py\", line 256, in <module>\n    model=fit(name,FEATURES[:ntr],TARGET[:ntr],FEATURES[ntr:ntr+nd],TARGET[ntr:ntr+nd],NORM,common,MAIN_END)\n  File \"${REMOTE_EXPERIMENT}/night_run.py\", line 211, in fit\n    row=dict(step=step+1,train_batch_MSE=loss,dev_MSE=score,best_dev_MSE=best,elapsed_seconds=time.time()-t0,lr=opt.param_groups[0]['lr']);logs.append(row);dump('results/'+name+'_training.json',logs);event('training',name=name,**row)\n  File \"${REMOTE_EXPERIMENT}/night_run.py\", line 33, in event\n    d=dict(stage=stage,unix=time.time(),elapsed_seconds=time.time()-START,**kw);LEDGER['events'].append(d);LEDGER['spent_seconds']=time.time()-START;dump('night_budget.json',LEDGER);dump('live_status.json',d);print(json.dumps(d),flush=True)\nTypeError: dict() got multiple values for keyword argument 'elapsed_seconds'\n",
+  "wall_seconds": 103.4556667804718,
+  "emergency_save_error": "OSError(39, 'Directory not empty')"
+}

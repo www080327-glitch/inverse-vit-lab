@@ -1,0 +1,15 @@
+{
+  "train_count": 1000,
+  "dev_count": 200,
+  "steps_each": 2000,
+  "sample_presentations_each": 64000,
+  "shared_body": {
+    "depth": 2,
+    "width": 768,
+    "heads": 12,
+    "FFN": 3072
+  },
+  "input_adapter_difference": "pre identity; post Linear(1024,3072), 3148800 additional parameters",
+  "not_perfect_control": true,
+  "final_used": false
+}

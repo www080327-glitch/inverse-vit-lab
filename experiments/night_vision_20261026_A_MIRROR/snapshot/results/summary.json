@@ -1,0 +1,53 @@
+{
+  "mirror_full": {
+    "status": "TRAINED",
+    "steps": 16300,
+    "sample_presentations": 521600,
+    "wall_seconds": 1793.7672657966614,
+    "parameters": 88795392,
+    "adapter_parameters": 3148800,
+    "peak_DCU_bytes": 4803889152,
+    "best_dev_MSE": 0.02056581485271454,
+    "independent_reload": "PASS"
+  },
+  "mirror_tiny": {
+    "status": "TRAINED",
+    "steps": 16300,
+    "sample_presentations": 521600,
+    "wall_seconds": 204.08718395233154,
+    "parameters": 2827008,
+    "adapter_parameters": 1049600,
+    "peak_DCU_bytes": 1420716032,
+    "best_dev_MSE": 0.021879932622114816,
+    "independent_reload": "PASS"
+  },
+  "pre_post": "TRAINED_MATCHED_SUBSET_WITH_ADAPTER_PARAMETER_DIFFERENCE",
+  "language_interface": {
+    "status": "NOT_RUN",
+    "reason": "Provider lease has less than 60 minutes remaining after main reconstruction; official language weights were not downloaded or instantiated",
+    "checked_once_after_main": true,
+    "remaining_provider_seconds": 960.1544764041901
+  },
+  "pre_shallow": {
+    "status": "TRAINED",
+    "steps": 2000,
+    "sample_presentations": 64000,
+    "wall_seconds": 45.50467801094055,
+    "parameters": 14767872,
+    "adapter_parameters": 0,
+    "peak_DCU_bytes": 3838569472,
+    "best_dev_MSE": 0.007980419894059499
+  },
+  "post_shallow": {
+    "status": "TRAINED",
+    "steps": 2000,
+    "sample_presentations": 64000,
+    "wall_seconds": 49.20953869819641,
+    "parameters": 17916672,
+    "adapter_parameters": 3148800,
+    "peak_DCU_bytes": 3868109824,
+    "best_dev_MSE": 0.023019124666849772
+  },
+  "status": "COMPLETE",
+  "wall_seconds": 3197.5507254600525
+}

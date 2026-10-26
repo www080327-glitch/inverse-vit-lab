@@ -1,0 +1,31 @@
+{
+  "status": "COMPLETE_FROZEN_POSTHOC_DIAGNOSTIC",
+  "started_unix": 1793038659.7292788,
+  "wall_seconds": 9.391112804412842,
+  "original_budget_started_unix": 1793032977.2948039,
+  "original_compute_wall_seconds": 3197.5507261753082,
+  "original_budget_cap_seconds": 28800,
+  "new_training_steps": 0,
+  "new_encoder_forwards": 0,
+  "decoder_inference_only": true,
+  "fixed_samples": 16,
+  "train_samples": 8,
+  "dev_samples": 8,
+  "final_samples": 0,
+  "config_selection": false,
+  "output_shapes": {
+    "pre": [
+      16,
+      3,
+      256,
+      256
+    ],
+    "post": [
+      16,
+      3,
+      256,
+      256
+    ]
+  },
+  "note": "All 16 predeclared paired interface examples shown; correct-feature diagnostic only. Does not replace full 1000/200 metrics. PNG clipped for display; raw predictions retained."
+}

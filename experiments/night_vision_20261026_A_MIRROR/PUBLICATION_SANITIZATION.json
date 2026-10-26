@@ -1,0 +1,45 @@
+{
+  "original_production_sources_in": "Release reports ZIP",
+  "changes": {
+    "prepare_assets.py": {
+      "production_sha256": "477d7627d9f1611eeeb199da60ba3c9c265af5120f53655e355160f32c433d70",
+      "published_sha256": "d16c2dfd54c8bc4ea917281e07b5573d89e6c5acb0577a83fc76688437d9a7f9",
+      "change": "Remove provider-specific absolute runtime path or replace admission prefix with explicit authorization flag; no decoder/data/loss changes"
+    },
+    "night_run_attempt1.py": {
+      "production_sha256": "e5f0a7d3c5377b565f1af073cfb9ec1c8c1a4fd18368bc45c9dec4fb329f771d",
+      "published_sha256": "747140c9ff07284d6da7ff3460fb40a7f0b957c6ae607fc2686d480c4b7a960b",
+      "change": "Remove provider-specific absolute runtime path or replace admission prefix with explicit authorization flag; no decoder/data/loss changes"
+    },
+    "night_run.py": {
+      "production_sha256": "02f5c3b872b46f498562130cc23d9acb47018bfb236b234728db8c1afc125e6f",
+      "published_sha256": "f45dc685df05da423b195589933ef5c6434ac28c084ca5a47693355f7f7e8f90",
+      "change": "Remove provider-specific absolute runtime path or replace admission prefix with explicit authorization flag; no decoder/data/loss changes"
+    },
+    "night_run_attempt0.py": {
+      "production_sha256": "d35272d3cff721737dc0eb88f3f6c297c016216e885433b3cb8604751f74ddd1",
+      "published_sha256": "530080609488b68826e34e3a639c09e7e11b53c3c9437babf8468ab874532aaf",
+      "change": "Remove provider-specific absolute runtime path or replace admission prefix with explicit authorization flag; no decoder/data/loss changes"
+    },
+    "minimum_reproducer_error.json": {
+      "production_sha256": "6d2e031afc64a0741c7537f122495a43ea7d7bdeaaa936f105131a43b1ad9679",
+      "published_sha256": "be52bc07ab5c49b66bd9c8fa0981daf3bc1db4cd13b6a9f026d6165081b99928",
+      "change": "Remove provider-specific absolute runtime path or replace admission prefix with explicit authorization flag; no decoder/data/loss changes"
+    },
+    "results/attempt0_summary.json": {
+      "production_sha256": "a9b1de7597278f5e8c2fa48612296e2c11f16995f3bfabac87eb70fd0c39e46c",
+      "published_sha256": "aa3caacc964f9ad05252bb0708c029bdd1ac372b158cb9dd60d5d224a4a94aab",
+      "change": "Remove provider-specific absolute runtime path or replace admission prefix with explicit authorization flag; no decoder/data/loss changes"
+    },
+    "results/attempt1_summary.json": {
+      "production_sha256": "a18a9fe37415806057f432821b946cb82f622186303b8bf36f3c2ed127e1db9e",
+      "published_sha256": "5957dd7033b928e7aaf84cf9525cb50d098ebb7cf7f448e4ec9042aec0a7d93a",
+      "change": "Remove provider-specific absolute runtime path or replace admission prefix with explicit authorization flag; no decoder/data/loss changes"
+    },
+    "REPORT_ZH.md": {
+      "production_sha256": "d12fb6016fa6ffa02c9e308f10f15e26ed952e2346efcaa2dacd8c8962c809b7",
+      "published_sha256": "982f76f52a76f046d4593b07ee77af573023206ba0f63590d067a9d75ea5e9eb",
+      "change": "Remove extra final blank line only; original remains in Release ZIP"
+    }
+  }
+}

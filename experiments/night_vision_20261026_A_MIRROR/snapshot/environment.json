@@ -1,0 +1,8 @@
+{
+  "python": "3.10.16 (main, Dec 11 2024, 16:24:50) [GCC 11.2.0]",
+  "torch": "2.4.1",
+  "hip": "6.1.25065",
+  "transformers": "5.2.0",
+  "device": "BW",
+  "memory_bytes": 68702699520
+}

@@ -1,0 +1,285 @@
+{
+  "status": "COMPLETE_ATOMIC_TRANSPORT",
+  "format": "content-addressed raw checkpoint assets plus one reports ZIP; restore each raw asset to its listed relative paths",
+  "assets": [
+    {
+      "name": "artifact-85241578dca5d72c15ea0f62d730c92978388e6bca5123ee4e6a14fb220a152e.safetensors",
+      "bytes": 11310624,
+      "sha256": "85241578dca5d72c15ea0f62d730c92978388e6bca5123ee4e6a14fb220a152e",
+      "encoding": "raw",
+      "paths": [
+        "checkpoints/mirror_tiny/best/model.safetensors"
+      ]
+    },
+    {
+      "name": "artifact-958ec41b9cdf8178c8f8f5ca019fa847c2580c57daaeea10fbd62a64c91c2be6.safetensors",
+      "bytes": 8336,
+      "sha256": "958ec41b9cdf8178c8f8f5ca019fa847c2580c57daaeea10fbd62a64c91c2be6",
+      "encoding": "raw",
+      "paths": [
+        "checkpoints/mirror_tiny/best/normalization.safetensors",
+        "checkpoints/mirror_tiny/last/normalization.safetensors",
+        "checkpoints/mirror_full/best/normalization.safetensors",
+        "checkpoints/mirror_full/last/normalization.safetensors"
+      ]
+    },
+    {
+      "name": "artifact-e5139d0d0eff6180a408e10e50dbb8dfbec97750ba6198f118332a7d2f25cc4e.safetensors",
+      "bytes": 11310624,
+      "sha256": "e5139d0d0eff6180a408e10e50dbb8dfbec97750ba6198f118332a7d2f25cc4e",
+      "encoding": "raw",
+      "paths": [
+        "checkpoints/mirror_tiny/last/model.safetensors"
+      ]
+    },
+    {
+      "name": "artifact-d413004a46abbc504a09af31bdde4c080f1f7fba3af794fe3bff1e7ed8c81c65.pt",
+      "bytes": 22646530,
+      "sha256": "d413004a46abbc504a09af31bdde4c080f1f7fba3af794fe3bff1e7ed8c81c65",
+      "encoding": "raw",
+      "paths": [
+        "checkpoints/mirror_tiny/last/restore.pt"
+      ]
+    },
+    {
+      "name": "artifact-40a7316acb2e112590d5748126daf4092218a5c76376a34f6c0b693a81485c35.safetensors",
+      "bytes": 355195128,
+      "sha256": "40a7316acb2e112590d5748126daf4092218a5c76376a34f6c0b693a81485c35",
+      "encoding": "raw",
+      "paths": [
+        "checkpoints/mirror_full/best/model.safetensors"
+      ]
+    },
+    {
+      "name": "artifact-85c5e199d926751c2de9c34e1d394156c7cb9c1e0fe5ba5147841d2a87955f60.pt",
+      "bytes": 710492906,
+      "sha256": "85c5e199d926751c2de9c34e1d394156c7cb9c1e0fe5ba5147841d2a87955f60",
+      "encoding": "raw",
+      "paths": [
+        "checkpoints/mirror_full/last/restore.pt"
+      ]
+    },
+    {
+      "name": "artifact-aa2f68c1ee88addc832c40cea771515cf391d6cc4a93e4f90111a9dfaa8c5289.safetensors",
+      "bytes": 355195128,
+      "sha256": "aa2f68c1ee88addc832c40cea771515cf391d6cc4a93e4f90111a9dfaa8c5289",
+      "encoding": "raw",
+      "paths": [
+        "checkpoints/mirror_full/last/model.safetensors"
+      ]
+    },
+    {
+      "name": "artifact-a155ef131b3d164860f94809e8ff393fc9c95d163e03f6382c942cb2667e1d05.safetensors",
+      "bytes": 59073960,
+      "sha256": "a155ef131b3d164860f94809e8ff393fc9c95d163e03f6382c942cb2667e1d05",
+      "encoding": "raw",
+      "paths": [
+        "checkpoints/pre_shallow/best/model.safetensors",
+        "checkpoints/pre_shallow/last/model.safetensors"
+      ]
+    },
+    {
+      "name": "artifact-da40b6c2753fb8ed44801d8aea8fa7b856e297cbcdc3bea577eff826c07a7162.safetensors",
+      "bytes": 6288,
+      "sha256": "da40b6c2753fb8ed44801d8aea8fa7b856e297cbcdc3bea577eff826c07a7162",
+      "encoding": "raw",
+      "paths": [
+        "checkpoints/pre_shallow/best/normalization.safetensors",
+        "checkpoints/pre_shallow/last/normalization.safetensors"
+      ]
+    },
+    {
+      "name": "artifact-745e82e3407b36aaf90affd04d4d7f6a6ed46a11c1854d7048b22c206ae7d994.pt",
+      "bytes": 118171860,
+      "sha256": "745e82e3407b36aaf90affd04d4d7f6a6ed46a11c1854d7048b22c206ae7d994",
+      "encoding": "raw",
+      "paths": [
+        "checkpoints/pre_shallow/last/restore.pt"
+      ]
+    },
+    {
+      "name": "artifact-f3648de7be9e23a67c3fefaafb5dd1068af6f26b94e4b3f19e62840f15359f7b.safetensors",
+      "bytes": 8336,
+      "sha256": "f3648de7be9e23a67c3fefaafb5dd1068af6f26b94e4b3f19e62840f15359f7b",
+      "encoding": "raw",
+      "paths": [
+        "checkpoints/post_shallow/best/normalization.safetensors",
+        "checkpoints/post_shallow/last/normalization.safetensors"
+      ]
+    },
+    {
+      "name": "artifact-3f562cd9ef81a76e87dba69b7b48b68ad190b876e6fd4f5576125c3dbb39a2ea.safetensors",
+      "bytes": 71669328,
+      "sha256": "3f562cd9ef81a76e87dba69b7b48b68ad190b876e6fd4f5576125c3dbb39a2ea",
+      "encoding": "raw",
+      "paths": [
+        "checkpoints/post_shallow/best/model.safetensors"
+      ]
+    },
+    {
+      "name": "artifact-469475329d9c9b21486406cadaaad96c5e56e16ecddb612f74677709554be79d.safetensors",
+      "bytes": 71669328,
+      "sha256": "469475329d9c9b21486406cadaaad96c5e56e16ecddb612f74677709554be79d",
+      "encoding": "raw",
+      "paths": [
+        "checkpoints/post_shallow/last/model.safetensors"
+      ]
+    },
+    {
+      "name": "artifact-c394a924079d8240ca00f5a83de06f974d12d227254b4ede9d1c5d9e60c21352.pt",
+      "bytes": 143363842,
+      "sha256": "c394a924079d8240ca00f5a83de06f974d12d227254b4ede9d1c5d9e60c21352",
+      "encoding": "raw",
+      "paths": [
+        "checkpoints/post_shallow/last/restore.pt"
+      ]
+    },
+    {
+      "name": "NIGHT_VISION_20261026_A_MIRROR_reports.zip",
+      "bytes": 162447229,
+      "sha256": "363c4eca3e37f76d43187a98cbc53d267af4be99b4e1f3e15d54d64d5a06444b",
+      "encoding": "zip",
+      "paths": [
+        "prepare_assets.py",
+        "official_model_config.json",
+        "prepare.log",
+        "previous_indices.json",
+        "source_identity.json",
+        "run.log",
+        "night_budget.json",
+        "live_status.json",
+        "layout_checks.json",
+        "actual_forward_shapes.json",
+        "indices.json",
+        "protocol.json",
+        "run_attempt0.log",
+        "throughput_probe.json",
+        "repair_1.json",
+        "night_run_attempt1.py",
+        "finalize_artifacts.py",
+        "finalize.log",
+        "pre_post_locked.json",
+        "REPORT_ZH.md",
+        "REPORT_ZH.html",
+        "night_model.py",
+        "official_preprocessor_config.json",
+        "split_contract.json",
+        "assets_status.json",
+        "dependency_install.log",
+        "night_run.py",
+        "decode_only.py",
+        "environment.json",
+        "candidate_data_plans.json",
+        "feature_contract.json",
+        "normalization.safetensors",
+        "ATOMIC_SNAPSHOT_READY.json",
+        "training_locked.json",
+        "minimum_reproducer_error.json",
+        "night_run_attempt0.py",
+        "run_attempt1.log",
+        "repair_2.json",
+        "PREFETCH_AVAILABLE.json",
+        "reference_core/__init__.py",
+        "reference_core/config.py",
+        "reference_core/decoder.py",
+        "reference_core/layout.py",
+        "results/attempt0_summary.json",
+        "results/gallery_dev_00.png",
+        "results/metrics.json",
+        "results/mirror_tiny_train_unclipped.safetensors",
+        "results/mirror_full_training.json",
+        "results/mirror_tiny_dev_per_image.json",
+        "results/mirror_full_train_unclipped.safetensors",
+        "results/mirror_full_train_per_image.json",
+        "results/mirror_full_dev_unclipped.safetensors",
+        "results/mirror_full_decode_input.safetensors",
+        "results/mirror_full_decode_reference.safetensors",
+        "results/mirror_tiny_final_unclipped.safetensors",
+        "results/mirror_tiny_final_per_image.json",
+        "results/mirror_tiny_independent_reload.json",
+        "results/mirror_full_final_per_image.json",
+        "results/mirror_full_final_unclipped.safetensors",
+        "results/mirror_full_independent_prediction.safetensors",
+        "results/gallery_dev_01.png",
+        "results/gallery_dev_02.png",
+        "results/gallery_final_00.png",
+        "results/gallery_final_03.png",
+        "results/pre_shallow_dev_per_image.json",
+        "results/pre_shallow_training.json",
+        "results/post_shallow_training.json",
+        "results/summary.json",
+        "results/mirror_tiny_training.json",
+        "results/attempt1_summary.json",
+        "results/mirror_tiny_train_per_image.json",
+        "results/mirror_tiny_dev_unclipped.safetensors",
+        "results/mirror_tiny_decode_input.safetensors",
+        "results/mirror_tiny_decode_reference.safetensors",
+        "results/mirror_full_dev_per_image.json",
+        "results/mirror_tiny_independent_prediction.safetensors",
+        "results/mirror_tiny_independent_decode.log",
+        "results/mirror_full_independent_reload.json",
+        "results/mirror_full_independent_decode.log",
+        "results/gallery_train_00.png",
+        "results/gallery_train_01.png",
+        "results/gallery_dev_03.png",
+        "results/gallery_final_01.png",
+        "results/gallery_final_02.png",
+        "results/post_shallow_dev_per_image.json",
+        "results/pre_shallow_train_per_image.json",
+        "results/post_shallow_train_per_image.json",
+        "feature_evidence/samples.json",
+        "feature_evidence/paired_pre_post_16.safetensors",
+        "checkpoints/mirror_tiny/best/config.json",
+        "checkpoints/mirror_tiny/best/READY.json",
+        "checkpoints/mirror_tiny/last/config.json",
+        "checkpoints/mirror_tiny/last/READY.json",
+        "checkpoints/mirror_full/best/config.json",
+        "checkpoints/mirror_full/best/READY.json",
+        "checkpoints/mirror_full/last/READY.json",
+        "checkpoints/mirror_full/last/config.json",
+        "checkpoints/pre_shallow/best/config.json",
+        "checkpoints/pre_shallow/best/READY.json",
+        "checkpoints/pre_shallow/last/config.json",
+        "checkpoints/pre_shallow/last/READY.json",
+        "checkpoints/post_shallow/best/config.json",
+        "checkpoints/post_shallow/best/READY.json",
+        "checkpoints/post_shallow/last/READY.json",
+        "checkpoints/post_shallow/last/config.json",
+        "DELIVERY_FILES.json"
+      ]
+    }
+  ],
+  "path_to_asset": {
+    "checkpoints/mirror_tiny/best/model.safetensors": "artifact-85241578dca5d72c15ea0f62d730c92978388e6bca5123ee4e6a14fb220a152e.safetensors",
+    "checkpoints/mirror_tiny/best/normalization.safetensors": "artifact-958ec41b9cdf8178c8f8f5ca019fa847c2580c57daaeea10fbd62a64c91c2be6.safetensors",
+    "checkpoints/mirror_tiny/last/model.safetensors": "artifact-e5139d0d0eff6180a408e10e50dbb8dfbec97750ba6198f118332a7d2f25cc4e.safetensors",
+    "checkpoints/mirror_tiny/last/restore.pt": "artifact-d413004a46abbc504a09af31bdde4c080f1f7fba3af794fe3bff1e7ed8c81c65.pt",
+    "checkpoints/mirror_tiny/last/normalization.safetensors": "artifact-958ec41b9cdf8178c8f8f5ca019fa847c2580c57daaeea10fbd62a64c91c2be6.safetensors",
+    "checkpoints/mirror_full/best/model.safetensors": "artifact-40a7316acb2e112590d5748126daf4092218a5c76376a34f6c0b693a81485c35.safetensors",
+    "checkpoints/mirror_full/best/normalization.safetensors": "artifact-958ec41b9cdf8178c8f8f5ca019fa847c2580c57daaeea10fbd62a64c91c2be6.safetensors",
+    "checkpoints/mirror_full/last/normalization.safetensors": "artifact-958ec41b9cdf8178c8f8f5ca019fa847c2580c57daaeea10fbd62a64c91c2be6.safetensors",
+    "checkpoints/mirror_full/last/restore.pt": "artifact-85c5e199d926751c2de9c34e1d394156c7cb9c1e0fe5ba5147841d2a87955f60.pt",
+    "checkpoints/mirror_full/last/model.safetensors": "artifact-aa2f68c1ee88addc832c40cea771515cf391d6cc4a93e4f90111a9dfaa8c5289.safetensors",
+    "checkpoints/pre_shallow/best/model.safetensors": "artifact-a155ef131b3d164860f94809e8ff393fc9c95d163e03f6382c942cb2667e1d05.safetensors",
+    "checkpoints/pre_shallow/best/normalization.safetensors": "artifact-da40b6c2753fb8ed44801d8aea8fa7b856e297cbcdc3bea577eff826c07a7162.safetensors",
+    "checkpoints/pre_shallow/last/model.safetensors": "artifact-a155ef131b3d164860f94809e8ff393fc9c95d163e03f6382c942cb2667e1d05.safetensors",
+    "checkpoints/pre_shallow/last/restore.pt": "artifact-745e82e3407b36aaf90affd04d4d7f6a6ed46a11c1854d7048b22c206ae7d994.pt",
+    "checkpoints/pre_shallow/last/normalization.safetensors": "artifact-da40b6c2753fb8ed44801d8aea8fa7b856e297cbcdc3bea577eff826c07a7162.safetensors",
+    "checkpoints/post_shallow/best/normalization.safetensors": "artifact-f3648de7be9e23a67c3fefaafb5dd1068af6f26b94e4b3f19e62840f15359f7b.safetensors",
+    "checkpoints/post_shallow/best/model.safetensors": "artifact-3f562cd9ef81a76e87dba69b7b48b68ad190b876e6fd4f5576125c3dbb39a2ea.safetensors",
+    "checkpoints/post_shallow/last/model.safetensors": "artifact-469475329d9c9b21486406cadaaad96c5e56e16ecddb612f74677709554be79d.safetensors",
+    "checkpoints/post_shallow/last/normalization.safetensors": "artifact-f3648de7be9e23a67c3fefaafb5dd1068af6f26b94e4b3f19e62840f15359f7b.safetensors",
+    "checkpoints/post_shallow/last/restore.pt": "artifact-c394a924079d8240ca00f5a83de06f974d12d227254b4ede9d1c5d9e60c21352.pt"
+  },
+  "experiment_status": "COMPLETE",
+  "created_unix": 1793036207.6766853,
+  "supplements": [
+    {
+      "name": "posthoc_pre_post_16.zip",
+      "bytes": 11132356,
+      "sha256": "a033397101c284fe18c2f562008017fe14c38ef0c4d5f1285785df459a3cfcfb",
+      "encoding": "zip",
+      "scope": "frozen posthoc 16-example pre/post gallery; no additional training"
+    }
+  ]
+}

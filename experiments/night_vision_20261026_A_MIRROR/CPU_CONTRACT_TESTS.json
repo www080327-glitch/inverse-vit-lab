@@ -1,0 +1,6 @@
+{
+  "exit_code": 0,
+  "wall_seconds": 3.749401092529297,
+  "scope": "CPU-meta contract checks; no numeric model inference/training or DCU calls",
+  "output": "test_HWC_RGB_pixels (__main__.Contracts) ... ok\ntest_decoder_input_signature (__main__.Contracts) ... ok\ntest_full_and_tiny_meta_shapes_and_counts (__main__.Contracts) ... ok\ntest_grouped_coordinate_values (__main__.Contracts) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.498s\n\nOK\n"
+}

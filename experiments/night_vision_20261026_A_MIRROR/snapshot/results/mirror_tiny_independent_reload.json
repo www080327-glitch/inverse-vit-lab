@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "maximum_absolute_error": 0.0,
+  "tolerance": 0.005,
+  "source_images_read": false,
+  "decoder_inputs": [
+    "features",
+    "normalization",
+    "config",
+    "weights"
+  ]
+}

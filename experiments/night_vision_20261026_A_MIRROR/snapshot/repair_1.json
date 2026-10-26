@@ -1,0 +1,10 @@
+{
+  "reason": "logging elapsed_seconds keyword collision after first atomic tiny checkpoint",
+  "change": "logging only plus explicit checkpoint/cache resume support",
+  "data_indices_changed": false,
+  "common_steps_changed": false,
+  "original_budget_start_preserved": true,
+  "feature_reextraction": false,
+  "original_source_sha256": "d35272d3cff721737dc0eb88f3f6c297c016216e885433b3cb8604751f74ddd1",
+  "repaired_source_sha256": "e5f0a7d3c5377b565f1af073cfb9ec1c8c1a4fd18368bc45c9dec4fb329f771d"
+}

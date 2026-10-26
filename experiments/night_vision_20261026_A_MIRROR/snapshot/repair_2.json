@@ -1,0 +1,9 @@
+{
+  "reason": "Mean image is BCHW; evaluation expansion needs four dimensions",
+  "architecture_or_loss_changed": false,
+  "tiny_completed_steps_preserved": 16300,
+  "data_indices_changed": false,
+  "common_steps_changed": false,
+  "original_budget_start_preserved": true,
+  "repaired_source_sha256": "02f5c3b872b46f498562130cc23d9acb47018bfb236b234728db8c1afc125e6f"
+}

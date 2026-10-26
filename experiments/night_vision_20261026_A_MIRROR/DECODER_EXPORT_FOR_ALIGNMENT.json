@@ -1,0 +1,65 @@
+{
+  "schema": "alignment.decoder_export.v1",
+  "status": "IMMUTABLE_A_EXPORT_NOT_YET_LOCKED_WITH_D_ALIGNMENT",
+  "representation": {
+    "repository": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "feature_kind": "post_merger_pooler_output",
+    "order": "merged_row_major",
+    "encoder_dtype": "float32",
+    "preprocessing": "square_rgb_256_pil_bicubic_official_processor",
+    "processor_sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516"
+  },
+  "normalization": {
+    "kind": "channel_standardize",
+    "decoder_space": "model",
+    "statistics_split": "train",
+    "statistics_split_sha256": "f458a1eff48341876f5d6cfed5c6f4d0637a79f5f6e2056bc815edb2dc11a4ad",
+    "statistics": {
+      "path": "snapshot/checkpoints/mirror_full/best/normalization.safetensors",
+      "sha256": "958ec41b9cdf8178c8f8f5ca019fa847c2580c57daaeea10fbd62a64c91c2be6"
+    },
+    "stored_std": "effective torch training-only std, clamped to 1e-5; do not refit or normalize twice",
+    "statistics_split_hash_encoding": "SHA256 of the semantic STATISTICS_TRAIN_PARTITION.json object encoded as UTF-8 JSON with sort_keys=True and separators=(comma,colon)"
+  },
+  "decoder": {
+    "weights": {
+      "path": "snapshot/checkpoints/mirror_full/best/model.safetensors",
+      "sha256": "40a7316acb2e112590d5748126daf4092218a5c76376a34f6c0b693a81485c35"
+    },
+    "source": {
+      "path": "snapshot/night_model.py",
+      "sha256": "2642360dbbdbda44eef54f497422f60eb39e27c4cbffc5c9604fee6a746b59d0"
+    },
+    "dependency_sources": [
+      {
+        "path": "snapshot/reference_core/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "snapshot/reference_core/config.py",
+        "sha256": "5ff9bf89238a1a723518a3ad40f4028b33b054d971b708c9458b7ff838cfb8b5"
+      },
+      {
+        "path": "snapshot/reference_core/layout.py",
+        "sha256": "4170c830c2528ce53b6207b2e316a8593705944098ce42e32a77ee1e04be0be2"
+      },
+      {
+        "path": "snapshot/reference_core/decoder.py",
+        "sha256": "8dbe378afd4b1f254ded3b801793cf14840d6bbc514fb7b8b5040643aca16294"
+      }
+    ],
+    "factory": "night_model:NightMirror",
+    "kwargs": {
+      "name": "mirror_full"
+    },
+    "call": "features_grid",
+    "input_space": "model"
+  },
+  "limits": [
+    "This is an A-side immutable decoder export; D_ALIGNMENT locking/real-language integration was NOT_RUN.",
+    "Paths are relative to this experiment directory. Add snapshot/ to Python import path.",
+    "Factory expects standardized model-space features. The supplied normalizer is applied exactly once outside the factory.",
+    "D statistics were fitted on the original 2000 training images, not alignment mini-data. Preserve provenance."
+  ]
+}
