@@ -6,6 +6,9 @@ on:
       - "experiments/C11/runner.mjs"
       - "experiments/C11/package.py"
       - "experiments/C11/gradient_probe.py"
+      - "experiments/C11/README.md"
+      - "experiments/C11/QWEN_NEXT_LOGGING.md"
+      - "experiments/C11/DIAGNOSIS.md"
       - ".github/workflows/c11-toy.yml"
 permissions:
   contents: write
@@ -32,7 +35,21 @@ jobs:
           with open(os.environ["GITHUB_ENV"], "a") as f:
               f.write("C11_CPU_AFFINITY="+",".join(map(str,cpus))+"\n")
           PY
+      - name: Reuse validated results when exact training source is unchanged
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          root = Path("experiments/C11")
+          p = root/"results/RESULT.json"
+          expected = hashlib.sha256((root/"runner.mjs").read_bytes()).hexdigest()
+          reuse = p.exists() and json.loads(p.read_text()).get("status") == "completed" and json.loads(p.read_text())["environment"]["source_sha256"] == expected
+          with open(os.environ["GITHUB_ENV"], "a") as f:
+              f.write("C11_RUN_REQUIRED="+("false" if reuse else "true")+"\n")
+          print("Reuse exact-source existing result:", reuse)
+          PY
       - name: Execute paired seeds and embedded numerical checks, no downloads
+        if: env.C11_RUN_REQUIRED == 'true'
         run: |
           timeout 1770 taskset -c "$C11_CPU_AFFINITY" node experiments/C11/runner.mjs experiments/C11/results
       - name: Check portable probe syntax and package delivery

@@ -5,6 +5,7 @@
 ## 入口
 
 - [实验结果表与比例解释](results/RESULTS.md)
+- [梯度符号与实际优化表现对照](DIAGNOSIS.md)
 - [机器可读 RESULT.json](results/RESULT.json)
 - [逐方案全部字段](results/results.csv)
 - [按任务梯度统计](results/gradient_diagnostics.csv)

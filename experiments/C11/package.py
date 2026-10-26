@@ -7,6 +7,7 @@ out = root / "results"
 data = json.loads((out / "RESULT.json").read_text())
 rows = data["rows"]
 assert data["status"] == "completed"
+assert data["environment"]["source_sha256"] == hashlib.sha256((root/"runner.mjs").read_bytes()).hexdigest()
 assert data["aggregate_wall_seconds"] < 1750
 assert len(rows) == 16
 assert len({(r["seed"],r["relation"],r["arm"]) for r in rows}) == 16
@@ -36,13 +37,16 @@ validation = dict(status="passed", experiment="C11", scope="toy mechanism eviden
 entries = sorted(p for p in root.rglob("*") if p.is_file()
                  and p.name not in ["C11_DELIVERY.zip", "SHA256SUMS"]
                  and "__pycache__" not in p.parts)
+archive_entries = [(p, p.relative_to(root).as_posix()) for p in entries]
+workflow = root.parents[1]/".github/workflows/c11-toy.yml"
+archive_entries.append((workflow, "c11-toy.yml"))
 sums = []
-for p in entries:
-    sums.append(hashlib.sha256(p.read_bytes()).hexdigest()+"  "+p.relative_to(root).as_posix())
+for p, name in archive_entries:
+    sums.append(hashlib.sha256(p.read_bytes()).hexdigest()+"  "+name)
 (root/"SHA256SUMS").write_text("\n".join(sums)+"\n")
 with zipfile.ZipFile(root/"C11_DELIVERY.zip","w",zipfile.ZIP_DEFLATED) as z:
-    for p in entries+[root/"SHA256SUMS"]:
-        z.write(p, "C11/"+p.relative_to(root).as_posix())
+    for p, name in archive_entries+[(root/"SHA256SUMS", "SHA256SUMS")]:
+        z.write(p, "C11/"+name)
 with zipfile.ZipFile(root/"C11_DELIVERY.zip") as z:
     assert z.testzip() is None
 print(json.dumps(validation))
