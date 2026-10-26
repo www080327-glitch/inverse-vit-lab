@@ -1,0 +1,27 @@
+test_all_masked_rejected (test_reference_attention.AttentionTests.test_all_masked_rejected) ... ok
+test_all_selected_and_one_region (test_reference_attention.AttentionTests.test_all_selected_and_one_region) ... ok
+test_binary64 (test_reference_attention.AttentionTests.test_binary64) ... ok
+test_bound_needs_exact_conditional (test_reference_attention.AttentionTests.test_bound_needs_exact_conditional) ... ok
+test_bound_needs_value_bound (test_reference_attention.AttentionTests.test_bound_needs_value_bound) ... ok
+test_bound_tight (test_reference_attention.AttentionTests.test_bound_tight) ... ok
+test_conditionals_recover_dense_probability (test_reference_attention.AttentionTests.test_conditionals_recover_dense_probability) ... ok
+test_duplicate_representation (test_reference_attention.AttentionTests.test_duplicate_representation) ... ok
+test_extreme_logits (test_reference_attention.AttentionTests.test_extreme_logits) ... ok
+test_flat_log_size_exact (test_reference_attention.AttentionTests.test_flat_log_size_exact) ... ok
+test_huge_common_offset (test_reference_attention.AttentionTests.test_huge_common_offset) ... ok
+test_masked_regions_and_empty_lse (test_reference_attention.AttentionTests.test_masked_regions_and_empty_lse) ... ok
+test_max_ranking_fails_cardinality (test_reference_attention.AttentionTests.test_max_ranking_fails_cardinality) ... ok
+test_mean_key_identity (test_reference_attention.AttentionTests.test_mean_key_identity) ... ok
+test_mean_log_size_misses_peak (test_reference_attention.AttentionTests.test_mean_log_size_misses_peak) ... ok
+test_nonfinite_rejected (test_reference_attention.AttentionTests.test_nonfinite_rejected) ... ok
+test_partition_overlap_duplicate_missing (test_reference_attention.AttentionTests.test_partition_overlap_duplicate_missing) ... ok
+test_random_equivalence_and_bounds_up_to_1024 (test_reference_attention.AttentionTests.test_random_equivalence_and_bounds_up_to_1024) ... ok
+test_token_limit_and_shapes (test_reference_attention.AttentionTests.test_token_limit_and_shapes) ... ok
+test_unequal_and_empty_regions (test_reference_attention.AttentionTests.test_unequal_and_empty_regions) ... ok
+test_wrong_block_average (test_reference_attention.AttentionTests.test_wrong_block_average) ... ok
+test_zero_error_despite_omission (test_reference_attention.AttentionTests.test_zero_error_despite_omission) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.168s
+
+OK
