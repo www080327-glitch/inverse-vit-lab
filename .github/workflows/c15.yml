@@ -1,0 +1,62 @@
+name: C15 synthetic output heads
+on:
+  push:
+    branches: [research/c15-continuous-heads]
+    paths:
+      - 'experiments/c15/*.py'
+      - 'experiments/c15/config.json'
+      - '.github/workflows/c15.yml'
+permissions:
+  contents: write
+concurrency:
+  group: c15-synthetic-output-heads
+  cancel-in-progress: false
+jobs:
+  cpu:
+    runs-on: ubuntu-latest
+    timeout-minutes: 38
+    env:
+      OMP_NUM_THREADS: '2'
+      MKL_NUM_THREADS: '2'
+      OPENBLAS_NUM_THREADS: '2'
+      NUMEXPR_NUM_THREADS: '2'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/c15-continuous-heads
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install isolated CPU dependencies
+        run: |
+          python -m venv /tmp/c15-env
+          /tmp/c15-env/bin/pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu
+          /tmp/c15-env/bin/pip install -r experiments/c15/requirements.txt
+      - name: Formula and API checks, training, evaluation and packaging
+        working-directory: experiments/c15
+        run: /tmp/c15-env/bin/python run.py
+      - name: Repository no-download CPU check
+        run: /tmp/c15-env/bin/python tests/minimal_cpu.py
+      - name: Save all evidence to topic branch
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f experiments/c15/results
+          for f in RESULT.json HANDOFF_ZH.md MANIFEST.json C15_DELIVERY.zip; do
+            if test -f "experiments/c15/$f"; then git add -f "experiments/c15/$f"; fi
+          done
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish all C15 synthetic experiment evidence"
+            git push origin HEAD:research/c15-continuous-heads
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: C15_DELIVERY
+          path: |
+            experiments/c15/C15_DELIVERY.zip
+            experiments/c15/results/
+            experiments/c15/RESULT.json
+            experiments/c15/HANDOFF_ZH.md
+          retention-days: 30
