@@ -1,0 +1,46 @@
+{
+  "mse": {
+    "default_sampling_bitwise_parity": true,
+    "default_loss_bitwise_parity": true,
+    "onehot_equals_id_sample": true,
+    "continuous_condition_sample_shape": [
+      3,
+      17,
+      8
+    ],
+    "float64_and_gradient": "pass"
+  },
+  "diag": {
+    "default_sampling_bitwise_parity": true,
+    "default_loss_bitwise_parity": true,
+    "onehot_equals_id_sample": true,
+    "continuous_condition_sample_shape": [
+      3,
+      17,
+      8
+    ],
+    "float64_and_gradient": "pass"
+  },
+  "full": {
+    "default_sampling_bitwise_parity": true,
+    "default_loss_bitwise_parity": true,
+    "onehot_equals_id_sample": true,
+    "continuous_condition_sample_shape": [
+      3,
+      17,
+      8
+    ],
+    "float64_and_gradient": "pass"
+  },
+  "ear": {
+    "default_sampling_bitwise_parity": true,
+    "default_loss_bitwise_parity": true,
+    "onehot_equals_id_sample": true,
+    "continuous_condition_sample_shape": [
+      3,
+      17,
+      8
+    ],
+    "float64_and_gradient": "pass"
+  }
+}

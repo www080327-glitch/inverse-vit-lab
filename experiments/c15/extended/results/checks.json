@@ -1,0 +1,22 @@
+{
+  "diag_logprob_max_error": 8.881784197001252e-16,
+  "full_logprob_max_error": 8.881784197001252e-16,
+  "wrong_factorized_minus_joint_logprob": 198.61370849609375,
+  "squared_energy_equal_mean": {
+    "truth": {
+      "alpha1": 0.0,
+      "alpha2": 0.0
+    },
+    "collapsed": {
+      "alpha1": 1.0,
+      "alpha2": 0.0
+    },
+    "wrong_variance": {
+      "alpha1": 1.0,
+      "alpha2": 0.0
+    }
+  },
+  "api_gradients_and_generator": "pass",
+  "bounded_pair_distance_matches_dense": "pass",
+  "independent_samples_repeated_conditions": "pass"
+}
