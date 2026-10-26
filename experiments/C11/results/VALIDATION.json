@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "experiment": "C11",
+  "scope": "toy mechanism evidence only",
+  "two_paired_seeds": true,
+  "rows": 16,
+  "snapshot_and_schedule_pairing": true,
+  "teacher_frozen": true,
+  "count_consistency": true,
+  "parameter_count": 136,
+  "gradient_check": {
+    "checked": 62,
+    "max_absolute_error": 1.2891927109182078e-11,
+    "max_relative_error": 4.9021475001967216e-08,
+    "self_kd_zero": true,
+    "diagnostic_non_mutation": true,
+    "cached_kd_agreement": true
+  },
+  "pytorch_probe_validation": "syntax only; not runtime-tested with PyTorch/Qwen",
+  "training_wall_seconds": 3.0180351649999997,
+  "cpu_affinity": "0,1",
+  "training_source_sha256": "5958818835b45f647055fa1f049d7dcc19dee737883343d407f761048265d18c"
+}

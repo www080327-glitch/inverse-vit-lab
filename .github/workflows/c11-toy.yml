@@ -1,0 +1,66 @@
+name: C11 independent CPU toy experiment
+on:
+  push:
+    branches: ["c11/toy-retention-20261027"]
+    paths:
+      - "experiments/C11/runner.mjs"
+      - "experiments/C11/package.py"
+      - "experiments/C11/gradient_probe.py"
+      - "experiments/C11/README.md"
+      - "experiments/C11/QWEN_NEXT_LOGGING.md"
+      - "experiments/C11/DIAGNOSIS.md"
+      - ".github/workflows/c11-toy.yml"
+permissions:
+  contents: write
+concurrency:
+  group: c11-toy
+  cancel-in-progress: false
+jobs:
+  paired-toy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OMP_NUM_THREADS: "2"
+      MKL_NUM_THREADS: "2"
+      OPENBLAS_NUM_THREADS: "2"
+      UV_THREADPOOL_SIZE: "1"
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Restrict training CPU affinity to at most two cores
+        run: |
+          python3 - <<'PY'
+          import os
+          cpus = sorted(os.sched_getaffinity(0))[:2]
+          assert cpus
+          with open(os.environ["GITHUB_ENV"], "a") as f:
+              f.write("C11_CPU_AFFINITY="+",".join(map(str,cpus))+"\n")
+          PY
+      - name: Reuse validated results when exact training source is unchanged
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          root = Path("experiments/C11")
+          p = root/"results/RESULT.json"
+          expected = hashlib.sha256((root/"runner.mjs").read_bytes()).hexdigest()
+          reuse = p.exists() and json.loads(p.read_text()).get("status") == "completed" and json.loads(p.read_text())["environment"]["source_sha256"] == expected
+          with open(os.environ["GITHUB_ENV"], "a") as f:
+              f.write("C11_RUN_REQUIRED="+("false" if reuse else "true")+"\n")
+          print("Reuse exact-source existing result:", reuse)
+          PY
+      - name: Execute paired seeds and embedded numerical checks, no downloads
+        if: env.C11_RUN_REQUIRED == 'true'
+        run: |
+          timeout 1770 taskset -c "$C11_CPU_AFFINITY" node experiments/C11/runner.mjs experiments/C11/results
+      - name: Check portable probe syntax and package delivery
+        run: |
+          python3 -m py_compile experiments/C11/gradient_probe.py
+          python3 experiments/C11/package.py
+      - name: Commit standalone results back to C11 topic branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add experiments/C11/results experiments/C11/SHA256SUMS
+          git add -f experiments/C11/C11_DELIVERY.zip
+          git commit -m "Record C11 paired toy evidence and complete delivery"
+          git push origin HEAD:c11/toy-retention-20261027
