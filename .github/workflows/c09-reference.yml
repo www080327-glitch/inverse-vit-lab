@@ -1,0 +1,30 @@
+name: C09 binary64 CPU reference
+on:
+  pull_request:
+    paths:
+      - 'experiments/c09/**'
+      - '.github/workflows/c09-reference.yml'
+permissions:
+  contents: read
+jobs:
+  c09:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          sparse-checkout: experiments/c09
+          persist-credentials: false
+      - name: No-download standard-library CPU checks and experiment
+        working-directory: experiments/c09
+        run: |
+          python3 -m unittest -v test_reference_attention.py
+          python3 run_experiment.py
+          python3 - <<'PY'
+          import base64
+          from pathlib import Path
+          for name in ("RESULT.json", "C09_DELIVERY.zip"):
+              print("C09_FILE_BEGIN:" + name)
+              print(base64.b64encode(Path(name).read_bytes()).decode())
+              print("C09_FILE_END:" + name)
+          PY
