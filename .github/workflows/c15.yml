@@ -1,11 +1,6 @@
 name: C15 synthetic output heads
 on:
-  push:
-    branches: [research/c15-continuous-heads]
-    paths:
-      - 'experiments/c15/*.py'
-      - 'experiments/c15/config*.json'
-      - '.github/workflows/c15.yml'
+  workflow_dispatch:
 permissions:
   contents: write
 concurrency:

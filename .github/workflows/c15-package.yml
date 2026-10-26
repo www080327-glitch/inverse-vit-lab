@@ -1,0 +1,39 @@
+name: C15 verify and package both stages
+on:
+  push:
+    branches: [research/c15-continuous-heads]
+    paths:
+      - 'experiments/c15/finalize.py'
+      - '.github/workflows/c15-package.yml'
+permissions:
+  contents: write
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/c15-continuous-heads
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify vector interface and measured default parity (no training)
+        run: |
+          python -m venv /tmp/c15-api
+          /tmp/c15-api/bin/pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu
+          /tmp/c15-api/bin/python experiments/c15/portability_checks.py
+      - name: Validate evidence and package (no training)
+        run: python experiments/c15/finalize.py
+      - name: Publish verified delivery
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f experiments/c15/extended
+          git commit -m "Finalize C15 handoff and verified two-stage delivery archive"
+          git push origin HEAD:research/c15-continuous-heads
+      - uses: actions/upload-artifact@v4
+        with:
+          name: C15_DELIVERY
+          path: experiments/c15/extended/C15_DELIVERY.zip
+          retention-days: 30
