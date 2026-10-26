@@ -1,0 +1,54 @@
+{
+  "name": "C13 publish existing measured delivery",
+  "on": {
+    "push": {
+      "branches": [
+        "experiments/c13-reverse-init"
+      ],
+      "paths": [
+        "experiments/c13/PUBLISH_REQUEST.txt"
+      ]
+    }
+  },
+  "permissions": {
+    "contents": "write",
+    "actions": "read"
+  },
+  "jobs": {
+    "publish": {
+      "runs-on": "ubuntu-latest",
+      "timeout-minutes": 5,
+      "steps": [
+        {
+          "uses": "actions/checkout@v4",
+          "with": {
+            "ref": "experiments/c13-reverse-init"
+          }
+        },
+        {
+          "uses": "actions/download-artifact@v4",
+          "with": {
+            "name": "C13_DELIVERY",
+            "run-id": 40363046478,
+            "github-token": "${{ github.token }}",
+            "path": "${{ runner.temp }}/c13-measured"
+          }
+        },
+        {
+          "name": "Verify and recover existing result files",
+          "env": {
+            "C13_ARTIFACT_DIR": "${{ runner.temp }}/c13-measured"
+          },
+          "run": "python - <<'PY'\nimport os,zipfile,hashlib,shutil\nfrom pathlib import Path\nsrc=Path(os.environ[\"C13_ARTIFACT_DIR\"])\narc=src/\"C13_DELIVERY.zip\"\nassert hashlib.sha256(arc.read_bytes()).hexdigest()==\"132437efba3ddf667e57f352c654f27000e158d08803f4bc626615b7a6ceead2\"\ndst=Path(\"experiments/c13\")\nnames=[\"RESULT.json\",\"PARAMETER_MAPPING.json\",\"HANDOFF_ZH.md\",\"MANIFEST.sha256\",\"learning_curves.svg\",\"reconstructions.svg\"]\nwith zipfile.ZipFile(arc) as z:\n    assert z.testzip() is None\n    for name in names:\n        (dst/name).write_bytes(z.read(\"C13/\"+name))\nshutil.copyfile(arc,dst/\"C13_DELIVERY.zip\")\nfor name in [\"RESULT.json\",\"HANDOFF_ZH.md\"]:\n    assert (dst/name).read_bytes()==(src/name).read_bytes()\nmanifest={}\nfor line in (dst/\"MANIFEST.sha256\").read_text().splitlines():\n    digest,name=line.split(\"  \",1)\n    assert hashlib.sha256((dst/name).read_bytes()).hexdigest()==digest,name\nprint(\"Archive CRC, all source/result hashes, and duplicate artifact contents verified. No training executed.\")\nPY"
+        },
+        {
+          "name": "Commit measured artifacts",
+          "env": {
+            "C13_BRANCH": "experiments/c13-reverse-init"
+          },
+          "run": "git config user.name \"github-actions[bot]\"\ngit config user.email \"41898282+github-actions[bot]@users.noreply.github.com\"\ngit add experiments/c13/RESULT.json experiments/c13/PARAMETER_MAPPING.json experiments/c13/HANDOFF_ZH.md experiments/c13/MANIFEST.sha256 experiments/c13/learning_curves.svg experiments/c13/reconstructions.svg\ngit add -f experiments/c13/C13_DELIVERY.zip\ngit commit -m \"C13: publish verified measured delivery without retraining\"\ngit push origin \"HEAD:refs/heads/$C13_BRANCH\""
+        }
+      ]
+    }
+  }
+}
