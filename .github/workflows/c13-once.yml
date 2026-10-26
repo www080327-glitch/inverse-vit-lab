@@ -1,58 +1,75 @@
-name: C13 one-shot CPU initialization experiment
-on:
-  pull_request:
-    types: [opened]
-    branches: [main]
-    paths:
-      - 'experiments/c13/**'
-      - '.github/workflows/c13-once.yml'
-permissions:
-  contents: write
-jobs:
-  c13:
-    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'experiments/c13-reverse-init'
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    env:
-      OMP_NUM_THREADS: '2'
-      OPENBLAS_NUM_THREADS: '2'
-      MKL_NUM_THREADS: '2'
-      BLIS_NUM_THREADS: '2'
-      NUMEXPR_NUM_THREADS: '2'
-      C13_SOURCE_SHA: ${{ github.event.pull_request.head.sha }}
-      C13_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
-          persist-credentials: true
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Install the small numeric dependency
-        run: python -m pip install --only-binary=:all: -r experiments/c13/requirements.txt
-      - name: Execute C13 once with hard timeout
-        run: timeout --signal=TERM 1150s python experiments/c13/experiment.py
-      - name: Build handoff and audited archive
-        run: |
-          python experiments/c13/make_report.py
-          python experiments/c13/package_delivery.py
-      - name: Upload result artifact
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: C13_DELIVERY
-          path: |
-            experiments/c13/C13_DELIVERY.zip
-            experiments/c13/RESULT.json
-            experiments/c13/HANDOFF_ZH.md
-          if-no-files-found: warn
-      - name: Publish only C13 outputs to experiment branch
-        env:
-          C13_BRANCH: experiments/c13-reverse-init
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add experiments/c13/RESULT.json experiments/c13/PARAMETER_MAPPING.json experiments/c13/HANDOFF_ZH.md experiments/c13/MANIFEST.sha256 experiments/c13/C13_DELIVERY.zip experiments/c13/learning_curves.svg experiments/c13/reconstructions.svg
-          git commit -m "C13: record measured two-seed CPU results and delivery"
-          git push origin "HEAD:refs/heads/$C13_BRANCH"
+{
+  "name": "C13 one-shot CPU initialization experiment",
+  "on": {
+    "push": {
+      "branches": [
+        "experiments/c13-reverse-init"
+      ],
+      "paths": [
+        "experiments/c13/RUN_REQUEST.txt"
+      ]
+    }
+  },
+  "permissions": {
+    "contents": "write"
+  },
+  "jobs": {
+    "c13": {
+      "runs-on": "ubuntu-latest",
+      "timeout-minutes": 20,
+      "env": {
+        "OMP_NUM_THREADS": "2",
+        "OPENBLAS_NUM_THREADS": "2",
+        "MKL_NUM_THREADS": "2",
+        "BLIS_NUM_THREADS": "2",
+        "NUMEXPR_NUM_THREADS": "2",
+        "C13_SOURCE_SHA": "${{ github.sha }}",
+        "C13_RUN_URL": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+      },
+      "steps": [
+        {
+          "uses": "actions/checkout@v4",
+          "with": {
+            "ref": "${{ github.sha }}",
+            "persist-credentials": true
+          }
+        },
+        {
+          "uses": "actions/setup-python@v5",
+          "with": {
+            "python-version": "3.12"
+          }
+        },
+        {
+          "name": "Install small dependency",
+          "run": "python -m pip install --only-binary=:all: -r experiments/c13/requirements.txt"
+        },
+        {
+          "name": "Execute C13 once",
+          "run": "timeout --signal=TERM 1150s python experiments/c13/experiment.py"
+        },
+        {
+          "name": "Build handoff and archive",
+          "run": "python experiments/c13/make_report.py\npython experiments/c13/package_delivery.py"
+        },
+        {
+          "name": "Upload C13 artifact",
+          "if": "always()",
+          "uses": "actions/upload-artifact@v4",
+          "with": {
+            "name": "C13_DELIVERY",
+            "path": "experiments/c13/C13_DELIVERY.zip\nexperiments/c13/RESULT.json\nexperiments/c13/HANDOFF_ZH.md",
+            "if-no-files-found": "warn"
+          }
+        },
+        {
+          "name": "Publish results to topic branch",
+          "env": {
+            "C13_BRANCH": "experiments/c13-reverse-init"
+          },
+          "run": "git config user.name \"github-actions[bot]\"\ngit config user.email \"41898282+github-actions[bot]@users.noreply.github.com\"\ngit add experiments/c13/RESULT.json experiments/c13/PARAMETER_MAPPING.json experiments/c13/HANDOFF_ZH.md experiments/c13/MANIFEST.sha256 experiments/c13/C13_DELIVERY.zip experiments/c13/learning_curves.svg experiments/c13/reconstructions.svg\ngit commit -m \"C13: record measured two-seed CPU results and delivery\"\ngit push origin \"HEAD:refs/heads/$C13_BRANCH\""
+        }
+      ]
+    }
+  }
+}
