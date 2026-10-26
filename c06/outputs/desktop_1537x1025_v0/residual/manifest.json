@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "shape": [
+    1025,
+    1537,
+    3
+  ],
+  "scale": 8,
+  "tile": 32,
+  "dtype": "|u1",
+  "coarse": "coarse.bank",
+  "residual": "residual.bank",
+  "equation": "x = repeat(coarse,scale) + int16_residual; crop H,W",
+  "coarse_boundary": "mean over valid pixels, floor integer"
+}

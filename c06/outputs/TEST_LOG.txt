@@ -1,0 +1,11 @@
+test_coordinate_corruption_and_truncation (test_bypass.DetailTests.test_coordinate_corruption_and_truncation) ... ok
+test_disk_ROI_and_overlap (test_bypass.DetailTests.test_disk_ROI_and_overlap) ... ok
+test_integer_pack_permutation (test_bypass.DetailTests.test_integer_pack_permutation) ... ok
+test_invalid_inputs (test_bypass.DetailTests.test_invalid_inputs) ... ok
+test_residual_random_boundaries (test_bypass.DetailTests.test_residual_random_boundaries) ... ok
+test_semantics_identity_and_separation (test_bypass.DetailTests.test_semantics_identity_and_separation) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.077s
+
+OK
