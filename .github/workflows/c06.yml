@@ -1,0 +1,41 @@
+name: C06 independent source-detail CPU experiment
+on:
+  push:
+    branches: [c06-detail-bypass-20261027]
+    paths:
+      - c06/**
+      - .github/workflows/c06.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: c06-source-detail
+  cancel-in-progress: false
+jobs:
+  c06:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      OMP_NUM_THREADS: "2"
+      OPENBLAS_NUM_THREADS: "2"
+      MKL_NUM_THREADS: "2"
+      NUMEXPR_NUM_THREADS: "2"
+      VECLIB_MAXIMUM_THREADS: "2"
+      C06_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: c06-detail-bypass-20261027
+      - name: Isolated dependencies; reuse existing numpy where possible
+        run: |
+          python3 -m venv --system-site-packages /tmp/c06-venv
+          /tmp/c06-venv/bin/python -c 'import numpy' || /tmp/c06-venv/bin/pip install --only-binary=:all: -r c06/requirements.txt
+      - name: Independent bounded numerical run
+        run: /tmp/c06-venv/bin/python c06/run_experiment.py
+      - name: Save all evidence and delivery ZIP to this branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f c06/RESULT.json c06/REPORT_ZH.md c06/PACKAGE.json c06/C06_DELIVERY.zip c06/outputs
+          git diff --cached --quiet || git commit -m "C06: record isolated CPU evidence and complete delivery"
+          git push origin HEAD:c06-detail-bypass-20261027

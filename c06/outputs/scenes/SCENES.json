@@ -1,0 +1,238 @@
+[
+  {
+    "name": "desktop_1537x1025_v0",
+    "height": 1025,
+    "width": 1537,
+    "variant": 0,
+    "targets": [
+      {
+        "name": "tiny_glyph",
+        "roi": [
+          318,
+          190,
+          327,
+          197
+        ],
+        "image_fraction": 3.998920926099307e-05
+      },
+      {
+        "name": "one_pixel_lines",
+        "roi": [
+          446,
+          254,
+          485,
+          295
+        ],
+        "image_fraction": 0.001014964216005205
+      },
+      {
+        "name": "eyes_open",
+        "roi": [
+          512,
+          288,
+          528,
+          296
+        ],
+        "image_fraction": 8.124791722868433e-05
+      },
+      {
+        "name": "accessory_square",
+        "roi": [
+          640,
+          384,
+          648,
+          392
+        ],
+        "image_fraction": 4.062395861434216e-05
+      },
+      {
+        "name": "odd_edge",
+        "roi": [
+          1532,
+          1020,
+          1537,
+          1025
+        ],
+        "image_fraction": 1.5868733833727408e-05
+      }
+    ],
+    "rgb_sha256": "6815e55580fde6b261a5a903f8e7dad90ab6e92f1db0a10c3017845b234c91cf"
+  },
+  {
+    "name": "desktop_1537x1025_v1",
+    "height": 1025,
+    "width": 1537,
+    "variant": 1,
+    "targets": [
+      {
+        "name": "tiny_glyph",
+        "roi": [
+          318,
+          190,
+          327,
+          197
+        ],
+        "image_fraction": 3.998920926099307e-05
+      },
+      {
+        "name": "one_pixel_lines",
+        "roi": [
+          446,
+          254,
+          485,
+          295
+        ],
+        "image_fraction": 0.001014964216005205
+      },
+      {
+        "name": "eyes_closed",
+        "roi": [
+          512,
+          288,
+          528,
+          296
+        ],
+        "image_fraction": 8.124791722868433e-05
+      },
+      {
+        "name": "accessory_clip",
+        "roi": [
+          640,
+          384,
+          648,
+          392
+        ],
+        "image_fraction": 4.062395861434216e-05
+      },
+      {
+        "name": "odd_edge",
+        "roi": [
+          1532,
+          1020,
+          1537,
+          1025
+        ],
+        "image_fraction": 1.5868733833727408e-05
+      }
+    ],
+    "rgb_sha256": "9420f27c7754edb0b546f2ff171866a7985d47cb07d4f841c7cd6fdd1dd48da3"
+  },
+  {
+    "name": "desktop_1023x769_v0",
+    "height": 769,
+    "width": 1023,
+    "variant": 0,
+    "targets": [
+      {
+        "name": "tiny_glyph",
+        "roi": [
+          318,
+          190,
+          327,
+          197
+        ],
+        "image_fraction": 8.008267582914171e-05
+      },
+      {
+        "name": "one_pixel_lines",
+        "roi": [
+          446,
+          254,
+          485,
+          295
+        ],
+        "image_fraction": 0.0020325745817586917
+      },
+      {
+        "name": "eyes_open",
+        "roi": [
+          512,
+          288,
+          528,
+          296
+        ],
+        "image_fraction": 0.0001627076588274625
+      },
+      {
+        "name": "accessory_square",
+        "roi": [
+          640,
+          384,
+          648,
+          392
+        ],
+        "image_fraction": 8.135382941373125e-05
+      },
+      {
+        "name": "odd_edge",
+        "roi": [
+          1018,
+          764,
+          1023,
+          769
+        ],
+        "image_fraction": 3.177883961473877e-05
+      }
+    ],
+    "rgb_sha256": "272e32d0e72c4bf0df82451446b2fa8c26edfbb5c0258c85cf07c50878dc8068"
+  },
+  {
+    "name": "desktop_1023x769_v1",
+    "height": 769,
+    "width": 1023,
+    "variant": 1,
+    "targets": [
+      {
+        "name": "tiny_glyph",
+        "roi": [
+          318,
+          190,
+          327,
+          197
+        ],
+        "image_fraction": 8.008267582914171e-05
+      },
+      {
+        "name": "one_pixel_lines",
+        "roi": [
+          446,
+          254,
+          485,
+          295
+        ],
+        "image_fraction": 0.0020325745817586917
+      },
+      {
+        "name": "eyes_closed",
+        "roi": [
+          512,
+          288,
+          528,
+          296
+        ],
+        "image_fraction": 0.0001627076588274625
+      },
+      {
+        "name": "accessory_clip",
+        "roi": [
+          640,
+          384,
+          648,
+          392
+        ],
+        "image_fraction": 8.135382941373125e-05
+      },
+      {
+        "name": "odd_edge",
+        "roi": [
+          1018,
+          764,
+          1023,
+          769
+        ],
+        "image_fraction": 3.177883961473877e-05
+      }
+    ],
+    "rgb_sha256": "e73c84387a3238c049c307b239f620ee2c5aef9d7ad98022e843428d11167974"
+  }
+]

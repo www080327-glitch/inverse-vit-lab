@@ -1,0 +1,9 @@
+{
+  "filename": "C06_DELIVERY.zip",
+  "bytes": 475383,
+  "sha256": "49e74be8c910ee1d3acaeda9dd82ff46000f4578a064f8e87ee728df4214ce35",
+  "zip_integrity": "all members CRC checked",
+  "contains": "code, tests, scenes, banks, reports, RESULT.json",
+  "packaging_wall_seconds": 2.3255142269999993,
+  "total_process_cpu_seconds": 2.380215906
+}

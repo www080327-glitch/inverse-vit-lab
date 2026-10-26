@@ -1,0 +1,13 @@
+{
+  "producer": "SYNTHETIC-independent-random-vectors",
+  "synthetic": true,
+  "source_rgb_sha256": "9420f27c7754edb0b546f2ff171866a7985d47cb07d4f841c7cd6fdd1dd48da3",
+  "dtype": "float32",
+  "shape": [
+    4,
+    16
+  ],
+  "coordinate_space": "source_xyxy_half_open",
+  "file": "semantic.npy",
+  "qwen_features_used": false
+}

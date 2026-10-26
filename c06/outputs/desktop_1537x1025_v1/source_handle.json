@@ -1,0 +1,16 @@
+{
+  "schema": "C06-SourceDetailHandle-v1",
+  "source_rgb_sha256": "9420f27c7754edb0b546f2ff171866a7985d47cb07d4f841c7cd6fdd1dd48da3",
+  "source_shape": [
+    1025,
+    1537,
+    3
+  ],
+  "source_dtype": "uint8",
+  "raw_bank": "raw.bank",
+  "semantics": "semantic.json",
+  "raw_required": true,
+  "coordinates": "source pixels, xyxy half-open",
+  "transform_to_source": "identity for this synthetic demo",
+  "no_source_policy": "unavailable; never fabricate source residual"
+}
