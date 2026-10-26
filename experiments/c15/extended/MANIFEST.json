@@ -1,5 +1,5 @@
 {
-  "HANDOFF_ZH.md": "df6b58218ec7499d04fb0319038a6f6d8628bab6027fd61ea61e9c8fc67f74a5",
+  "HANDOFF_ZH.md": "ede17a0632d7980654c386beb5bb5ff4c0412e5f15414155d008e5ba19797065",
   "PACKAGING_CHECKS.json": "dd059d69f18ac86863331ce2c78d2de58b75955c6c056d3b1dd50adc88a2c749",
   "README.md": "ccf2e0d3fbe9daf8a705e5737135d456176919dce8aa1445bacb28fb8c7b479f",
   "RESULT.json": "f3d352ce3c4849bc73061319a73ece06fe7139d031404ef793478d9fef41e63b",
@@ -40,7 +40,7 @@
   "initial_1800/results/summary.json": "d0354bd83707f0d2a3b3e2b23a0dc4e47527d955f576d4143239b99cb8f24864",
   "initial_1800/run.py": "05262d4245eb16baefa9432a1f5a3c2e76f746ad7b5dbdea14cd01578ffd486b",
   "metrics.py": "c94dc00b4798247cbbf5d724607f74f2e8cc50df44c76533a87c5433539da402",
-  "packaging/finalize.py": "3bcd9a5d20163cb13352920ff56823653d9d57cc59ccb8bc5483bfbd1f795963",
+  "packaging/finalize.py": "410b376267638dfaf49e792a5c434ee210683f113816d36a1f6e3422cdf602c9",
   "packaging/portability_checks.py": "5035074788d876f3e8c2bfa7743148a1746f650c2d73e720f48535c966fa2f43",
   "requirements.txt": "2288a14de7b1a00a70292a6a1ee1fe2573321f34f70141e52ac9d5d727369fea",
   "results/budget.json": "6b1dcf7bac581abaf9b5b248d72b30d6439e10fe1399ff2e70199a98f11f23a0",
