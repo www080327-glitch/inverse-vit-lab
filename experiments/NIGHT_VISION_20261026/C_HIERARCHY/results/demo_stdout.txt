@@ -1,0 +1,67 @@
+{
+  "image": "data/images/test/test_0000.png",
+  "question_id": 0,
+  "selected_regions": [
+    6,
+    11
+  ],
+  "selected_pixel_positions": 128,
+  "raw_pixel_count": 1024,
+  "storage": {
+    "detail_pixels": {
+      "shape": [
+        16,
+        8,
+        8,
+        3
+      ],
+      "dtype": "torch.uint8",
+      "bytes": 3072,
+      "storage_bytes": 3072
+    },
+    "region_boxes": {
+      "shape": [
+        16,
+        4
+      ],
+      "dtype": "torch.int64",
+      "bytes": 512,
+      "storage_bytes": 512
+    },
+    "valid_mask": {
+      "shape": [
+        16,
+        8,
+        8
+      ],
+      "dtype": "torch.bool",
+      "bytes": 1024,
+      "storage_bytes": 1024
+    }
+  },
+  "answer_id": 0,
+  "answer_probability": [
+    0.9997945427894592,
+    0.00020544992003124207
+  ],
+  "coarse_scores": [
+    -16.793128967285156,
+    -16.793128967285156,
+    -16.2816104888916,
+    -16.793128967285156,
+    -3.3838136196136475,
+    -16.793128967285156,
+    6.6974358558654785,
+    -5.913194179534912,
+    -7.1542649269104,
+    -16.793128967285156,
+    -16.793128967285156,
+    -3.1348907947540283,
+    -15.824714660644531,
+    -6.1982645988464355,
+    -11.478635787963867,
+    -16.793128967285156
+  ],
+  "attention_sum": 0.9999998807907104,
+  "note": "Canonical task ID only. No natural-language model. Labels were not loaded."
+}

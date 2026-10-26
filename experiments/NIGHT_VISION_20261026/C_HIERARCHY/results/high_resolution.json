@@ -1,0 +1,79 @@
+{
+  "source": "NASA Blue Marble 2002 satellite composite",
+  "original_file": "data/earth_original.jpg",
+  "crop_file": "data/earth_1920x1080.png",
+  "image_shape": [
+    1080,
+    1920,
+    3
+  ],
+  "interpolation": false,
+  "roundtrip_equal": true,
+  "packed_storage": {
+    "detail_pixels": {
+      "shape": [
+        32400,
+        8,
+        8,
+        3
+      ],
+      "dtype": "torch.uint8",
+      "bytes": 6220800,
+      "storage_bytes": 6220800
+    },
+    "region_boxes": {
+      "shape": [
+        32400,
+        4
+      ],
+      "dtype": "torch.int64",
+      "bytes": 1036800,
+      "storage_bytes": 1036800
+    },
+    "valid_mask": {
+      "shape": [
+        32400,
+        8,
+        8
+      ],
+      "dtype": "torch.bool",
+      "bytes": 2073600,
+      "storage_bytes": 2073600
+    }
+  },
+  "actual_summary_bytes": 2073600,
+  "actual_gathered_regions": [
+    0,
+    119,
+    239,
+    16199,
+    16200,
+    32160,
+    32280,
+    32399
+  ],
+  "actual_gathered_pixels": 512,
+  "actual_gathered_raw_bytes": 1536,
+  "timing_single_observation_ms": {
+    "pack": 7.438624999849708,
+    "unpack": 1.2780840006598737,
+    "summary": 14.858500000627828
+  },
+  "attention_executed": false,
+  "router_executed": false,
+  "theoretical_only": {
+    "fine_positions": 2073600,
+    "regions": 32400,
+    "q": 1,
+    "dk": 5,
+    "dv": 64,
+    "all_pixel_self_attention_score_elements": 4299816960000,
+    "float32_self_attention_score_bytes": 17199267840000,
+    "single_query_dense_score_elements": 2073600,
+    "single_query_dense_attention_flops": 286156800,
+    "example_selected_positions": 512,
+    "single_query_selected_attention_flops": 70656,
+    "coarse_encoder_matrix_flops": 41472000
+  },
+  "warning": "No N-by-N tensor created. Theoretical costs use the toy dimensions, not a real VLM. No high-resolution semantic quality or speed measured."
+}

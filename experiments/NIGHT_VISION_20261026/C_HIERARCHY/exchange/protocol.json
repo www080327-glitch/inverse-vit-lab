@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "question_dim": 4,
+  "questions": [
+    "eye",
+    "arm",
+    "marker",
+    "connection"
+  ],
+  "answers": [
+    [
+      "closed",
+      "open"
+    ],
+    [
+      "down",
+      "up"
+    ],
+    [
+      "left",
+      "right"
+    ],
+    [
+      "aligned",
+      "offset"
+    ]
+  ],
+  "region_order": "row-major 4x4; each tile 8x8; pixel order within tile row-major",
+  "boxes": "global [x0,y0,x1,y1), integer pixels, clipped",
+  "hierarchy": {
+    "root": {
+      "level": 0,
+      "bounds": [
+        0,
+        0,
+        32,
+        32
+      ]
+    },
+    "region": {
+      "level": 1,
+      "scale_pixels": 8,
+      "parent": "root"
+    },
+    "fine": {
+      "level": 2,
+      "scale_pixels": 1,
+      "parent": "region_id",
+      "coordinates": "x=x0+local_x; y=y0+local_y"
+    }
+  },
+  "storage_lossless": "uint8 raw RGB pack/unpack; zero padding and validity mask",
+  "summary_lossy": "RGB mean then 2x2 mean, float32 [16,16]; cannot restore raw pixels",
+  "attention": "softmax(Q K_selected.T/sqrt(5)) V_selected; one normalization over all selected pixels",
+  "coarse_tokens_in_fine_attention": false,
+  "dedup": "sort(unique(region IDs)) before gather and fine encoding",
+  "cache": "no cross-query fine-KV cache; per-query temporary KV; raw details retained",
+  "masks": "invalid padded pixel positions get -inf scores",
+  "production_relation": "independent toy; not Qwen or CSA2 or a paper reproduction",
+  "inputs": "data/inputs/*.jsonl contains paths and task IDs only",
+  "gold": "data/annotations/*.jsonl is training/evaluation supervision, never inference inputs",
+  "contract": "B can consume arrays independently. No B files modified, no B reply required."
+}

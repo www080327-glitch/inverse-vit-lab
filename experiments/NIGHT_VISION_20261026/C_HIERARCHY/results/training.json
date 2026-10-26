@@ -1,0 +1,48 @@
+{
+  "environment": {
+    "seed": 20261026,
+    "device": "cpu",
+    "torch": "2.14.1",
+    "numpy": "2.5.4",
+    "python": "3.14.6 (v3.14.6:c63aec69bd5, Jun 10 2026, 08:07:54) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "intraop_threads": 2,
+    "interop_threads": 1,
+    "accelerator_calls": false
+  },
+  "stages": [
+    {
+      "name": "coarse_router_train_region_supervision",
+      "steps": 700,
+      "first_loss": 2.7837305068969727,
+      "last_loss": 0.40582606196403503,
+      "seconds": 0.39874458400117874
+    },
+    {
+      "name": "fine_region_type_only_no_answer_labels",
+      "steps": 900,
+      "first_loss": 1.5890467166900635,
+      "last_loss": 0.00024354891502298415,
+      "seconds": 0.4403509160001704
+    },
+    {
+      "name": "prepare_train_attention_outputs",
+      "seconds": 0.39055062499937776,
+      "examples": 1600
+    },
+    {
+      "name": "answer_head_train_answers_only",
+      "steps": 1000,
+      "first_loss": 0.6901589035987854,
+      "last_loss": 0.00012301614333409816,
+      "seconds": 0.3990730829991662
+    }
+  ],
+  "parameters": 7451,
+  "train_scenes": 400,
+  "fine_type_train_accuracy": 1.0,
+  "answer_head_train_accuracy": 1.0,
+  "test_files_opened": false,
+  "training_supervision": "TRAIN region IDs/type IDs; TRAIN answers for head only",
+  "handcrafted_query": "one-hot glyph task IDs, not natural-language understanding"
+}

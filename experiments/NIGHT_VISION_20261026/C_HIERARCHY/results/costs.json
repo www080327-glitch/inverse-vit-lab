@@ -1,0 +1,223 @@
+{
+  "actual_tensor_allocations": {
+    "detail_pixels": {
+      "shape": [
+        16,
+        8,
+        8,
+        3
+      ],
+      "dtype": "torch.uint8",
+      "bytes": 3072,
+      "storage_bytes": 3072
+    },
+    "region_boxes": {
+      "shape": [
+        16,
+        4
+      ],
+      "dtype": "torch.int64",
+      "bytes": 512,
+      "storage_bytes": 512
+    },
+    "valid_mask": {
+      "shape": [
+        16,
+        8,
+        8
+      ],
+      "dtype": "torch.bool",
+      "bytes": 1024,
+      "storage_bytes": 1024
+    },
+    "coarse_summary": {
+      "shape": [
+        16,
+        16
+      ],
+      "dtype": "torch.float32",
+      "bytes": 1024,
+      "storage_bytes": 1024
+    },
+    "coarse_keys": {
+      "shape": [
+        16,
+        4
+      ],
+      "dtype": "torch.float32",
+      "bytes": 256,
+      "storage_bytes": 256
+    },
+    "selected_raw_pixels": {
+      "shape": [
+        2,
+        8,
+        8,
+        3
+      ],
+      "dtype": "torch.uint8",
+      "bytes": 384,
+      "storage_bytes": 384
+    },
+    "selected_K": {
+      "shape": [
+        128,
+        5
+      ],
+      "dtype": "torch.float32",
+      "bytes": 2560,
+      "storage_bytes": 2560
+    },
+    "selected_V": {
+      "shape": [
+        128,
+        64
+      ],
+      "dtype": "torch.float32",
+      "bytes": 32768,
+      "storage_bytes": 32768
+    },
+    "query": {
+      "shape": [
+        1,
+        5
+      ],
+      "dtype": "torch.float32",
+      "bytes": 20,
+      "storage_bytes": 20
+    },
+    "attention_output": {
+      "shape": [
+        1,
+        64
+      ],
+      "dtype": "torch.float32",
+      "bytes": 256,
+      "storage_bytes": 256
+    }
+  },
+  "model_parameter_bytes": 29804,
+  "model_buffer_bytes": 16384,
+  "counts": {
+    "regions": 16,
+    "persistent_raw_positions": 1024,
+    "selected_regions": 2,
+    "selected_positions": 128,
+    "q_positions": 1,
+    "key_dim": 5,
+    "value_dim": 64,
+    "coarse_input_dim": 16,
+    "coarse_key_dim": 4
+  },
+  "matrix_multiply_FLOPs": {
+    "convention": "multiply and add count as 2; excludes bias/activation/softmax/norm/pool/sort/gather",
+    "coarse_encoder": 20480,
+    "question_region_scores": 128,
+    "coarse_context_weighted_sum": 512,
+    "selected_fine_type_encoder": 13248,
+    "dense_fine_type_encoder": 105984,
+    "selected_attention": 17664,
+    "dense_attention": 141312,
+    "answer_head": 6720,
+    "attention_ratio_only": 8
+  },
+  "timing": {
+    "pack_raw_with_metadata": {
+      "unit": "microseconds",
+      "median": 74.166,
+      "p90": 77.208,
+      "minimum": 72.833,
+      "warmups": 5,
+      "repeats": 101
+    },
+    "summary_rgb_and_2x2_mean": {
+      "unit": "microseconds",
+      "median": 26.417,
+      "p90": 27.208,
+      "minimum": 25.958,
+      "warmups": 5,
+      "repeats": 101
+    },
+    "coarse_MLP_scores_context": {
+      "unit": "microseconds",
+      "median": 29.541,
+      "p90": 30.042,
+      "minimum": 26.875,
+      "warmups": 5,
+      "repeats": 101
+    },
+    "coarse_read_and_topk": {
+      "unit": "microseconds",
+      "median": 40.416,
+      "p90": 41.541,
+      "minimum": 39.375,
+      "warmups": 5,
+      "repeats": 101
+    },
+    "dedup_and_raw_gather": {
+      "unit": "microseconds",
+      "median": 28.25,
+      "p90": 30.0,
+      "minimum": 27.667,
+      "warmups": 5,
+      "repeats": 101
+    },
+    "selected_fine_encoder_and_KV": {
+      "unit": "microseconds",
+      "median": 99.875,
+      "p90": 110.667,
+      "minimum": 94.833,
+      "warmups": 5,
+      "repeats": 101
+    },
+    "selected_attention_QK_softmax_AV": {
+      "unit": "microseconds",
+      "median": 9.75,
+      "p90": 10.125,
+      "minimum": 9.541,
+      "warmups": 5,
+      "repeats": 101
+    },
+    "dense_attention_QK_softmax_AV": {
+      "unit": "microseconds",
+      "median": 16.625,
+      "p90": 17.875,
+      "minimum": 15.541,
+      "warmups": 5,
+      "repeats": 101
+    },
+    "hierarchical_whole_query_no_pack": {
+      "unit": "microseconds",
+      "median": 291.875,
+      "p90": 329.375,
+      "minimum": 273.5,
+      "warmups": 5,
+      "repeats": 101
+    },
+    "dense_whole_query_no_pack": {
+      "unit": "microseconds",
+      "median": 358.208,
+      "p90": 556.666,
+      "minimum": 323.958,
+      "warmups": 5,
+      "repeats": 101
+    },
+    "direct_dense_reader_no_router_no_pack": {
+      "unit": "microseconds",
+      "median": 226.084,
+      "p90": 304.125,
+      "minimum": 192.292,
+      "warmups": 5,
+      "repeats": 101
+    }
+  },
+  "timing_scope": "CPU eager, inference_mode, 2 intraop/1 interop; one image, one task, no PNG I/O",
+  "caveats": [
+    "direct dense baseline skips coarse routing; all-region hierarchy includes it",
+    "stage medians cannot be added into an end-to-end measurement",
+    "one-hot spatial V is a pedagogical buffer and its expanded materialization is charged",
+    "no persistent learned fine KV cache; original pixels retained and selected KV generated per query",
+    "coarse summaries and keys are regenerated per query in this minimal implementation",
+    "CPU times do not imply GPU/DCU/MPS performance or full-model acceleration"
+  ]
+}

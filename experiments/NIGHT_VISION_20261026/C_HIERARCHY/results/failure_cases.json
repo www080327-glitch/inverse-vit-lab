@@ -1,0 +1,98 @@
+[
+  {
+    "scene": "test_blind_0000",
+    "image": "data/images/test_blind/test_blind_0000.png",
+    "split": "test_blind",
+    "question": 3,
+    "k": 2,
+    "method": "learned",
+    "target_region": 2,
+    "selected_regions": [
+      0,
+      1
+    ],
+    "target_region_recall": 0,
+    "target_foreground_fraction": 0.0029296875,
+    "target_region_area_fraction": 0.0625,
+    "selected_positions": 128,
+    "target_answer": 1,
+    "predicted_answer": 0,
+    "correct": 0,
+    "dense_correct": 1,
+    "output_relative_l2": 1.0797924995422363,
+    "output_max_abs": 0.3269668519496918,
+    "retained_dense_attention_mass": 1.8963070697042284e-11
+  },
+  {
+    "scene": "test_blind_0001",
+    "image": "data/images/test_blind/test_blind_0001.png",
+    "split": "test_blind",
+    "question": 2,
+    "k": 2,
+    "method": "learned",
+    "target_region": 3,
+    "selected_regions": [
+      0,
+      1
+    ],
+    "target_region_recall": 0,
+    "target_foreground_fraction": 0.0029296875,
+    "target_region_area_fraction": 0.0625,
+    "selected_positions": 128,
+    "target_answer": 1,
+    "predicted_answer": 0,
+    "correct": 0,
+    "dense_correct": 1,
+    "output_relative_l2": 1.4129116535186768,
+    "output_max_abs": 0.3269670009613037,
+    "retained_dense_attention_mass": 1.9974949686799446e-20
+  },
+  {
+    "scene": "test_blind_0002",
+    "image": "data/images/test_blind/test_blind_0002.png",
+    "split": "test_blind",
+    "question": 0,
+    "k": 2,
+    "method": "learned",
+    "target_region": 7,
+    "selected_regions": [
+      0,
+      1
+    ],
+    "target_region_recall": 0,
+    "target_foreground_fraction": 0.0029296875,
+    "target_region_area_fraction": 0.0625,
+    "selected_positions": 128,
+    "target_answer": 0,
+    "predicted_answer": 0,
+    "correct": 1,
+    "dense_correct": 1,
+    "output_relative_l2": 0.8141483068466187,
+    "output_max_abs": 0.3269670009613037,
+    "retained_dense_attention_mass": 1.0234940672759762e-10
+  },
+  {
+    "scene": "test_blind_0003",
+    "image": "data/images/test_blind/test_blind_0003.png",
+    "split": "test_blind",
+    "question": 0,
+    "k": 2,
+    "method": "learned",
+    "target_region": 10,
+    "selected_regions": [
+      0,
+      1
+    ],
+    "target_region_recall": 0,
+    "target_foreground_fraction": 0.0029296875,
+    "target_region_area_fraction": 0.0625,
+    "selected_positions": 128,
+    "target_answer": 0,
+    "predicted_answer": 0,
+    "correct": 1,
+    "dense_correct": 1,
+    "output_relative_l2": 0.815744936466217,
+    "output_max_abs": 0.3269670009613037,
+    "retained_dense_attention_mass": 2.038919311164733e-10
+  }
+]

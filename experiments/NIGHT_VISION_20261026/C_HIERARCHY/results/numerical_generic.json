@@ -1,0 +1,18 @@
+[
+  {
+    "n": 256,
+    "torch_dense_max_abs": 1.1102230246251565e-16,
+    "all_regions_max_abs": 2.220446049250313e-16,
+    "streaming_max_abs": 1.1102230246251565e-16,
+    "sparse_masked_max_abs": 2.220446049250313e-16,
+    "partial_vs_full_relative_l2": 2.5006975548624393
+  },
+  {
+    "n": 1024,
+    "torch_dense_max_abs": 1.8041124150158794e-16,
+    "all_regions_max_abs": 2.3592239273284576e-16,
+    "streaming_max_abs": 3.608224830031759e-16,
+    "sparse_masked_max_abs": 2.220446049250313e-16,
+    "partial_vs_full_relative_l2": 2.0888984387639034
+  }
+]

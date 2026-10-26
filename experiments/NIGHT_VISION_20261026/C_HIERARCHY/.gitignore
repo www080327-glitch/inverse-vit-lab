@@ -1,0 +1,13 @@
+.venv/
+.local_python
+__pycache__/
+.DS_Store
+*.lock
+.publish/
+
+# This isolated experiment deliberately publishes synthetic fixtures, the NASA
+# storage example, and its own 50 KB trained toy model. No pretrained weights.
+!data/
+!data/**
+!exchange/*.npz
+!results/model.pt

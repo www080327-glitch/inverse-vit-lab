@@ -1,0 +1,9 @@
+{
+  "question": 0,
+  "region": 15,
+  "summary_identical": true,
+  "selected_ids_identical": true,
+  "sparse_output_bitwise_identical": true,
+  "dense_output_max_abs_change": 0.3269670009613037,
+  "raw_change_preserved": true
+}

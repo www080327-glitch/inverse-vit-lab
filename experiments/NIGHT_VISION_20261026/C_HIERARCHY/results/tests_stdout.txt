@@ -1,0 +1,14 @@
+test_actual_qkv_dense_row_major (test_mechanisms.Mechanisms.test_actual_qkv_dense_row_major) ... ok
+test_dense_permutation_streaming_and_sparse (test_mechanisms.Mechanisms.test_dense_permutation_streaming_and_sparse) ... ok
+test_large_image_attention_rejected (test_mechanisms.Mechanisms.test_large_image_attention_rejected) ... ok
+test_lazy_encoder_unique_regions_and_no_gold (test_mechanisms.Mechanisms.test_lazy_encoder_unique_regions_and_no_gold) ... ok
+test_local_softmax_sum_is_wrong (test_mechanisms.Mechanisms.test_local_softmax_sum_is_wrong) ... ok
+test_lossless_all_bytes_and_padding (test_mechanisms.Mechanisms.test_lossless_all_bytes_and_padding) ... ok
+test_split_contract (test_mechanisms.Mechanisms.test_split_contract) ... ok
+test_summary_blindness_exact (test_mechanisms.Mechanisms.test_summary_blindness_exact) ... ok
+test_unread_details_preserved_and_causally_unread (test_mechanisms.Mechanisms.test_unread_details_preserved_and_causally_unread) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.068s
+
+OK

@@ -1,0 +1,50 @@
+Prior CPU lab boundary excerpt, original lines 99-145.
+Full kv_demo.py SHA256: 4a40168fbe8caddbff78d8e962ef27c08f343cd46b68f263378a7defb3554149
+
+99: def unique_storage_bytes(tensors):
+100:     storage={}
+101:     for x in tensors:
+102:         s=x.untyped_storage(); storage[s.data_ptr()]=s.nbytes()
+103:     return sum(storage.values())
+104: 
+105: 
+106: def structural_csa_ledger(t=30,d=32,di=32,w=8):
+107:     # Small synthetic dimensions with the real 40-layer mode schedule. No layer forward.
+108:     layers=[]; source=None; latest_index=None
+109:     for layer in range(40):
+110:         if layer<2: mode='SWA'; ratio=0
+111:         elif layer<20: mode='Full' if (layer-2)%6==0 else 'Reuse'; ratio=2
+112:         else:
+113:             mode='Full' if layer==20 else ('Reindex' if (layer-20)%4==0 else 'Reuse'); ratio=1
+114:         if mode=='Full': source=layer; latest_index=layer
+115:         if mode=='Reindex': latest_index=layer
+116:         layers.append(dict(layer=layer,stage='encoder' if layer<20 else 'decoder',mode=mode,ratio=ratio,
+117:             main_source=None if mode=='SWA' else source,
+118:             index_source=None if mode=='SWA' else latest_index,
+119:             main_input='encoder_final' if layer>=20 and mode=='Full' else ('own_hidden' if mode=='Full' else None),
+120:             own_query=True,own_swa=True))
+121:     full=[r for r in layers if r['mode']=='Full']
+122:     global_c={r['layer']:torch.zeros(t//r['ratio'],d,dtype=torch.float16) for r in full}
+123:     index_k={r['layer']:torch.zeros(t//r['ratio'],di,dtype=torch.float16) for r in full}
+124:     # K/V tied latent for CSA-like bookkeeping; generic MHA above stores separate K,V.
+125:     swa=[torch.zeros(w,d,dtype=torch.float16) for _ in layers]
+126:     views=[global_c[r['main_source']] for r in layers if r['main_source'] is not None]
+127:     assert len({x.untyped_storage().data_ptr() for x in views})==4
+128:     selections={r['layer']:torch.zeros(4,dtype=torch.int64) for r in layers if r['mode'] in ('Full','Reindex')}
+129:     records=[tensor_record(f'main_source{l}',x) for l,x in global_c.items()]
+130:     records += [tensor_record(f'indexK_source{l}',x) for l,x in index_k.items()]
+131:     records += [tensor_record(f'swa_layer{l}',x) for l,x in enumerate(swa)]
+132:     records += [tensor_record(f'topk_layer{l}_scratch',x) for l,x in selections.items()]
+133:     actual_global=unique_storage_bytes(list(global_c.values())+list(index_k.values()))
+134:     # Counterexample: selections shared, but independent per-layer main still allocated.
+135:     independent=[torch.zeros(t,d,dtype=torch.float16) for _ in range(4)]
+136:     one_selection=torch.zeros(4,dtype=torch.int64)
+137:     index_only_before=unique_storage_bytes(independent)
+138:     index_only_after=unique_storage_bytes(independent+[one_selection]*4)-one_selection.untyped_storage().nbytes()
+139:     assert index_only_before==index_only_after
+140:     # Production logical layout: exact format accounting, not allocating a model cache.
+141:     main_entry=512//2+512//16   # E2M1 + E4M3 group scales
+142:     index_entry=128//2+128//32 # E2M1 + UE8M0 group scales
+143:     global_per_token=(3/2+1)*(main_entry+index_entry)
+144:     assert global_per_token==890
+145:     return dict(kind='STRUCTURE_AND_LEDGER_ONLY; no CED/CSA2 model run',layers=layers,

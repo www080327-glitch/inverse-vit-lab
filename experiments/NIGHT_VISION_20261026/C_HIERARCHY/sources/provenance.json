@@ -1,0 +1,70 @@
+{
+  "checked_utc": "2026-10-26T16:29:24.036898+00:00",
+  "qwen2_transformers_commit": "a22a4378d97d06b7a1d9abad6e0086d30fdea199",
+  "qwen3_5_transformers_commit": "a672eb5f474b8b30173e9f96eab66adf292da635",
+  "records": [
+    {
+      "file": "qwen2_vl_modeling.py",
+      "url": "https://raw.githubusercontent.com/huggingface/transformers/a22a4378d97d06b7a1d9abad6e0086d30fdea199/src/transformers/models/qwen2_vl/modeling_qwen2_vl.py",
+      "resolved_url": "https://raw.githubusercontent.com/huggingface/transformers/a22a4378d97d06b7a1d9abad6e0086d30fdea199/src/transformers/models/qwen2_vl/modeling_qwen2_vl.py",
+      "bytes": 95991,
+      "sha256": "9cba46a1f8bdf222007424a179959d55f33fa545edd713e39f89d313e594fc44"
+    },
+    {
+      "file": "qwen2_vl_processor.py",
+      "url": "https://raw.githubusercontent.com/huggingface/transformers/a22a4378d97d06b7a1d9abad6e0086d30fdea199/src/transformers/models/qwen2_vl/image_processing_qwen2_vl.py",
+      "resolved_url": "https://raw.githubusercontent.com/huggingface/transformers/a22a4378d97d06b7a1d9abad6e0086d30fdea199/src/transformers/models/qwen2_vl/image_processing_qwen2_vl.py",
+      "bytes": 20923,
+      "sha256": "2e9d7c203e0f9557266c5e438080439ba74a6f108a8d3cf5d57951598e4091e7"
+    },
+    {
+      "file": "qwen3_5_modeling.py",
+      "url": "https://raw.githubusercontent.com/huggingface/transformers/a672eb5f474b8b30173e9f96eab66adf292da635/src/transformers/models/qwen3_5/modeling_qwen3_5.py",
+      "resolved_url": "https://raw.githubusercontent.com/huggingface/transformers/a672eb5f474b8b30173e9f96eab66adf292da635/src/transformers/models/qwen3_5/modeling_qwen3_5.py",
+      "bytes": 87748,
+      "sha256": "af05d0acfe79fff8aea1c75f93516a6a72bc80f6f901329a73e66a3866fe1e7c"
+    },
+    {
+      "file": "Transformers_LICENSE",
+      "url": "https://raw.githubusercontent.com/huggingface/transformers/v4.49.0/LICENSE",
+      "resolved_url": "https://raw.githubusercontent.com/huggingface/transformers/v4.49.0/LICENSE",
+      "bytes": 11418,
+      "sha256": "77fd4710def9ec3c0f6225800e0235f15a425abd4a8b03559127fcd782612049"
+    },
+    {
+      "reference": "Qwen2-VL",
+      "url": "https://arxiv.org/html/2409.12191v2",
+      "kind": "primary_paper_checked_in_browser"
+    },
+    {
+      "reference": "ZoomEye",
+      "url": "https://arxiv.org/html/2411.16044v1",
+      "kind": "primary_paper_checked_in_browser"
+    },
+    {
+      "reference": "LLaVA-UHD",
+      "url": "https://arxiv.org/html/2403.11703v1",
+      "kind": "primary_paper_checked_in_browser"
+    },
+    {
+      "file": "data/earth_original.jpg",
+      "url": "https://eoimages.gsfc.nasa.gov/images/imagerecords/57000/57723/globe_west_2048.jpg",
+      "resolved_url": "https://eoimages.gsfc.nasa.gov/images/imagerecords/57000/57723/globe_west_2048.jpg",
+      "bytes": 593338,
+      "sha256": "b79e0577e7565a2c7e9f7165284ccb53ece2872ddc429c687b6d3ae1aaa85780",
+      "original_size": [
+        2048,
+        2048
+      ],
+      "crop_xyxy": [
+        64,
+        484,
+        1984,
+        1564
+      ],
+      "interpolation": false,
+      "credit": "NASA Earth Observatory; Blue Marble satellite-imagery composite, 2002",
+      "landing_page": "https://science.nasa.gov/earth/earth-observatory/the-blue-marble-true-color-global-imagery-at-1km-resolution/"
+    }
+  ]
+}

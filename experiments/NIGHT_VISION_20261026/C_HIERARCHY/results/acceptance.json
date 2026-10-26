@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "checks": {
+    "required_files": true,
+    "all_592_original_png_hashes_and_lossless_roundtrips": true,
+    "no_identical_png_across_train_test": true,
+    "11520_evaluations_match_30_aggregate_rows": true,
+    "exchange_npz_independent_restore_and_attention": true,
+    "actual_1920x1080_archive_restores_exactly": true,
+    "official_source_and_real_image_hashes": true,
+    "cpu_and_cumulative_training_budget": true,
+    "nine_mechanism_tests_passed": true,
+    "own_python_sources_parse": true,
+    "public_export_no_home_paths_or_secret_patterns": true,
+    "markdown_local_links_except_final_ready": true
+  },
+  "started_utc": "2026-10-26T16:14:11+00:00",
+  "verified_utc": "2026-10-26T16:50:06.195453+00:00",
+  "started_local": "2026-10-27T00:14:11+08:00",
+  "verified_local": "2026-10-27T00:50:06.195453+08:00",
+  "elapsed_seconds": 2155.195453,
+  "total_window_limit_seconds": 10800,
+  "cumulative_training_seconds": 1.7589826670009643,
+  "training_limit_seconds": 1200,
+  "browser_QA": "Local viewer inspected at 1280x720; normal read, blind miss, oracle recovery, gold toggle verified; screenshots saved",
+  "device": "cpu",
+  "intraop_threads": 2,
+  "interop_threads": 1,
+  "B_code_modified": false,
+  "B_result_required": false,
+  "measured": "bounded synthetic task, numerical equivalence, CPU timings, physical tensor bytes, real-image packing",
+  "unknown": [
+    "real desktop semantic quality",
+    "free-form natural language",
+    "GPU/DCU/MPS performance",
+    "full Qwen/CSA2/paper reproduction"
+  ]
+}

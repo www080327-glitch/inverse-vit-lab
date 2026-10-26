@@ -1,0 +1,14 @@
+[
+  {
+    "n": 256,
+    "max_abs": 3.725290298461914e-09,
+    "definition": "same fine Q/K/V, independent row-major dense PyTorch SDPA",
+    "dtype": "float32"
+  },
+  {
+    "n": 1024,
+    "max_abs": 1.8189894035458565e-11,
+    "definition": "same fine Q/K/V, independent row-major dense PyTorch SDPA",
+    "dtype": "float32"
+  }
+]
