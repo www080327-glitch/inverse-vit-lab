@@ -304,7 +304,7 @@ def report(result,rows,baselines):
         f'累计训练 {result["training_seconds"]:.1f} 秒；训练线程 {result["threads"]}，CPU affinity {result["affinity_cpu_count"]}。'
         "每模型约 12000 参数，宽度根据实际输出维数调整；固定 one-hot 条件编码，无额外可训练主干。"
         "规模相近但结构和计算并不相同，因此不能宣称普遍更强。",
-        "每模型同样 1800 步、batch 128；EAR 每目标生成两份样本，MLP 前向计算约两倍；全协方差还需三角求解。"
+        f'每模型同样 {CONFIG["steps"]} 步、batch 128；EAR 每目标生成两份样本，MLP 前向计算约两倍；全协方差还需三角求解。'
         "逐模型真实秒数、参数、宽度、前向 dense MAC 估计和训练目标样本次数在 runs.json；MAC 不含反向、激活、优化器及求解器。","",
         "## 文件与复现","",
         "从本目录运行 python run.py；依赖 requirements.txt。既有训练预算文件会阻止静默重跑，"

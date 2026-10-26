@@ -1,0 +1,18 @@
+{
+  "training_runs": 48,
+  "initial_steps": 1800,
+  "final_steps": 9000,
+  "condition_metric_rows": 192,
+  "plot_files": 24,
+  "cumulative_training_seconds": 542.4025146880002,
+  "training_budget_seconds": 1800,
+  "cpu_affinity": 2,
+  "threads": 2,
+  "all_formula_checks": "pass",
+  "all_run_statuses": "complete",
+  "continuous_condition_interface_and_default_parity": "pass",
+  "nll_only_for_explicit_density": "pass",
+  "raw_datasets_committed": false,
+  "model_weights_committed": false,
+  "initial_archive_crc": "pass"
+}

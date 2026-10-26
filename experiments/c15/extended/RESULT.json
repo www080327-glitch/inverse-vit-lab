@@ -769,5 +769,1273 @@
     "higher-dimensional covariance scaling",
     "equal-wall-time and equal-sample compute frontier",
     "more seeds and non-Gaussian truth families"
-  ]
+  ],
+  "initial_stage": {
+    "source_commit": "232250a66b73077cbf0d5029c047d26f1e09bf2d",
+    "evidence_commit": "6b10c71a446e7a408957ee2cd685c25985b6800e",
+    "steps": 1800,
+    "runs": 24,
+    "training_seconds": 95.77157734500004,
+    "recommendation": "diag",
+    "selection_scores": {
+      "diag": 0.009925307318203227,
+      "full": 0.012418645382575783,
+      "ear": 0.1086085601004303
+    }
+  },
+  "total_runs_both_stages": 48,
+  "portable_interface": {
+    "continuous_features": "[B,condition_dim]",
+    "default_onehot_sampling_and_loss_bitwise_parity": true,
+    "real_feature_training_tested": false
+  },
+  "final_stage_training_seconds": 446.63093734300014,
+  "distribution_audit_threshold": "coverage<1 OR valid_fraction<0.9; descriptive post-hoc audit, NOT a changed selection rule",
+  "distribution_audit_initial": [
+    {
+      "dimension": 1,
+      "seed": 2027,
+      "method": "mse",
+      "condition": 0,
+      "coverage": 0.5,
+      "valid_fraction": 1.0,
+      "mode_tv_to_test": 0.255859375
+    },
+    {
+      "dimension": 1,
+      "seed": 2027,
+      "method": "mse",
+      "condition": 1,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.5234375
+    },
+    {
+      "dimension": 1,
+      "seed": 2027,
+      "method": "mse",
+      "condition": 2,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.31640625
+    },
+    {
+      "dimension": 1,
+      "seed": 2027,
+      "method": "mse",
+      "condition": 3,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.39453125
+    },
+    {
+      "dimension": 1,
+      "seed": 2027,
+      "method": "ear",
+      "condition": 0,
+      "coverage": 1.0,
+      "valid_fraction": 0.705078125,
+      "mode_tv_to_test": 0.0625
+    },
+    {
+      "dimension": 1,
+      "seed": 2027,
+      "method": "ear",
+      "condition": 1,
+      "coverage": 1.0,
+      "valid_fraction": 0.4765625,
+      "mode_tv_to_test": 0.103515625
+    },
+    {
+      "dimension": 1,
+      "seed": 2027,
+      "method": "ear",
+      "condition": 2,
+      "coverage": 1.0,
+      "valid_fraction": 0.509765625,
+      "mode_tv_to_test": 0.0703125
+    },
+    {
+      "dimension": 1,
+      "seed": 2027,
+      "method": "ear",
+      "condition": 3,
+      "coverage": 1.0,
+      "valid_fraction": 0.556640625,
+      "mode_tv_to_test": 0.033203125
+    },
+    {
+      "dimension": 1,
+      "seed": 2028,
+      "method": "mse",
+      "condition": 0,
+      "coverage": 0.5,
+      "valid_fraction": 1.0,
+      "mode_tv_to_test": 0.255859375
+    },
+    {
+      "dimension": 1,
+      "seed": 2028,
+      "method": "mse",
+      "condition": 1,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.4765625
+    },
+    {
+      "dimension": 1,
+      "seed": 2028,
+      "method": "mse",
+      "condition": 2,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.31640625
+    },
+    {
+      "dimension": 1,
+      "seed": 2028,
+      "method": "mse",
+      "condition": 3,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.39453125
+    },
+    {
+      "dimension": 1,
+      "seed": 2028,
+      "method": "ear",
+      "condition": 0,
+      "coverage": 1.0,
+      "valid_fraction": 0.744140625,
+      "mode_tv_to_test": 0.091796875
+    },
+    {
+      "dimension": 1,
+      "seed": 2028,
+      "method": "ear",
+      "condition": 1,
+      "coverage": 1.0,
+      "valid_fraction": 0.533203125,
+      "mode_tv_to_test": 0.0546875
+    },
+    {
+      "dimension": 1,
+      "seed": 2028,
+      "method": "ear",
+      "condition": 2,
+      "coverage": 1.0,
+      "valid_fraction": 0.48828125,
+      "mode_tv_to_test": 0.037109375
+    },
+    {
+      "dimension": 1,
+      "seed": 2028,
+      "method": "ear",
+      "condition": 3,
+      "coverage": 1.0,
+      "valid_fraction": 0.55078125,
+      "mode_tv_to_test": 0.08984375
+    },
+    {
+      "dimension": 2,
+      "seed": 2027,
+      "method": "mse",
+      "condition": 0,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.880859375
+    },
+    {
+      "dimension": 2,
+      "seed": 2027,
+      "method": "mse",
+      "condition": 1,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.62890625
+    },
+    {
+      "dimension": 2,
+      "seed": 2027,
+      "method": "mse",
+      "condition": 2,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.58203125
+    },
+    {
+      "dimension": 2,
+      "seed": 2027,
+      "method": "mse",
+      "condition": 3,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.810546875
+    },
+    {
+      "dimension": 2,
+      "seed": 2027,
+      "method": "diag",
+      "condition": 0,
+      "coverage": 1.0,
+      "valid_fraction": 0.8125,
+      "mode_tv_to_test": 0.037109375
+    },
+    {
+      "dimension": 2,
+      "seed": 2027,
+      "method": "diag",
+      "condition": 1,
+      "coverage": 1.0,
+      "valid_fraction": 0.685546875,
+      "mode_tv_to_test": 0.046875
+    },
+    {
+      "dimension": 2,
+      "seed": 2027,
+      "method": "full",
+      "condition": 2,
+      "coverage": 1.0,
+      "valid_fraction": 0.728515625,
+      "mode_tv_to_test": 0.044921875
+    },
+    {
+      "dimension": 2,
+      "seed": 2027,
+      "method": "ear",
+      "condition": 0,
+      "coverage": 1.0,
+      "valid_fraction": 0.275390625,
+      "mode_tv_to_test": 0.06640625
+    },
+    {
+      "dimension": 2,
+      "seed": 2027,
+      "method": "ear",
+      "condition": 1,
+      "coverage": 1.0,
+      "valid_fraction": 0.26953125,
+      "mode_tv_to_test": 0.115234375
+    },
+    {
+      "dimension": 2,
+      "seed": 2027,
+      "method": "ear",
+      "condition": 2,
+      "coverage": 1.0,
+      "valid_fraction": 0.298828125,
+      "mode_tv_to_test": 0.076171875
+    },
+    {
+      "dimension": 2,
+      "seed": 2027,
+      "method": "ear",
+      "condition": 3,
+      "coverage": 1.0,
+      "valid_fraction": 0.302734375,
+      "mode_tv_to_test": 0.123046875
+    },
+    {
+      "dimension": 2,
+      "seed": 2028,
+      "method": "mse",
+      "condition": 0,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.880859375
+    },
+    {
+      "dimension": 2,
+      "seed": 2028,
+      "method": "mse",
+      "condition": 1,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.62890625
+    },
+    {
+      "dimension": 2,
+      "seed": 2028,
+      "method": "mse",
+      "condition": 2,
+      "coverage": 0.25,
+      "valid_fraction": 1.0,
+      "mode_tv_to_test": 0.58203125
+    },
+    {
+      "dimension": 2,
+      "seed": 2028,
+      "method": "mse",
+      "condition": 3,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.810546875
+    },
+    {
+      "dimension": 2,
+      "seed": 2028,
+      "method": "diag",
+      "condition": 0,
+      "coverage": 1.0,
+      "valid_fraction": 0.794921875,
+      "mode_tv_to_test": 0.072265625
+    },
+    {
+      "dimension": 2,
+      "seed": 2028,
+      "method": "diag",
+      "condition": 1,
+      "coverage": 1.0,
+      "valid_fraction": 0.705078125,
+      "mode_tv_to_test": 0.0625
+    },
+    {
+      "dimension": 2,
+      "seed": 2028,
+      "method": "diag",
+      "condition": 2,
+      "coverage": 1.0,
+      "valid_fraction": 0.54296875,
+      "mode_tv_to_test": 0.109375
+    },
+    {
+      "dimension": 2,
+      "seed": 2028,
+      "method": "diag",
+      "condition": 3,
+      "coverage": 1.0,
+      "valid_fraction": 0.638671875,
+      "mode_tv_to_test": 0.033203125
+    },
+    {
+      "dimension": 2,
+      "seed": 2028,
+      "method": "ear",
+      "condition": 0,
+      "coverage": 1.0,
+      "valid_fraction": 0.296875,
+      "mode_tv_to_test": 0.064453125
+    },
+    {
+      "dimension": 2,
+      "seed": 2028,
+      "method": "ear",
+      "condition": 1,
+      "coverage": 1.0,
+      "valid_fraction": 0.236328125,
+      "mode_tv_to_test": 0.138671875
+    },
+    {
+      "dimension": 2,
+      "seed": 2028,
+      "method": "ear",
+      "condition": 2,
+      "coverage": 1.0,
+      "valid_fraction": 0.251953125,
+      "mode_tv_to_test": 0.060546875
+    },
+    {
+      "dimension": 2,
+      "seed": 2028,
+      "method": "ear",
+      "condition": 3,
+      "coverage": 1.0,
+      "valid_fraction": 0.291015625,
+      "mode_tv_to_test": 0.14453125
+    },
+    {
+      "dimension": 8,
+      "seed": 2027,
+      "method": "mse",
+      "condition": 0,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.7890625
+    },
+    {
+      "dimension": 8,
+      "seed": 2027,
+      "method": "mse",
+      "condition": 1,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.587890625
+    },
+    {
+      "dimension": 8,
+      "seed": 2027,
+      "method": "mse",
+      "condition": 2,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.6015625
+    },
+    {
+      "dimension": 8,
+      "seed": 2027,
+      "method": "mse",
+      "condition": 3,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.697265625
+    },
+    {
+      "dimension": 8,
+      "seed": 2027,
+      "method": "diag",
+      "condition": 0,
+      "coverage": 1.0,
+      "valid_fraction": 0.28515625,
+      "mode_tv_to_test": 0.029296875
+    },
+    {
+      "dimension": 8,
+      "seed": 2027,
+      "method": "diag",
+      "condition": 1,
+      "coverage": 1.0,
+      "valid_fraction": 0.26171875,
+      "mode_tv_to_test": 0.048828125
+    },
+    {
+      "dimension": 8,
+      "seed": 2027,
+      "method": "diag",
+      "condition": 2,
+      "coverage": 1.0,
+      "valid_fraction": 0.30078125,
+      "mode_tv_to_test": 0.056640625
+    },
+    {
+      "dimension": 8,
+      "seed": 2027,
+      "method": "diag",
+      "condition": 3,
+      "coverage": 1.0,
+      "valid_fraction": 0.23828125,
+      "mode_tv_to_test": 0.052734375
+    },
+    {
+      "dimension": 8,
+      "seed": 2027,
+      "method": "full",
+      "condition": 0,
+      "coverage": 1.0,
+      "valid_fraction": 0.779296875,
+      "mode_tv_to_test": 0.115234375
+    },
+    {
+      "dimension": 8,
+      "seed": 2027,
+      "method": "full",
+      "condition": 1,
+      "coverage": 1.0,
+      "valid_fraction": 0.63671875,
+      "mode_tv_to_test": 0.130859375
+    },
+    {
+      "dimension": 8,
+      "seed": 2027,
+      "method": "full",
+      "condition": 2,
+      "coverage": 1.0,
+      "valid_fraction": 0.732421875,
+      "mode_tv_to_test": 0.103515625
+    },
+    {
+      "dimension": 8,
+      "seed": 2027,
+      "method": "full",
+      "condition": 3,
+      "coverage": 1.0,
+      "valid_fraction": 0.609375,
+      "mode_tv_to_test": 0.1171875
+    },
+    {
+      "dimension": 8,
+      "seed": 2027,
+      "method": "ear",
+      "condition": 0,
+      "coverage": 0.25,
+      "valid_fraction": 0.0390625,
+      "mode_tv_to_test": 0.0625
+    },
+    {
+      "dimension": 8,
+      "seed": 2027,
+      "method": "ear",
+      "condition": 1,
+      "coverage": 0.5,
+      "valid_fraction": 0.05078125,
+      "mode_tv_to_test": 0.125
+    },
+    {
+      "dimension": 8,
+      "seed": 2027,
+      "method": "ear",
+      "condition": 2,
+      "coverage": 0.5,
+      "valid_fraction": 0.060546875,
+      "mode_tv_to_test": 0.0625
+    },
+    {
+      "dimension": 8,
+      "seed": 2027,
+      "method": "ear",
+      "condition": 3,
+      "coverage": 0.5,
+      "valid_fraction": 0.05859375,
+      "mode_tv_to_test": 0.119140625
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "mse",
+      "condition": 0,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.7890625
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "mse",
+      "condition": 1,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.587890625
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "mse",
+      "condition": 2,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.6015625
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "mse",
+      "condition": 3,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.697265625
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "diag",
+      "condition": 0,
+      "coverage": 1.0,
+      "valid_fraction": 0.26171875,
+      "mode_tv_to_test": 0.033203125
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "diag",
+      "condition": 1,
+      "coverage": 1.0,
+      "valid_fraction": 0.23828125,
+      "mode_tv_to_test": 0.056640625
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "diag",
+      "condition": 2,
+      "coverage": 1.0,
+      "valid_fraction": 0.318359375,
+      "mode_tv_to_test": 0.046875
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "diag",
+      "condition": 3,
+      "coverage": 1.0,
+      "valid_fraction": 0.255859375,
+      "mode_tv_to_test": 0.0234375
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "full",
+      "condition": 0,
+      "coverage": 1.0,
+      "valid_fraction": 0.62890625,
+      "mode_tv_to_test": 0.03125
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "full",
+      "condition": 1,
+      "coverage": 1.0,
+      "valid_fraction": 0.73828125,
+      "mode_tv_to_test": 0.08984375
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "full",
+      "condition": 2,
+      "coverage": 1.0,
+      "valid_fraction": 0.615234375,
+      "mode_tv_to_test": 0.08984375
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "full",
+      "condition": 3,
+      "coverage": 1.0,
+      "valid_fraction": 0.732421875,
+      "mode_tv_to_test": 0.041015625
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "ear",
+      "condition": 0,
+      "coverage": 0.5,
+      "valid_fraction": 0.04296875,
+      "mode_tv_to_test": 0.078125
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "ear",
+      "condition": 1,
+      "coverage": 0.5,
+      "valid_fraction": 0.052734375,
+      "mode_tv_to_test": 0.109375
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "ear",
+      "condition": 2,
+      "coverage": 0.75,
+      "valid_fraction": 0.06640625,
+      "mode_tv_to_test": 0.03125
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "ear",
+      "condition": 3,
+      "coverage": 0.75,
+      "valid_fraction": 0.064453125,
+      "mode_tv_to_test": 0.119140625
+    }
+  ],
+  "distribution_audit_final": [
+    {
+      "dimension": 1,
+      "seed": 2027,
+      "method": "mse",
+      "condition": 0,
+      "coverage": 0.5,
+      "valid_fraction": 1.0,
+      "mode_tv_to_test": 0.255859375
+    },
+    {
+      "dimension": 1,
+      "seed": 2027,
+      "method": "mse",
+      "condition": 1,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.4765625
+    },
+    {
+      "dimension": 1,
+      "seed": 2027,
+      "method": "mse",
+      "condition": 2,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.31640625
+    },
+    {
+      "dimension": 1,
+      "seed": 2027,
+      "method": "mse",
+      "condition": 3,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.39453125
+    },
+    {
+      "dimension": 1,
+      "seed": 2027,
+      "method": "ear",
+      "condition": 0,
+      "coverage": 1.0,
+      "valid_fraction": 0.869140625,
+      "mode_tv_to_test": 0.01953125
+    },
+    {
+      "dimension": 1,
+      "seed": 2027,
+      "method": "ear",
+      "condition": 1,
+      "coverage": 1.0,
+      "valid_fraction": 0.8671875,
+      "mode_tv_to_test": 0.041015625
+    },
+    {
+      "dimension": 1,
+      "seed": 2027,
+      "method": "ear",
+      "condition": 2,
+      "coverage": 1.0,
+      "valid_fraction": 0.853515625,
+      "mode_tv_to_test": 0.0078125
+    },
+    {
+      "dimension": 1,
+      "seed": 2027,
+      "method": "ear",
+      "condition": 3,
+      "coverage": 1.0,
+      "valid_fraction": 0.869140625,
+      "mode_tv_to_test": 0.01953125
+    },
+    {
+      "dimension": 1,
+      "seed": 2028,
+      "method": "mse",
+      "condition": 0,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.255859375
+    },
+    {
+      "dimension": 1,
+      "seed": 2028,
+      "method": "mse",
+      "condition": 1,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.4765625
+    },
+    {
+      "dimension": 1,
+      "seed": 2028,
+      "method": "mse",
+      "condition": 2,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.31640625
+    },
+    {
+      "dimension": 1,
+      "seed": 2028,
+      "method": "mse",
+      "condition": 3,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.39453125
+    },
+    {
+      "dimension": 1,
+      "seed": 2028,
+      "method": "ear",
+      "condition": 0,
+      "coverage": 1.0,
+      "valid_fraction": 0.884765625,
+      "mode_tv_to_test": 0.0
+    },
+    {
+      "dimension": 1,
+      "seed": 2028,
+      "method": "ear",
+      "condition": 1,
+      "coverage": 1.0,
+      "valid_fraction": 0.869140625,
+      "mode_tv_to_test": 0.025390625
+    },
+    {
+      "dimension": 1,
+      "seed": 2028,
+      "method": "ear",
+      "condition": 2,
+      "coverage": 1.0,
+      "valid_fraction": 0.8984375,
+      "mode_tv_to_test": 0.046875
+    },
+    {
+      "dimension": 1,
+      "seed": 2028,
+      "method": "ear",
+      "condition": 3,
+      "coverage": 1.0,
+      "valid_fraction": 0.859375,
+      "mode_tv_to_test": 0.021484375
+    },
+    {
+      "dimension": 2,
+      "seed": 2027,
+      "method": "mse",
+      "condition": 0,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.880859375
+    },
+    {
+      "dimension": 2,
+      "seed": 2027,
+      "method": "mse",
+      "condition": 1,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.62890625
+    },
+    {
+      "dimension": 2,
+      "seed": 2027,
+      "method": "mse",
+      "condition": 2,
+      "coverage": 0.25,
+      "valid_fraction": 1.0,
+      "mode_tv_to_test": 0.58203125
+    },
+    {
+      "dimension": 2,
+      "seed": 2027,
+      "method": "mse",
+      "condition": 3,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.810546875
+    },
+    {
+      "dimension": 2,
+      "seed": 2027,
+      "method": "diag",
+      "condition": 0,
+      "coverage": 1.0,
+      "valid_fraction": 0.822265625,
+      "mode_tv_to_test": 0.041015625
+    },
+    {
+      "dimension": 2,
+      "seed": 2027,
+      "method": "diag",
+      "condition": 1,
+      "coverage": 1.0,
+      "valid_fraction": 0.6953125,
+      "mode_tv_to_test": 0.044921875
+    },
+    {
+      "dimension": 2,
+      "seed": 2027,
+      "method": "full",
+      "condition": 2,
+      "coverage": 1.0,
+      "valid_fraction": 0.734375,
+      "mode_tv_to_test": 0.017578125
+    },
+    {
+      "dimension": 2,
+      "seed": 2027,
+      "method": "ear",
+      "condition": 0,
+      "coverage": 1.0,
+      "valid_fraction": 0.5,
+      "mode_tv_to_test": 0.0703125
+    },
+    {
+      "dimension": 2,
+      "seed": 2027,
+      "method": "ear",
+      "condition": 1,
+      "coverage": 1.0,
+      "valid_fraction": 0.359375,
+      "mode_tv_to_test": 0.041015625
+    },
+    {
+      "dimension": 2,
+      "seed": 2027,
+      "method": "ear",
+      "condition": 2,
+      "coverage": 1.0,
+      "valid_fraction": 0.421875,
+      "mode_tv_to_test": 0.09375
+    },
+    {
+      "dimension": 2,
+      "seed": 2027,
+      "method": "ear",
+      "condition": 3,
+      "coverage": 1.0,
+      "valid_fraction": 0.375,
+      "mode_tv_to_test": 0.0546875
+    },
+    {
+      "dimension": 2,
+      "seed": 2028,
+      "method": "mse",
+      "condition": 0,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.880859375
+    },
+    {
+      "dimension": 2,
+      "seed": 2028,
+      "method": "mse",
+      "condition": 1,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.62890625
+    },
+    {
+      "dimension": 2,
+      "seed": 2028,
+      "method": "mse",
+      "condition": 2,
+      "coverage": 0.25,
+      "valid_fraction": 1.0,
+      "mode_tv_to_test": 0.58203125
+    },
+    {
+      "dimension": 2,
+      "seed": 2028,
+      "method": "mse",
+      "condition": 3,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.810546875
+    },
+    {
+      "dimension": 2,
+      "seed": 2028,
+      "method": "diag",
+      "condition": 0,
+      "coverage": 1.0,
+      "valid_fraction": 0.8046875,
+      "mode_tv_to_test": 0.056640625
+    },
+    {
+      "dimension": 2,
+      "seed": 2028,
+      "method": "diag",
+      "condition": 1,
+      "coverage": 1.0,
+      "valid_fraction": 0.669921875,
+      "mode_tv_to_test": 0.0234375
+    },
+    {
+      "dimension": 2,
+      "seed": 2028,
+      "method": "diag",
+      "condition": 2,
+      "coverage": 1.0,
+      "valid_fraction": 0.544921875,
+      "mode_tv_to_test": 0.091796875
+    },
+    {
+      "dimension": 2,
+      "seed": 2028,
+      "method": "diag",
+      "condition": 3,
+      "coverage": 1.0,
+      "valid_fraction": 0.88671875,
+      "mode_tv_to_test": 0.033203125
+    },
+    {
+      "dimension": 2,
+      "seed": 2028,
+      "method": "ear",
+      "condition": 0,
+      "coverage": 1.0,
+      "valid_fraction": 0.40234375,
+      "mode_tv_to_test": 0.05078125
+    },
+    {
+      "dimension": 2,
+      "seed": 2028,
+      "method": "ear",
+      "condition": 1,
+      "coverage": 1.0,
+      "valid_fraction": 0.3671875,
+      "mode_tv_to_test": 0.060546875
+    },
+    {
+      "dimension": 2,
+      "seed": 2028,
+      "method": "ear",
+      "condition": 2,
+      "coverage": 1.0,
+      "valid_fraction": 0.423828125,
+      "mode_tv_to_test": 0.060546875
+    },
+    {
+      "dimension": 2,
+      "seed": 2028,
+      "method": "ear",
+      "condition": 3,
+      "coverage": 1.0,
+      "valid_fraction": 0.41015625,
+      "mode_tv_to_test": 0.09765625
+    },
+    {
+      "dimension": 8,
+      "seed": 2027,
+      "method": "mse",
+      "condition": 0,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.7890625
+    },
+    {
+      "dimension": 8,
+      "seed": 2027,
+      "method": "mse",
+      "condition": 1,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.587890625
+    },
+    {
+      "dimension": 8,
+      "seed": 2027,
+      "method": "mse",
+      "condition": 2,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.6015625
+    },
+    {
+      "dimension": 8,
+      "seed": 2027,
+      "method": "mse",
+      "condition": 3,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.697265625
+    },
+    {
+      "dimension": 8,
+      "seed": 2027,
+      "method": "diag",
+      "condition": 0,
+      "coverage": 1.0,
+      "valid_fraction": 0.26953125,
+      "mode_tv_to_test": 0.037109375
+    },
+    {
+      "dimension": 8,
+      "seed": 2027,
+      "method": "diag",
+      "condition": 1,
+      "coverage": 1.0,
+      "valid_fraction": 0.251953125,
+      "mode_tv_to_test": 0.025390625
+    },
+    {
+      "dimension": 8,
+      "seed": 2027,
+      "method": "diag",
+      "condition": 2,
+      "coverage": 1.0,
+      "valid_fraction": 0.279296875,
+      "mode_tv_to_test": 0.029296875
+    },
+    {
+      "dimension": 8,
+      "seed": 2027,
+      "method": "diag",
+      "condition": 3,
+      "coverage": 1.0,
+      "valid_fraction": 0.25,
+      "mode_tv_to_test": 0.072265625
+    },
+    {
+      "dimension": 8,
+      "seed": 2027,
+      "method": "ear",
+      "condition": 0,
+      "coverage": 1.0,
+      "valid_fraction": 0.150390625,
+      "mode_tv_to_test": 0.0390625
+    },
+    {
+      "dimension": 8,
+      "seed": 2027,
+      "method": "ear",
+      "condition": 1,
+      "coverage": 1.0,
+      "valid_fraction": 0.189453125,
+      "mode_tv_to_test": 0.076171875
+    },
+    {
+      "dimension": 8,
+      "seed": 2027,
+      "method": "ear",
+      "condition": 2,
+      "coverage": 0.75,
+      "valid_fraction": 0.20703125,
+      "mode_tv_to_test": 0.017578125
+    },
+    {
+      "dimension": 8,
+      "seed": 2027,
+      "method": "ear",
+      "condition": 3,
+      "coverage": 0.75,
+      "valid_fraction": 0.162109375,
+      "mode_tv_to_test": 0.044921875
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "mse",
+      "condition": 0,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.7890625
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "mse",
+      "condition": 1,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.587890625
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "mse",
+      "condition": 2,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.6015625
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "mse",
+      "condition": 3,
+      "coverage": 0.0,
+      "valid_fraction": 0.0,
+      "mode_tv_to_test": 0.697265625
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "diag",
+      "condition": 0,
+      "coverage": 1.0,
+      "valid_fraction": 0.265625,
+      "mode_tv_to_test": 0.033203125
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "diag",
+      "condition": 1,
+      "coverage": 1.0,
+      "valid_fraction": 0.216796875,
+      "mode_tv_to_test": 0.044921875
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "diag",
+      "condition": 2,
+      "coverage": 1.0,
+      "valid_fraction": 0.314453125,
+      "mode_tv_to_test": 0.060546875
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "diag",
+      "condition": 3,
+      "coverage": 1.0,
+      "valid_fraction": 0.2578125,
+      "mode_tv_to_test": 0.03515625
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "full",
+      "condition": 0,
+      "coverage": 1.0,
+      "valid_fraction": 0.626953125,
+      "mode_tv_to_test": 0.02734375
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "full",
+      "condition": 1,
+      "coverage": 1.0,
+      "valid_fraction": 0.744140625,
+      "mode_tv_to_test": 0.0625
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "full",
+      "condition": 2,
+      "coverage": 1.0,
+      "valid_fraction": 0.6171875,
+      "mode_tv_to_test": 0.05859375
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "full",
+      "condition": 3,
+      "coverage": 1.0,
+      "valid_fraction": 0.751953125,
+      "mode_tv_to_test": 0.029296875
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "ear",
+      "condition": 0,
+      "coverage": 1.0,
+      "valid_fraction": 0.189453125,
+      "mode_tv_to_test": 0.080078125
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "ear",
+      "condition": 1,
+      "coverage": 1.0,
+      "valid_fraction": 0.1953125,
+      "mode_tv_to_test": 0.083984375
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "ear",
+      "condition": 2,
+      "coverage": 0.75,
+      "valid_fraction": 0.1953125,
+      "mode_tv_to_test": 0.044921875
+    },
+    {
+      "dimension": 8,
+      "seed": 2028,
+      "method": "ear",
+      "condition": 3,
+      "coverage": 1.0,
+      "valid_fraction": 0.193359375,
+      "mode_tv_to_test": 0.09375
+    }
+  ],
+  "interpretation": "Recommendation follows the preregistered dimension-balanced energy-distance rule, not a claim that all correlation, mode, tail or real-image criteria are solved."
 }

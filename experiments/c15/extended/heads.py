@@ -11,8 +11,8 @@ def output_size(method, d, k):
         return d
     return k + k*d + k*(d if method == "diag" else d*(d+1)//2)
 
-def parameter_count(method, d, k, width, noise_dim=8):
-    inp = 4 + (noise_dim if method == "ear" else 0)
+def parameter_count(method, d, k, width, noise_dim=8, condition_dim=4):
+    inp = condition_dim + (noise_dim if method == "ear" else 0)
     out = output_size(method, d, k)
     return (inp+1)*width + (width+1)*width + (width+1)*out
 
@@ -24,16 +24,17 @@ def energy_loss(a, b, target, alpha=1.0):
 
 class Head(nn.Module):
     def __init__(self, method, d, k, target_parameters=12000, noise_dim=8,
-                 scale_floor=.03):
+                 scale_floor=.03, condition_dim=4):
         super().__init__()
         if method not in METHODS:
             raise ValueError(method)
         self.method, self.d, self.k = method, d, k
         self.noise_dim, self.scale_floor = noise_dim, scale_floor
+        self.condition_dim = condition_dim
         self.width = min(range(24, 193),
-                         key=lambda w: abs(parameter_count(method,d,k,w,noise_dim)
+                         key=lambda w: abs(parameter_count(method,d,k,w,noise_dim,condition_dim)
                                            -target_parameters))
-        inp = 4 + (noise_dim if method == "ear" else 0)
+        inp = condition_dim + (noise_dim if method == "ear" else 0)
         self.net = nn.Sequential(nn.Linear(inp,self.width), nn.SiLU(),
                                  nn.Linear(self.width,self.width), nn.SiLU(),
                                  nn.Linear(self.width,output_size(method,d,k)))
@@ -41,11 +42,15 @@ class Head(nn.Module):
 
     def encode(self, condition):
         c = torch.as_tensor(condition,device=self.tri.device)
+        if c.ndim == 2:
+            if c.shape[-1] != self.condition_dim or not torch.isfinite(c).all():
+                raise ValueError("Expected finite [B,condition_dim] condition features")
+            return c.to(self.net[0].weight.dtype)
         if c.ndim == 0:
             c = c[None]
         if c.ndim != 1 or c.dtype.is_floating_point:
-            raise ValueError("condition: scalar integer or rank-1 integer IDs 0..3")
-        return F.one_hot(c.long(),4).to(self.net[0].weight.dtype)
+            raise ValueError("condition: integer IDs, or rank-2 continuous feature vectors")
+        return F.one_hot(c.long(),self.condition_dim).to(self.net[0].weight.dtype)
 
     def forward(self, condition, noise=None):
         c = self.encode(condition)
@@ -96,19 +101,18 @@ class Head(nn.Module):
 
     @torch.no_grad()
     def sample(self, condition, n, generator):
-        """Return [B,n,d], including B=1 for scalar condition. No temperature tricks."""
+        """IDs or continuous [B,condition_dim] features -> [B,n,d]. Scalar IDs keep B=1."""
         if n < 1:
             raise ValueError("n must be positive")
         c = self.encode(condition)
-        ids = c.argmax(-1)
         if self.method == "mse":
-            return self(ids)[:,None,:].expand(-1,n,-1).clone()
+            return self(c)[:,None,:].expand(-1,n,-1).clone()
         if self.method == "ear":
-            ids = ids.repeat_interleave(n)
-            noise = torch.rand((len(ids),self.noise_dim),generator=generator,
-                               device=c.device)-.5
-            return self(ids,noise).reshape(len(c),n,self.d)
-        logits,mu,L = self.distribution_parameters(ids)
+            c_expanded = c.repeat_interleave(n,dim=0)
+            noise = torch.rand((len(c_expanded),self.noise_dim),generator=generator,
+                               device=c.device,dtype=c.dtype)-.5
+            return self(c_expanded,noise).reshape(len(c),n,self.d)
+        logits,mu,L = self.distribution_parameters(c)
         z = torch.multinomial(logits.softmax(-1),n,replacement=True,generator=generator)
         rows = torch.arange(len(c),device=c.device)[:,None]
         e = torch.randn((len(c),n,self.d),generator=generator,device=c.device,dtype=c.dtype)
