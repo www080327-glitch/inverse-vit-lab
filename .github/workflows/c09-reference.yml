@@ -23,7 +23,7 @@ jobs:
           python3 - <<'PY'
           import base64
           from pathlib import Path
-          for name in ("RESULT.json", "C09_DELIVERY.zip"):
+          for name in ("RESULT.json", "C09_DELIVERY.zip", "TEST_REPORT.txt", "HANDOFF.md"):
               print("C09_FILE_BEGIN:" + name)
               print(base64.b64encode(Path(name).read_bytes()).decode())
               print("C09_FILE_END:" + name)

@@ -33,6 +33,7 @@ def probabilities_case(name, s, regions):
 
 def run():
     t0=time.perf_counter()
+    cpu0=time.process_time()
     suite=unittest.defaultTestLoader.discover(str(ROOT),pattern="test_reference_attention.py")
     test_output=io.StringIO()
     tested=unittest.TextTestRunner(stream=test_output,verbosity=2).run(suite)
@@ -133,7 +134,8 @@ def run():
         "execution":{"python":platform.python_version(),"platform":platform.system(),
                      **binary64_environment(),"seed":SEED,
                      "single_query":True,"key_dimension":d,"value_dimension":dv,
-                     "cpu_elapsed_seconds":time.perf_counter()-t0,
+                     "elapsed_seconds":time.perf_counter()-t0,
+                     "process_cpu_seconds":time.process_time()-cpu0,
                      "ten_minute_budget":600,"models_loaded":False,
                      "data_downloaded":False,"gpu_used":False,
                      "dependencies":"Python standard library only"},
@@ -150,10 +152,57 @@ def run():
                          for name in ("reference_attention.py","test_reference_attention.py",
                                       "run_experiment.py","REPORT.md","FAILURE_EXAMPLES.md","README.md")}
     }
-    assert result["execution"]["cpu_elapsed_seconds"]<600
+    assert result["execution"]["elapsed_seconds"]<600
     (ROOT/"RESULT.json").write_text(json.dumps(result,ensure_ascii=False,indent=2,
                                                allow_nan=False)+"\n",encoding="utf-8")
-    names=["reference_attention.py","test_reference_attention.py","run_experiment.py",
+    url="https://github.com/www080327-glitch/inverse-vit-lab"
+    handoff=[
+        "# C09 交接：现有分层原型最容易算错的三件事",
+        "",
+        "1. 区域内 softmax 后平均会丢失真实区域质量；正确跨区权重来自 logsumexp。",
+        "2. 精确 logsumexp / 最大分数需要读取全部细 key，不能当作免费粗路由。",
+        "3. 粗细直接拼接会重复计权；替换、残差、拼接必须先定义模型语义。",
+        "",
+        "## 实测与入口",
+        "",
+        f"- 22 项测试中实际运行 {tested.testsRun} 项，失败/错误均为 0。",
+        f"- 64 组固定 Top-k 对照；最多 1024 个细 Token；seed={SEED}。",
+        f'- Linux Python {platform.python_version()}，binary64；实验墙钟 {result["execution"]["elapsed_seconds"]:.6f} 秒，进程 CPU {result["execution"]["process_cpu_seconds"]:.6f} 秒（不含打包和解释器启动）。',
+        f"- 四个固定场景 dense/精确分层最大绝对输出差：{max_equivalence:.17g}。",
+        "- 推导、条件、接口与接入建议：[REPORT.md](REPORT.md)。",
+        "- 实现：[reference_attention.py](reference_attention.py)。",
+        "- 失败反例：[FAILURE_EXAMPLES.md](FAILURE_EXAMPLES.md)。",
+        "- 所有 64 行、质量与成本：[RESULT.json](RESULT.json)。",
+        "- 实际测试输出：[TEST_REPORT.txt](TEST_REPORT.txt)。",
+        "- 完整包：[C09_DELIVERY.zip](C09_DELIVERY.zip)。",
+        "",
+        "## Top-1 实测摘录（固定场景全部列出）",
+        "",
+        "| 场景 | 区域打分 | 保留真实质量 | L2 输出误差 | 选中细 Token | 在线 qk+av 乘加对 |",
+        "|---|---|---:|---:|---:|---:|",
+    ]
+    for row in rows:
+        if row["k"]==1:
+            cost=row["online_cost"]
+            pairs=cost["qk_scalar_multiply_add_pairs"]+cost["av_scalar_multiply_add_pairs"]
+            handoff.append(f'| {row["case"]} | {row["mode"]} | {row["retained_mass"]:.9g} | {row["l2_output_error"]:.9g} | {row["selected_fine_tokens"]} | {pairs} |')
+    handoff += [
+        "",
+        "计数不是时间，不能从这张表推断 GPU 加速。精确 max/LSE 的全部细 key 成本已计入在线列；粗 key 缓存更新与独立的全细 oracle 诊断另列于 JSON，表中未把它们混进在线计数。不同区域长度下，Top-1 对应的细 Token 成本差别很大。",
+        "",
+        "只要 ||v_i||₂≤B，且选中细 Token 沿用原 logits 精确重归一化，就有 ||y−y_S||₂≤2Bε。尖锐例达到等号；无 value 范数界、或选中后改权重的例子会使不当套用失效。详见报告。",
+        "",
+        "## 范围与复现",
+        "",
+        "本任务只验证数学与小型 CPU 数值，不含 Qwen 特征、模型训练、GPU 吞吐量或视觉质量结论。",
+        "",
+        "运行 python3 run_experiment.py 即可重跑测试和实验并生成此交接、结果与包。只需 Python 标准库。源文件 SHA256 在 RESULT.json；其他会话或现有原型无需修改。",
+        "",
+        f"代码审阅与云端 CI：[PR #12]({url}/pull/12)。",
+        "",
+    ]
+    (ROOT/"HANDOFF.md").write_text("\n".join(handoff),encoding="utf-8")
+    names=["HANDOFF.md","reference_attention.py","test_reference_attention.py","run_experiment.py",
            "REPORT.md","FAILURE_EXAMPLES.md","README.md","RESULT.json","TEST_REPORT.txt"]
     # Deterministic member timestamps. The measured elapsed time is intentionally
     # part of RESULT and will differ across independent reruns.
@@ -165,7 +214,7 @@ def run():
     with zipfile.ZipFile(ROOT/"C09_DELIVERY.zip") as z:
         assert z.testzip() is None
     print(json.dumps({"tests":result["tests"],
-                      "elapsed_seconds":result["execution"]["cpu_elapsed_seconds"],
+                      "elapsed_seconds":result["execution"]["elapsed_seconds"],
                       "dense_hierarchical_max_abs_error":max_equivalence,
                       "topk_rows":len(rows)},allow_nan=False))
 

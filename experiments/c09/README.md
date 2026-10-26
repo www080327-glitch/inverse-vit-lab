@@ -1,6 +1,6 @@
 # C09 hierarchical attention reference
 
-交接入口：[REPORT.md](REPORT.md)。先读前三条容易算错的地方。
+交接入口：[HANDOFF.md](HANDOFF.md)（实测摘要）。完整推导：[REPORT.md](REPORT.md)。先读前三条容易算错的地方。
 
 - [reference_attention.py](reference_attention.py)：可复用 binary64 数学参照，最多 1024 细 Token。
 - [test_reference_attention.py](test_reference_attention.py)：无下载、无模型、CPU 测试。
