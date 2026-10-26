@@ -1,0 +1,93 @@
+{
+  "status": "FAIL",
+  "fixture_only": true,
+  "real_Qwen_loaded": false,
+  "DCU_connected": false,
+  "MPS_used": false,
+  "torch_threads": 1,
+  "interop_threads": 1,
+  "torch_version": "2.14.1",
+  "elapsed_seconds": 2.089142165999874,
+  "tests_run": 15,
+  "checks": [
+    {
+      "name": "test_01_shift_and_causality",
+      "passed": true,
+      "seconds": 0.304940957999861
+    },
+    {
+      "name": "test_02_condition_switch_and_no_target_leak",
+      "passed": true,
+      "seconds": 0.04187279200050398
+    },
+    {
+      "name": "test_03_shapes_and_identical_numeric_contract",
+      "passed": true,
+      "seconds": 0.029965583999000955
+    },
+    {
+      "name": "test_04_frozen_D_gradient_reaches_M_pixel_only",
+      "passed": true,
+      "seconds": 0.3308540420002828
+    },
+    {
+      "name": "test_05_free_generation_64_uses_own_history",
+      "passed": true,
+      "seconds": 0.1295328750002227
+    },
+    {
+      "name": "test_06_scopes",
+      "passed": true,
+      "seconds": 0.04224020800029393
+    },
+    {
+      "name": "test_07_save_restore_optimizer_next_step",
+      "passed": true,
+      "seconds": 0.19110416699913912
+    },
+    {
+      "name": "test_08_independent_decode_without_M_E_targets",
+      "passed": true,
+      "seconds": 0.009811750000153552
+    },
+    {
+      "name": "test_09_immutable_join_and_inference_separation",
+      "passed": true,
+      "seconds": 0.008517416999893612
+    },
+    {
+      "name": "test_10_join_rejects_hash_and_split_mismatch",
+      "passed": true,
+      "seconds": 0.007334874999287422
+    },
+    {
+      "name": "test_11_instruction_replay_disjoint_and_keeps_head",
+      "passed": true,
+      "seconds": 0.005468041999847628
+    },
+    {
+      "name": "test_12_attribute_metrics_explicit_only",
+      "passed": true,
+      "seconds": 0.0011296659995423397
+    },
+    {
+      "name": "test_13_real_execution_guard",
+      "passed": true,
+      "seconds": 0.00020395899991854094
+    },
+    {
+      "name": "test_14_manifest_contract_and_scope_lock",
+      "passed": true,
+      "seconds": 0.0010817089987540385
+    },
+    {
+      "name": "test_15_paired_runner_fixture_end_to_end",
+      "passed": false,
+      "seconds": 0.9847151250014576
+    }
+  ],
+  "errors": [
+    "When adding the end-to-end fixture, a scope-lock assertion was accidentally placed in the next test. Moved it back; the paired fixture itself had completed."
+  ],
+  "real_model_training_complete": false
+}

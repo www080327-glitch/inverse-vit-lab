@@ -1,0 +1,251 @@
+{
+  "schema": "alignment.ready.v1",
+  "version": "0.1.0",
+  "date": "2026-10-27",
+  "timezone": "Asia/Shanghai",
+  "status": "READY_CPU_IMPLEMENTATION_ONLY",
+  "completion": {
+    "code": true,
+    "CPU_checks": true,
+    "real_model_training": false
+  },
+  "meaning": "Ready for A to supply immutable external artifacts and lock resources. Not acceptance of Qwen training or generation quality.",
+  "files": {
+    ".gitignore": {
+      "sha256": "33c035c84967b09149cebaa03827d5db5403fb21953505756635c9314a80188e",
+      "bytes": 116
+    },
+    "DATA_CONTRACT.md": {
+      "sha256": "ba7c38124ceb21c8089bd2291d607302f6c059ef716bad3aca712d7a3122f447",
+      "bytes": 8724
+    },
+    "HANDOFF_A.md": {
+      "sha256": "6fdeffd5958a0c81ec9195226707515b17725de7745ee90677bfacc823b32a44",
+      "bytes": 10054
+    },
+    "README.md": {
+      "sha256": "a5c89b110e224ab299fd842ea008f70e275b6b7e3e2ecd48147cbe47e996266b",
+      "bytes": 2749
+    },
+    "alignment/__init__.py": {
+      "sha256": "dee09aac764e587e2251eeb81ae10023884bb76946a0f107a09b77dedadcf2f6",
+      "bytes": 89
+    },
+    "alignment/backends.py": {
+      "sha256": "d935b05f30147bdbcd5a48fac2f932219adcdf8ade56278dce28cbb803f9f1d4",
+      "bytes": 16354
+    },
+    "alignment/core.py": {
+      "sha256": "43ccf17398452bb1c17c59dcf2f9dd2dc8fc8b8c54292207f6e705f8af24b4c2",
+      "bytes": 7561
+    },
+    "alignment/data.py": {
+      "sha256": "5d04048bfd899e39c43517f503af57112ac93efcd1304aa57c5830f850233cd4",
+      "bytes": 9540
+    },
+    "alignment/io.py": {
+      "sha256": "c6f5dc89b70fff3024804cb720ccef8d593e30bbb9d8796e6d2d687c8221d9f9",
+      "bytes": 4140
+    },
+    "alignment/runner.py": {
+      "sha256": "be096070f6fe7bc28e1cf86f99078b6ec38083272e1175b094d1756facd9cfda",
+      "bytes": 19666
+    },
+    "configs/decoder_export.example.json": {
+      "sha256": "424aac11ef84c9a562202a47bf588d51e9a7ca57d58955283001dcd861ebcf45",
+      "bytes": 1406
+    },
+    "configs/paired_short.example.json": {
+      "sha256": "39c610c4ca6ddce0441fe136069613c52851f1fd0bed6fd704cdac1898751f7c",
+      "bytes": 2930
+    },
+    "configs/request_class_only.json": {
+      "sha256": "556c3fc70f5df9c3fa9c0909d0a9a1c92954663308b902fd3d109a98122365ab",
+      "bytes": 44
+    },
+    "configs/request_description.json": {
+      "sha256": "563e7b2705bba3682ae097ec4e1138c5ca0f54ba5192586cf6b3e5f52394ae0d",
+      "bytes": 104
+    },
+    "configs/request_redraw.example.json": {
+      "sha256": "7112821420ca2d2c339f9f2441f18b2f281796df86897f3744a38727a67f2f2d",
+      "bytes": 115
+    },
+    "configs/standardized_normalization.example.json": {
+      "sha256": "61d3c4259f6fa095a9b949af32af4204507ae85e38674b7d0f0db54af3c13450",
+      "bytes": 389
+    },
+    "evidence/attempt02_fixture_error.json": {
+      "sha256": "d4166aceaa02c07b08c4aa3b3422c4c5488b89d37972a93dbf12ab27d2d6f8ab",
+      "bytes": 2133
+    },
+    "evidence/attempt04_fixture_scope_error.json": {
+      "sha256": "afab8ab4b05069a19663b05674f8ced93e08a4351f1e5e6a651947ecb62f1b4c",
+      "bytes": 2448
+    },
+    "evidence/cpu_checks.json": {
+      "sha256": "e45f1d6194865681e5699cf8aaddf64c39315ae4138ba406c707a25e448904d8",
+      "bytes": 2280
+    },
+    "evidence/development_attempts.json": {
+      "sha256": "593ffcc9161a6c9b8b2abb577ee09325259f7dcb30f857b370117b60e354275c",
+      "bytes": 773
+    },
+    "evidence/hf_random_check.json": {
+      "sha256": "7e2521ec72cb09ee432bc4a63b3dda7834ff76a0fbe92a39a62a4dbabe9d06a5",
+      "bytes": 582
+    },
+    "lock_manifest.py": {
+      "sha256": "7564708ea3958acad859c1b0021c6a66229450206c6f31f9a7c0799b3dca7f92",
+      "bytes": 4461
+    },
+    "requirements-cpu.txt": {
+      "sha256": "784c4dde278628fdf4b188caf9bc27ef63703a40a0dd703c3177318a65457aad",
+      "bytes": 196
+    },
+    "requirements-qwen.txt": {
+      "sha256": "d5de9cabbdc71676624b090f55759826ff9e4fefc108d0aba94925e62450772c",
+      "bytes": 149
+    },
+    "run_alignment.py": {
+      "sha256": "e1c080ff037a7bafe7e5903535cbf4c30dbfe37ed33c38a15cc9e26655af65a5",
+      "bytes": 5073
+    },
+    "tests/__init__.py": {
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    "tests/cpu_checks.py": {
+      "sha256": "5d7446febc38fb9b8933f73b951a24b89f8e01e4e6673f99cf20f692a69771b9",
+      "bytes": 21091
+    },
+    "tests/hf_random_check.py": {
+      "sha256": "2c6a9473c46ef523f1aa15a4b0bba61b8a37a6b3ceb829b50a1fa3fa15eeff5b",
+      "bytes": 4115
+    },
+    "verify_delivery.py": {
+      "sha256": "19d7a443750fbc51ea7adfe47ef916a9327c09853ee2054e0d6595a4881d69d2",
+      "bytes": 1857
+    }
+  },
+  "file_hash_policy": "All delivered files except READY.json itself are listed, avoiding a self-hash cycle. Runtime outputs and private populated manifests are not bundled.",
+  "entrypoints": {
+    "runner": "run_alignment.py",
+    "manifest_locker": "lock_manifest.py",
+    "handoff": "HANDOFF_A.md",
+    "data_contract": "DATA_CONTRACT.md",
+    "manifest_template": "configs/paired_short.example.json",
+    "integrity_check": "verify_delivery.py"
+  },
+  "commands": {
+    "verify": "python verify_delivery.py",
+    "CPU_checks": "python run_alignment.py cpu-test",
+    "optional_random_HF_check": "python tests/hf_random_check.py",
+    "join_B_snapshot": "python run_alignment.py join-snapshots --images private/image_features/snapshot.json --descriptions private/B_descriptions/snapshot.json --output private/joined",
+    "A_lock": "python lock_manifest.py --executor A --scope full --attest-original --model private/official_qwen --snapshot private/joined/snapshot.json --decoder-export private/D_export/export.json --replay-train private/instruction_train.jsonl --replay-eval private/instruction_eval.jsonl --python-path private/D_code --output alignment.locked.json",
+    "validate_without_model_load": "python run_alignment.py validate --manifest alignment.locked.json",
+    "A_paired_run": "python run_alignment.py run-pair --executor A --device cuda --manifest alignment.locked.json --output runs/paired_short",
+    "feature_only_decode": "python run_alignment.py decode --manifest alignment.locked.json --features runs/description_features.safetensors --output runs/description_rgb.safetensors"
+  },
+  "CPU_evidence": {
+    "core_checks": 15,
+    "core_status": "PASS",
+    "core_suite_seconds": 2.304397791000156,
+    "random_HF_parameters": 1004128,
+    "random_HF_status": "PASS",
+    "random_HF_forward_suite_seconds": 0.03185979199952271,
+    "timing_scope": "Suite bodies only; excludes interpreter/import overhead. Each command has a 300-second check timeout.",
+    "threads": 1,
+    "CPU_check_limit_seconds": 300,
+    "real_pretrained_weights_loaded": false,
+    "full_0_8B_loaded": false,
+    "MPS_used": false,
+    "DCU_connected": false
+  },
+  "external_artifacts_required": [
+    "Official original Qwen local model and processor, immutable revision and complete file hashes; no P2 weights",
+    "Frozen E: bundled official vision tower or separate strictly equal official vision state",
+    "D completed immutable export with weights, factory/local dependency sources, representation and normalization contracts",
+    "Raw image/features/RGB snapshot with fixed 640 train + 80 val IDs and hashes",
+    "B completed immutable original-Qwen candidate-description snapshot on exactly the same fixed IDs/hashes/splits",
+    "Disjoint instruction replay train and held-out rubric evaluation files",
+    "A resource/scope lock shared by both interfaces"
+  ],
+  "paired_defaults": {
+    "initialization": "same pinned official original M",
+    "interfaces": [
+      "direct",
+      "mlp"
+    ],
+    "mlp_shape": [
+      1024,
+      256,
+      1024
+    ],
+    "mode_trained": "redraw",
+    "scope_preference": "full",
+    "permitted_scope_alternative": "last4 explicitly labeled and identical for both",
+    "steps_per_interface": 40,
+    "batch_size": 1,
+    "gradient_accumulation": 1,
+    "seed": 20261027,
+    "validation": "same fixed first 8 of 80 val images in each of 3 modes",
+    "sampling": "deterministic full free autoregressive 64; no true history",
+    "description_training_performed": false
+  },
+  "numeric_contract": {
+    "output_positions": 64,
+    "channels": 1024,
+    "target": "raw official post-merger, then shared optional train-only standardization",
+    "direct": "identity on M hidden states, trained toward same z distribution as MLP",
+    "decoder_gradient": "parameters frozen; input gradient retained for pixel-loss training",
+    "normalization": "same statistics and raw/model D boundary for both interfaces; no independent refit"
+  },
+  "resource_estimate": {
+    "measured": false,
+    "units": "GiB",
+    "method": "Nominal P=0.8B, trainable full ~0.7B or last4 ~0.07-0.10B; FP32 master parameters+gradients+two FP32 Adam states, BF16 autocast in M; add activations, vocabulary logits, workspace, cache and frozen D separately.",
+    "parameter_gradient_optimizer_full_GiB_approx": 10.8,
+    "parameter_gradient_optimizer_last4_GiB_approx": [
+      3.8,
+      4.1
+    ],
+    "planning_full_excluding_D_GiB": [
+      14,
+      28
+    ],
+    "planning_last4_excluding_D_GiB": [
+      6,
+      18
+    ],
+    "D_extra": "4*D_parameter_count bytes plus forward/backward activations; unknown until A provides D",
+    "guarantee": "None; A must lock against actual resources; no automatic full/last4 fallback"
+  },
+  "limits": {
+    "default_wall_seconds_per_interface_including_load_train_eval": 900,
+    "default_pair_seconds_approx": 1800,
+    "maximum_wall_seconds_per_interface": 3600,
+    "default_steps_per_interface": 40,
+    "hard_max_steps_per_interface": 200,
+    "source_tokens_max": 2048,
+    "output_features_fixed": 64,
+    "real_execution": "Only A; cuda device spelling for ROCm; CPU/MPS real model commands refused"
+  },
+  "unverified": [
+    "Full official 0.8B loading, original processor input and real Qwen version/runtime compatibility",
+    "Real E/D correspondence and immutable D factory/normalization export",
+    "Actual B snapshot ingestion and actual 640/80 dataset join",
+    "DCU training, runtime, memory, operator support and real save/restore",
+    "Real redraw or description/class generation quality",
+    "All-80 validation generation (short template uses 8)",
+    "Subject/color/layout judgments and before/after instruction-retention rubric judgments",
+    "Stage2 self-description (B bridge is original Qwen candidates, not this)",
+    "Diversity; deterministic regression may average plausible outputs"
+  ],
+  "publication": {
+    "repository": "https://github.com/www080327-glitch/inverse-vit-lab",
+    "branch": "codex/qwen-vision-alignment-20261027",
+    "research_issue": "https://github.com/www080327-glitch/inverse-vit-lab/issues/5",
+    "scope": "This D_ALIGNMENT directory only; no weights, datasets, private logs, credentials or populated local paths; no merge"
+  }
+}

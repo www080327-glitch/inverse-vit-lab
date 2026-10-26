@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "fixture_only": true,
+  "official_pretrained_weights_loaded": false,
+  "full_0_8B_model_loaded": false,
+  "architecture": "random 2 language blocks / 1 tiny vision block",
+  "parameters": 1004128,
+  "hidden_width": 1024,
+  "output_shape": [
+    1,
+    64,
+    1024
+  ],
+  "checks": [
+    "official_language_forward_with_extended_mrope",
+    "causal_future_target_perturbation",
+    "pixel_only_D_to_M_gradient",
+    "frozen_E_D_unchanged"
+  ],
+  "device": "cpu",
+  "threads": 1,
+  "transformers_version": "5.20.2",
+  "elapsed_seconds": 0.03185979199952271
+}
