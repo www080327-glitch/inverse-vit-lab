@@ -90,7 +90,7 @@ class Head(nn.Module):
             return -self.log_prob(condition,target).mean()/self.d
         c = self.encode(condition)
         noise = torch.rand((2,len(c),self.noise_dim),generator=generator,
-                           device=c.device)-.5
+                           device=c.device,dtype=c.dtype)-.5
         a,b = self(condition,noise[0]), self(condition,noise[1])
         return energy_loss(a,b,target,alpha=1)/math.sqrt(self.d)
 
@@ -111,5 +111,5 @@ class Head(nn.Module):
         logits,mu,L = self.distribution_parameters(ids)
         z = torch.multinomial(logits.softmax(-1),n,replacement=True,generator=generator)
         rows = torch.arange(len(c),device=c.device)[:,None]
-        e = torch.randn((len(c),n,self.d),generator=generator,device=c.device)
+        e = torch.randn((len(c),n,self.d),generator=generator,device=c.device,dtype=c.dtype)
         return mu[rows,z] + (L[rows,z]@e.unsqueeze(-1)).squeeze(-1)

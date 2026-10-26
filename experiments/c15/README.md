@@ -1,5 +1,7 @@
 # C15: conditional multimodal continuous heads
 
+**Primary deliverable:** [extended/HANDOFF_ZH.md](extended/HANDOFF_ZH.md), [extended/RESULT.json](extended/RESULT.json), [extended/C15_DELIVERY.zip](extended/C15_DELIVERY.zip). The initial 1800-step study below is retained unchanged, including poor or collapsed distributions. A matched 9000-step extension of every method and seed was fixed after inspecting that initial evidence; cumulative training includes both stages and remains below 1800 seconds.
+
 Compare deterministic MSE, shared-component diagonal GMM, full-covariance GMM,
 and an EAR-style noise-conditioned MLP on frozen 1D/2D/8D distributions.
 

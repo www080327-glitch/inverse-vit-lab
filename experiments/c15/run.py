@@ -31,17 +31,26 @@ from heads import Head
 from metrics import evaluate,energy_distance
 from checks import checks
 
-ROOT = Path(__file__).resolve().parent
+BASE = Path(__file__).resolve().parent
+ROOT = Path(os.environ.get("C15_OUTPUT_DIR",str(BASE))).resolve()
+ROOT.mkdir(parents=True,exist_ok=True)
+config_path = BASE/os.environ.get("C15_CONFIG","config.json")
+if ROOT != BASE:
+    import shutil
+    for name in ("heads.py","data.py","metrics.py","checks.py","run.py",
+                 "SOURCES.md","README.md","requirements.txt"):
+        shutil.copy2(BASE/name,ROOT/name)
+    shutil.copy2(config_path,ROOT/"config.json")
 OUT = ROOT/"results"
 OUT.mkdir(exist_ok=True)
-CONFIG = json.loads((ROOT/"config.json").read_text())
+CONFIG = json.loads(config_path.read_text())
 TRAIN_LEDGER = OUT/"budget.json"
 
 def save(name, data):
     (OUT/name).write_text(json.dumps(data,indent=2,allow_nan=False)+"\n")
 
 def budget():
-    return json.loads(TRAIN_LEDGER.read_text()) if TRAIN_LEDGER.exists() else {"training_seconds":0,"runs":[]}
+    return json.loads(TRAIN_LEDGER.read_text()) if TRAIN_LEDGER.exists() else {"training_seconds":CONFIG.get("prior_training_seconds",0),"prior_training_seconds":CONFIG.get("prior_training_seconds",0),"runs":[]}
 
 def append_budget(run,seconds,steps):
     ledger = budget()
@@ -237,6 +246,8 @@ def main():
         "scipy":scipy.__version__,"matplotlib":matplotlib.__version__,
         "source_commit":subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip(),
         "config_sha256":hashlib.sha256((ROOT/"config.json").read_bytes()).hexdigest(),
+        "stage":CONFIG.get("stage","initial_1800_steps"),
+        "prior_training_seconds":CONFIG.get("prior_training_seconds",0),
         "failures":[{k:r[k] for k in ("dimension","seed","method","status")} for r in rows if r["status"]!="complete"],
         "summary":summary,
         "missing_evidence":["real frozen visual feature distribution","sequential free-running accumulation",
@@ -279,6 +290,11 @@ def report(result,rows,baselines):
         "MSE 输出重复的条件均值；它的失败是分布建模能力限制，不是重建任务不能使用平方误差。"
         "对角 GMM 可以用额外分量近似相关性，但本轮分量数固定为真实模式数；全协方差 GMM 的真分布就在模型族内，是有利的相关性对照。",
         "EAR 的连续 MLP 可在模式之间产生连接样本；能量评分的严格适当性不保证有限网络、有限训练找到全局最优。","",
+        "## 训练预算与首轮保留","",
+        f'本阶段标签：{result["stage"]}；当前阶段此前已使用 {result["prior_training_seconds"]:.1f} 秒训练。'
+        "初始 1800 步结果完整保留于上一级 results/ 与初始 C15_DELIVERY.zip。"
+        "观察首轮相关结构与模式间填充问题后，所有方法统一重训到预先固定的 9000 步；"
+        "两阶段不挑最好 seed 或最好 checkpoint。累计时间包含首轮训练。","",
         "## 唯一下一轮候选","",
         f'按预先固定的分布指标规则，本轮只推荐 **{result["recommendation"]}** 进入真实冻结视觉特征的小规模实验。'
         "这是一项待验证的实验候选，不是一般性优劣结论。","",

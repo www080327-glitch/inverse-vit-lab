@@ -4,7 +4,7 @@ on:
     branches: [research/c15-continuous-heads]
     paths:
       - 'experiments/c15/*.py'
-      - 'experiments/c15/config.json'
+      - 'experiments/c15/config*.json'
       - '.github/workflows/c15.yml'
 permissions:
   contents: write
@@ -34,6 +34,9 @@ jobs:
           /tmp/c15-env/bin/pip install -r experiments/c15/requirements.txt
       - name: Formula and API checks, training, evaluation and packaging
         working-directory: experiments/c15
+        env:
+          C15_OUTPUT_DIR: extended
+          C15_CONFIG: config_extended.json
         run: /tmp/c15-env/bin/python run.py
       - name: Repository no-download CPU check
         run: /tmp/c15-env/bin/python tests/minimal_cpu.py
@@ -42,7 +45,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f experiments/c15/results
+          git add -f experiments/c15/extended
           for f in RESULT.json HANDOFF_ZH.md MANIFEST.json C15_DELIVERY.zip; do
             if test -f "experiments/c15/$f"; then git add -f "experiments/c15/$f"; fi
           done
@@ -55,8 +58,8 @@ jobs:
         with:
           name: C15_DELIVERY
           path: |
-            experiments/c15/C15_DELIVERY.zip
-            experiments/c15/results/
-            experiments/c15/RESULT.json
-            experiments/c15/HANDOFF_ZH.md
+            experiments/c15/extended/C15_DELIVERY.zip
+            experiments/c15/extended/results/
+            experiments/c15/extended/RESULT.json
+            experiments/c15/extended/HANDOFF_ZH.md
           retention-days: 30

@@ -1,0 +1,42 @@
+{
+  "seeds": [
+    2027,
+    2028
+  ],
+  "dimensions": [
+    1,
+    2,
+    8
+  ],
+  "methods": [
+    "mse",
+    "diag",
+    "full",
+    "ear"
+  ],
+  "conditions": 4,
+  "train_per_condition": 2048,
+  "test_per_condition": 1024,
+  "eval_samples": 512,
+  "steps": 9000,
+  "batch_size": 128,
+  "lr": 0.001,
+  "parameter_target": 12000,
+  "noise_dim": 8,
+  "alpha": 1,
+  "train_temperature": 1,
+  "pair_block": 128,
+  "train_budget_seconds": 1800,
+  "checkpoint": "last_step_only_no_test_selection",
+  "dataset_seed_train": 31001,
+  "dataset_seed_test": 91001,
+  "scale_floor": 0.03,
+  "mixtures": "2 for d=1; 4 otherwise",
+  "coverage": "mode has >=1% generated samples inside true-component 99% Mahalanobis ellipsoid",
+  "stopping": "fixed steps, nonfinite failure, or cumulative train-loop budget; no retries or cherry picking",
+  "distance_normalization": "Euclidean / sqrt(d); common test metrics only; unbiased energy U-statistic may be negative",
+  "recommendation_rule": "one candidate: lowest dimension-balanced mean energy distance among stochastic heads with all runs complete; report all coverage/shape failures",
+  "prior_training_seconds": 95.77157734500004,
+  "stage": "matched_9000_steps_extension_all_methods_all_seeds",
+  "extension_reason": "Initial stage showed poor correlation/valid fraction and mode bridging; all methods extended equally; initial results retained; no further budget tuning."
+}

@@ -3,7 +3,7 @@
 ## 固定来源
 
 - GIVT: https://arxiv.org/html/2312.02116v2 ，§3.2、附录 A.1。
-- GIVT 官方模型: https://github.com/google-research/big_vision/blob/main/big_vision/models/proj/givt/givt.py
+- GIVT 官方模型: https://github.com/google-research/big_vision/blob/0127fb6b337ee2a27bf4e54dea79cff176527356/big_vision/models/proj/givt/givt.py
   本轮核对文件的 Git blob SHA 为 0bd4c84427fde5873c33dd7e76e6a289e163cb22。
   可用 https://api.github.com/repos/google-research/big_vision/git/blobs/0bd4c84427fde5873c33dd7e76e6a289e163cb22 固定读取。
 - EAR: https://arxiv.org/html/2505.07812v1 ，§4.1 Eq.(8)–(10)。
