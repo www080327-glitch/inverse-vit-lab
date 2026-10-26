@@ -1,0 +1,36 @@
+{
+  "status": "COMPLETE_ATOMIC_SNAPSHOT",
+  "core_assets": 15,
+  "core_asset_bytes": 2092569447,
+  "all_SHA256_verified": true,
+  "models": {
+    "mirror_full": {
+      "parameter_count_from_payload_header": 88795392,
+      "transformer_blocks": 12,
+      "dtypes": [
+        "F32"
+      ]
+    },
+    "mirror_tiny": {
+      "parameter_count_from_payload_header": 2827008,
+      "transformer_blocks": 2,
+      "dtypes": [
+        "F32"
+      ]
+    },
+    "pre_shallow": {
+      "parameter_count_from_payload_header": 14767872,
+      "transformer_blocks": 2,
+      "dtypes": [
+        "F32"
+      ]
+    },
+    "post_shallow": {
+      "parameter_count_from_payload_header": 17916672,
+      "transformer_blocks": 2,
+      "dtypes": [
+        "F32"
+      ]
+    }
+  }
+}

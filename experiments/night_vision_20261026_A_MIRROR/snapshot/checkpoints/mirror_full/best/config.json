@@ -1,0 +1,27 @@
+{
+  "model": {
+    "name": "mirror_full",
+    "input_dim": 1024,
+    "dim": 768,
+    "depth": 12,
+    "heads": 12,
+    "ff_dim": 3072,
+    "patch_size": 16,
+    "merge_size": 2,
+    "channels": 3,
+    "position": "fixed_2d_sincos_xy",
+    "initialization": "random_pytorch_default_no_encoder_copy"
+  },
+  "policy": {
+    "autocast": "bfloat16",
+    "sdpa": "default",
+    "micro_batch": 16,
+    "effective_batch": 32
+  },
+  "grid_thw": [
+    1,
+    16,
+    16
+  ],
+  "output": "unclipped BCHW float, RGB [0,1] target"
+}

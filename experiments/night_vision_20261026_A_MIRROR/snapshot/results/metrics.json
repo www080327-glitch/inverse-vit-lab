@@ -1,0 +1,550 @@
+{
+  "mirror_tiny": {
+    "train": {
+      "correct": {
+        "MSE": 0.013542048946022987,
+        "MAE": 0.08654397767782211,
+        "clipped_MSE": 0.013532263867557048,
+        "gradient_MAE": 0.019895557582378386,
+        "boundary_gradient_MAE": 0.05642887184023857,
+        "interior_gradient_MAE": 0.017612225353717804,
+        "boundary_excess": 0.038816646486520764,
+        "down32_vs_original_MSE": 0.01375038654357195,
+        "down32_vs_original_MAE": 0.08698357588052749,
+        "down32_vs_target_MSE": 0.012213829740881919
+      },
+      "same_class_mismatch": {
+        "MSE": 0.09888387000560761,
+        "MAE": 0.2519911642074585,
+        "clipped_MSE": 0.09874484914541244,
+        "gradient_MAE": 0.020084209740161896,
+        "boundary_gradient_MAE": 0.05993418511748314,
+        "interior_gradient_MAE": 0.017593586280941962,
+        "boundary_excess": 0.0423405989408493,
+        "down32_vs_original_MSE": 0.09943918451666832,
+        "down32_vs_original_MAE": 0.2528321229219437,
+        "down32_vs_target_MSE": 0.09754193446040153
+      },
+      "mean_feature": {
+        "MSE": 0.06467225503921509,
+        "MAE": 0.20720227611064912,
+        "clipped_MSE": 0.06467225503921509,
+        "gradient_MAE": 0.011354288145899772,
+        "boundary_gradient_MAE": 0.01634281676262617,
+        "interior_gradient_MAE": 0.011042505092918873,
+        "boundary_excess": 0.0053003116697072986,
+        "down32_vs_original_MSE": 0.06539032956957817,
+        "down32_vs_original_MAE": 0.20862482476234437,
+        "down32_vs_target_MSE": 0.06348588082194329
+      },
+      "training_mean_image": {
+        "MSE": 0.0597559831738472,
+        "MAE": 0.20274480772018433,
+        "clipped_MSE": 0.0597559831738472,
+        "gradient_MAE": 0.007293569289147853,
+        "boundary_gradient_MAE": 0.008501896627247334,
+        "interior_gradient_MAE": 0.007218048788607121,
+        "boundary_excess": 0.001283847838640213,
+        "down32_vs_original_MSE": 0.060515955001115805,
+        "down32_vs_original_MAE": 0.20429053735733033,
+        "down32_vs_target_MSE": 0.05861321905255318
+      },
+      "source_dependence": {
+        "mean_same_class_MSE_increase": 0.08534182077366859,
+        "fraction_correct_better": 1.0
+      }
+    },
+    "dev": {
+      "correct": {
+        "MSE": 0.021879933148622514,
+        "MAE": 0.11070066237449647,
+        "clipped_MSE": 0.02186873283982277,
+        "gradient_MAE": 0.01967018949985504,
+        "boundary_gradient_MAE": 0.05697627830505371,
+        "interior_gradient_MAE": 0.0173385588824749,
+        "boundary_excess": 0.039637719362974166,
+        "down32_vs_original_MSE": 0.022193383038043975,
+        "down32_vs_original_MAE": 0.11134258627891541,
+        "down32_vs_target_MSE": 0.020589974522590638
+      },
+      "same_class_mismatch": {
+        "MSE": 0.09263248938322068,
+        "MAE": 0.2429417724609375,
+        "clipped_MSE": 0.0925051406621933,
+        "gradient_MAE": 0.01980655127763748,
+        "boundary_gradient_MAE": 0.059495834708213804,
+        "interior_gradient_MAE": 0.017325970828533172,
+        "boundary_excess": 0.042169863998889924,
+        "down32_vs_original_MSE": 0.09317159533500671,
+        "down32_vs_original_MAE": 0.24380384635925292,
+        "down32_vs_target_MSE": 0.09133264660835266
+      },
+      "mean_feature": {
+        "MSE": 0.06070522737503052,
+        "MAE": 0.2001483268737793,
+        "clipped_MSE": 0.06070522737503052,
+        "gradient_MAE": 0.011274933964014053,
+        "boundary_gradient_MAE": 0.01631393447518349,
+        "interior_gradient_MAE": 0.010959996536374092,
+        "boundary_excess": 0.005353937938809395,
+        "down32_vs_original_MSE": 0.06139020928740501,
+        "down32_vs_original_MAE": 0.20151789498329162,
+        "down32_vs_target_MSE": 0.05955425375699997
+      },
+      "training_mean_image": {
+        "MSE": 0.05637485900521278,
+        "MAE": 0.1961917585134506,
+        "clipped_MSE": 0.05637485900521278,
+        "gradient_MAE": 0.007217520967125892,
+        "boundary_gradient_MAE": 0.008415947556495666,
+        "interior_gradient_MAE": 0.0071426193416118606,
+        "boundary_excess": 0.0012733282148838043,
+        "down32_vs_original_MSE": 0.05710131284594534,
+        "down32_vs_original_MAE": 0.19767957055568697,
+        "down32_vs_target_MSE": 0.055265452206134796
+      },
+      "source_dependence": {
+        "mean_same_class_MSE_increase": 0.07075255653448403,
+        "fraction_correct_better": 0.998
+      }
+    },
+    "final": {
+      "correct": {
+        "MSE": 0.022459603905677795,
+        "MAE": 0.11144697344303131,
+        "clipped_MSE": 0.022446885108947753,
+        "gradient_MAE": 0.019926312297582627,
+        "boundary_gradient_MAE": 0.057968896001577376,
+        "interior_gradient_MAE": 0.017548650622367858,
+        "boundary_excess": 0.04042024537920952,
+        "down32_vs_original_MSE": 0.02276951614022255,
+        "down32_vs_original_MAE": 0.11202632939815521,
+        "down32_vs_target_MSE": 0.021146517544984818
+      },
+      "same_class_mismatch": {
+        "MSE": 0.10490831011533737,
+        "MAE": 0.259162868976593,
+        "clipped_MSE": 0.10475823563337326,
+        "gradient_MAE": 0.02004987807571888,
+        "boundary_gradient_MAE": 0.06052523455023766,
+        "interior_gradient_MAE": 0.01752016820013523,
+        "boundary_excess": 0.043005066335201264,
+        "down32_vs_original_MSE": 0.10544860827922821,
+        "down32_vs_original_MAE": 0.2599839763641357,
+        "down32_vs_target_MSE": 0.10358512699604035
+      },
+      "mean_feature": {
+        "MSE": 0.06898923879861832,
+        "MAE": 0.21429003143310546,
+        "clipped_MSE": 0.06898923879861832,
+        "gradient_MAE": 0.011292764864861965,
+        "boundary_gradient_MAE": 0.01626293160021305,
+        "interior_gradient_MAE": 0.010982129409909249,
+        "boundary_excess": 0.0052808021903038025,
+        "down32_vs_original_MSE": 0.06968607828021049,
+        "down32_vs_original_MAE": 0.21563986897468568,
+        "down32_vs_target_MSE": 0.06782049590349197
+      },
+      "training_mean_image": {
+        "MSE": 0.06308116239309311,
+        "MAE": 0.20852509188652038,
+        "clipped_MSE": 0.06308116239309311,
+        "gradient_MAE": 0.00720056051760912,
+        "boundary_gradient_MAE": 0.00837154805660248,
+        "interior_gradient_MAE": 0.007127373810857534,
+        "boundary_excess": 0.0012441742457449437,
+        "down32_vs_original_MSE": 0.06382002449035644,
+        "down32_vs_original_MAE": 0.20998394274711607,
+        "down32_vs_target_MSE": 0.061955044269561776
+      },
+      "source_dependence": {
+        "mean_same_class_MSE_increase": 0.082448706750758,
+        "fraction_correct_better": 1.0
+      }
+    }
+  },
+  "mirror_full": {
+    "train": {
+      "correct": {
+        "MSE": 0.00855544988438487,
+        "MAE": 0.0680340104997158,
+        "clipped_MSE": 0.008553530983626843,
+        "gradient_MAE": 0.015531021378934383,
+        "boundary_gradient_MAE": 0.05342031469941139,
+        "interior_gradient_MAE": 0.013162940494716167,
+        "boundary_excess": 0.040257374107837675,
+        "down32_vs_original_MSE": 0.008751869194209576,
+        "down32_vs_original_MAE": 0.06880143743753434,
+        "down32_vs_target_MSE": 0.007430649112910032
+      },
+      "same_class_mismatch": {
+        "MSE": 0.10064847022294998,
+        "MAE": 0.25424077367782594,
+        "clipped_MSE": 0.100604137301445,
+        "gradient_MAE": 0.016108757361769675,
+        "boundary_gradient_MAE": 0.058090226829051975,
+        "interior_gradient_MAE": 0.013484915375709533,
+        "boundary_excess": 0.044605311453342435,
+        "down32_vs_original_MSE": 0.10124004191160202,
+        "down32_vs_original_MAE": 0.25509650027751923,
+        "down32_vs_target_MSE": 0.09934488105773925
+      },
+      "mean_feature": {
+        "MSE": 0.06365675589442253,
+        "MAE": 0.20707227146625518,
+        "clipped_MSE": 0.06365675589442253,
+        "gradient_MAE": 0.011499820806086063,
+        "boundary_gradient_MAE": 0.024868179842829706,
+        "interior_gradient_MAE": 0.010664298318326474,
+        "boundary_excess": 0.01420388152450323,
+        "down32_vs_original_MSE": 0.06434604144096374,
+        "down32_vs_original_MAE": 0.20845383036136628,
+        "down32_vs_target_MSE": 0.06244273653626442
+      },
+      "training_mean_image": {
+        "MSE": 0.0597559831738472,
+        "MAE": 0.20274480772018433,
+        "clipped_MSE": 0.0597559831738472,
+        "gradient_MAE": 0.007293569289147853,
+        "boundary_gradient_MAE": 0.008501896627247334,
+        "interior_gradient_MAE": 0.007218048788607121,
+        "boundary_excess": 0.001283847838640213,
+        "down32_vs_original_MSE": 0.060515955001115805,
+        "down32_vs_original_MAE": 0.20429053735733033,
+        "down32_vs_target_MSE": 0.05861321905255318
+      },
+      "source_dependence": {
+        "mean_same_class_MSE_increase": 0.09209302011266118,
+        "fraction_correct_better": 1.0
+      }
+    },
+    "dev": {
+      "correct": {
+        "MSE": 0.02056581538915634,
+        "MAE": 0.10608066403865814,
+        "clipped_MSE": 0.020563858434557915,
+        "gradient_MAE": 0.015584276363253593,
+        "boundary_gradient_MAE": 0.05628798097372055,
+        "interior_gradient_MAE": 0.013040294855833053,
+        "boundary_excess": 0.04324768614768982,
+        "down32_vs_original_MSE": 0.020999154686927795,
+        "down32_vs_original_MAE": 0.10709663671255111,
+        "down32_vs_target_MSE": 0.019432861030101774
+      },
+      "same_class_mismatch": {
+        "MSE": 0.09304326915740967,
+        "MAE": 0.24384600162506104,
+        "clipped_MSE": 0.09300376951694489,
+        "gradient_MAE": 0.015940994814038278,
+        "boundary_gradient_MAE": 0.05853845202922821,
+        "interior_gradient_MAE": 0.01327865356206894,
+        "boundary_excess": 0.04525979870557785,
+        "down32_vs_original_MSE": 0.09361596560478211,
+        "down32_vs_original_MAE": 0.244732750415802,
+        "down32_vs_target_MSE": 0.09177738589048386
+      },
+      "mean_feature": {
+        "MSE": 0.06017669951915741,
+        "MAE": 0.2007790060043335,
+        "clipped_MSE": 0.06017669951915741,
+        "gradient_MAE": 0.011422061212360859,
+        "boundary_gradient_MAE": 0.02479397389292717,
+        "interior_gradient_MAE": 0.010586316809058189,
+        "boundary_excess": 0.01420765708386898,
+        "down32_vs_original_MSE": 0.060830701172351835,
+        "down32_vs_original_MAE": 0.20209513330459594,
+        "down32_vs_target_MSE": 0.058995434015989306
+      },
+      "training_mean_image": {
+        "MSE": 0.05637485900521278,
+        "MAE": 0.1961917585134506,
+        "clipped_MSE": 0.05637485900521278,
+        "gradient_MAE": 0.007217520967125892,
+        "boundary_gradient_MAE": 0.008415947556495666,
+        "interior_gradient_MAE": 0.0071426193416118606,
+        "boundary_excess": 0.0012733282148838043,
+        "down32_vs_original_MSE": 0.05710131284594534,
+        "down32_vs_original_MAE": 0.19767957055568697,
+        "down32_vs_target_MSE": 0.055265452206134796
+      },
+      "source_dependence": {
+        "mean_same_class_MSE_increase": 0.07247745282016695,
+        "fraction_correct_better": 1.0
+      }
+    },
+    "final": {
+      "correct": {
+        "MSE": 0.021107784420251845,
+        "MAE": 0.10697681963443756,
+        "clipped_MSE": 0.02110602608323097,
+        "gradient_MAE": 0.015737542539834976,
+        "boundary_gradient_MAE": 0.05681936505436897,
+        "interior_gradient_MAE": 0.013169928520917893,
+        "boundary_excess": 0.0436494362950325,
+        "down32_vs_original_MSE": 0.02154043635725975,
+        "down32_vs_original_MAE": 0.10796933543682098,
+        "down32_vs_target_MSE": 0.01995918846130371
+      },
+      "same_class_mismatch": {
+        "MSE": 0.10433700728416442,
+        "MAE": 0.2584061007499695,
+        "clipped_MSE": 0.10430181050300598,
+        "gradient_MAE": 0.016091414630413057,
+        "boundary_gradient_MAE": 0.05909819716215134,
+        "interior_gradient_MAE": 0.013403490796685218,
+        "boundary_excess": 0.04569470596313477,
+        "down32_vs_original_MSE": 0.10491486376523972,
+        "down32_vs_original_MAE": 0.259252037525177,
+        "down32_vs_target_MSE": 0.10305027413368226
+      },
+      "mean_feature": {
+        "MSE": 0.06748307031393051,
+        "MAE": 0.21349378728866578,
+        "clipped_MSE": 0.06748307031393051,
+        "gradient_MAE": 0.011429755002260207,
+        "boundary_gradient_MAE": 0.02482495550811291,
+        "interior_gradient_MAE": 0.010592554584145547,
+        "boundary_excess": 0.014232400923967362,
+        "down32_vs_original_MSE": 0.06815377497673035,
+        "down32_vs_original_MAE": 0.21479097819328308,
+        "down32_vs_target_MSE": 0.06629028809070588
+      },
+      "training_mean_image": {
+        "MSE": 0.06308116239309311,
+        "MAE": 0.20852509188652038,
+        "clipped_MSE": 0.06308116239309311,
+        "gradient_MAE": 0.00720056051760912,
+        "boundary_gradient_MAE": 0.00837154805660248,
+        "interior_gradient_MAE": 0.007127373810857534,
+        "boundary_excess": 0.0012441742457449437,
+        "down32_vs_original_MSE": 0.06382002449035644,
+        "down32_vs_original_MAE": 0.20998394274711607,
+        "down32_vs_target_MSE": 0.061955044269561776
+      },
+      "source_dependence": {
+        "mean_same_class_MSE_increase": 0.08322922312375158,
+        "fraction_correct_better": 1.0
+      }
+    }
+  },
+  "pre_shallow": {
+    "train": {
+      "correct": {
+        "MSE": 0.00736412451416254,
+        "MAE": 0.06291341030597687,
+        "clipped_MSE": 0.00734854131937027,
+        "gradient_MAE": 0.01990778648853302,
+        "boundary_gradient_MAE": 0.07494302922487259,
+        "interior_gradient_MAE": 0.016468083873391152,
+        "boundary_excess": 0.058474945455789566,
+        "down32_vs_original_MSE": 0.0071978972405195235,
+        "down32_vs_original_MAE": 0.06250723496079445,
+        "down32_vs_target_MSE": 0.0060916622690856456
+      },
+      "same_class_mismatch": {
+        "MSE": 0.10427266174554825,
+        "MAE": 0.25902678847312927,
+        "clipped_MSE": 0.10407736802101135,
+        "gradient_MAE": 0.020296657741069795,
+        "boundary_gradient_MAE": 0.08097754549980164,
+        "interior_gradient_MAE": 0.016504101753234864,
+        "boundary_excess": 0.06447344386577607,
+        "down32_vs_original_MSE": 0.10486246109008789,
+        "down32_vs_original_MAE": 0.2598594172000885,
+        "down32_vs_target_MSE": 0.10295689171552658
+      },
+      "mean_feature": {
+        "MSE": 0.0606200236082077,
+        "MAE": 0.2025046043395996,
+        "clipped_MSE": 0.0606200236082077,
+        "gradient_MAE": 0.012366984143853187,
+        "boundary_gradient_MAE": 0.014593664035201072,
+        "interior_gradient_MAE": 0.012227816551923752,
+        "boundary_excess": 0.002365847483277321,
+        "down32_vs_original_MSE": 0.061324370115995404,
+        "down32_vs_original_MAE": 0.20396821320056915,
+        "down32_vs_target_MSE": 0.05941485461592674
+      },
+      "training_mean_image": {
+        "MSE": 0.059302925705909726,
+        "MAE": 0.20203963494300847,
+        "clipped_MSE": 0.059302925705909726,
+        "gradient_MAE": 0.007291367933154107,
+        "boundary_gradient_MAE": 0.00850221271812916,
+        "interior_gradient_MAE": 0.007215690180659293,
+        "boundary_excess": 0.0012865225374698642,
+        "down32_vs_original_MSE": 0.06006733113527299,
+        "down32_vs_original_MAE": 0.2035926502943039,
+        "down32_vs_target_MSE": 0.058159878492355356
+      },
+      "source_dependence": {
+        "mean_same_class_MSE_increase": 0.09690853786841035,
+        "fraction_correct_better": 1.0
+      }
+    },
+    "dev": {
+      "correct": {
+        "MSE": 0.007980420216917992,
+        "MAE": 0.06628288149833679,
+        "clipped_MSE": 0.007947248443961143,
+        "gradient_MAE": 0.01986371248960495,
+        "boundary_gradient_MAE": 0.07430023431777955,
+        "interior_gradient_MAE": 0.016461429223418235,
+        "boundary_excess": 0.0578388050198555,
+        "down32_vs_original_MSE": 0.007801473587751389,
+        "down32_vs_original_MAE": 0.06581220209598541,
+        "down32_vs_target_MSE": 0.006745013166218996
+      },
+      "same_class_mismatch": {
+        "MSE": 0.10623614251613617,
+        "MAE": 0.26085633456707,
+        "clipped_MSE": 0.10586747765541077,
+        "gradient_MAE": 0.02024736873805523,
+        "boundary_gradient_MAE": 0.08024480879306793,
+        "interior_gradient_MAE": 0.016497529298067092,
+        "boundary_excess": 0.06374727934598923,
+        "down32_vs_original_MSE": 0.10679704368114472,
+        "down32_vs_original_MAE": 0.2616711986064911,
+        "down32_vs_target_MSE": 0.1049591487646103
+      },
+      "mean_feature": {
+        "MSE": 0.05882374569773674,
+        "MAE": 0.19791407585144044,
+        "clipped_MSE": 0.05882374569773674,
+        "gradient_MAE": 0.012284512221813202,
+        "boundary_gradient_MAE": 0.014531092680990697,
+        "interior_gradient_MAE": 0.012144100964069366,
+        "boundary_excess": 0.0023869917169213294,
+        "down32_vs_original_MSE": 0.05949245691299439,
+        "down32_vs_original_MAE": 0.19931935667991638,
+        "down32_vs_target_MSE": 0.05765937119722366
+      },
+      "training_mean_image": {
+        "MSE": 0.05804238200187683,
+        "MAE": 0.19875225245952607,
+        "clipped_MSE": 0.05804238200187683,
+        "gradient_MAE": 0.007225460670888424,
+        "boundary_gradient_MAE": 0.008423482850193977,
+        "interior_gradient_MAE": 0.007150584682822228,
+        "boundary_excess": 0.0012728981673717499,
+        "down32_vs_original_MSE": 0.05876928687095642,
+        "down32_vs_original_MAE": 0.20024271011352537,
+        "down32_vs_target_MSE": 0.056937223672866834
+      },
+      "source_dependence": {
+        "mean_same_class_MSE_increase": 0.09825572205940261,
+        "fraction_correct_better": 1.0
+      }
+    }
+  },
+  "post_shallow": {
+    "train": {
+      "correct": {
+        "MSE": 0.01207913288474083,
+        "MAE": 0.08133948409557343,
+        "clipped_MSE": 0.01206651744246483,
+        "gradient_MAE": 0.021726830154657362,
+        "boundary_gradient_MAE": 0.05598127406835556,
+        "interior_gradient_MAE": 0.019585927367210387,
+        "boundary_excess": 0.03639534673094749,
+        "down32_vs_original_MSE": 0.01221166642010212,
+        "down32_vs_original_MAE": 0.08148545265197754,
+        "down32_vs_target_MSE": 0.010698188252747058
+      },
+      "same_class_mismatch": {
+        "MSE": 0.10046180921792984,
+        "MAE": 0.253876389503479,
+        "clipped_MSE": 0.10029209971427917,
+        "gradient_MAE": 0.021950622767210007,
+        "boundary_gradient_MAE": 0.05968497258424759,
+        "interior_gradient_MAE": 0.01959222599864006,
+        "boundary_excess": 0.04009274646639824,
+        "down32_vs_original_MSE": 0.10096558922529221,
+        "down32_vs_original_MAE": 0.254645144701004,
+        "down32_vs_target_MSE": 0.09906109023094177
+      },
+      "mean_feature": {
+        "MSE": 0.062152700662612914,
+        "MAE": 0.20466478085517884,
+        "clipped_MSE": 0.062152700662612914,
+        "gradient_MAE": 0.012391625173389912,
+        "boundary_gradient_MAE": 0.018842663496732713,
+        "interior_gradient_MAE": 0.011988435029983521,
+        "boundary_excess": 0.006854228466749191,
+        "down32_vs_original_MSE": 0.06285967954993248,
+        "down32_vs_original_MAE": 0.2061100172996521,
+        "down32_vs_target_MSE": 0.060950677037239075
+      },
+      "training_mean_image": {
+        "MSE": 0.059302925705909726,
+        "MAE": 0.20203963494300847,
+        "clipped_MSE": 0.059302925705909726,
+        "gradient_MAE": 0.007291367933154107,
+        "boundary_gradient_MAE": 0.00850221271812916,
+        "interior_gradient_MAE": 0.007215690180659293,
+        "boundary_excess": 0.0012865225374698642,
+        "down32_vs_original_MSE": 0.06006733113527299,
+        "down32_vs_original_MAE": 0.2035926502943039,
+        "down32_vs_target_MSE": 0.058159878492355356
+      },
+      "source_dependence": {
+        "mean_same_class_MSE_increase": 0.08838267721584998,
+        "fraction_correct_better": 1.0
+      }
+    },
+    "dev": {
+      "correct": {
+        "MSE": 0.02301912508904934,
+        "MAE": 0.11376331925392151,
+        "clipped_MSE": 0.023002884685993194,
+        "gradient_MAE": 0.02159396857023239,
+        "boundary_gradient_MAE": 0.05702120333909989,
+        "interior_gradient_MAE": 0.01937976635992527,
+        "boundary_excess": 0.03764143645763397,
+        "down32_vs_original_MSE": 0.023302322030067445,
+        "down32_vs_original_MAE": 0.11422737807035446,
+        "down32_vs_target_MSE": 0.021677536368370057
+      },
+      "same_class_mismatch": {
+        "MSE": 0.09799232363700866,
+        "MAE": 0.25004759907722474,
+        "clipped_MSE": 0.09779643654823303,
+        "gradient_MAE": 0.021729210168123247,
+        "boundary_gradient_MAE": 0.05931252986192703,
+        "interior_gradient_MAE": 0.019380252212285995,
+        "boundary_excess": 0.03993227794766426,
+        "down32_vs_original_MSE": 0.09847473412752152,
+        "down32_vs_original_MAE": 0.2508394438028336,
+        "down32_vs_target_MSE": 0.09663788706064225
+      },
+      "mean_feature": {
+        "MSE": 0.06073040574789047,
+        "MAE": 0.20088890314102173,
+        "clipped_MSE": 0.06073040574789047,
+        "gradient_MAE": 0.012310700342059135,
+        "boundary_gradient_MAE": 0.018815989792346954,
+        "interior_gradient_MAE": 0.011904119737446308,
+        "boundary_excess": 0.006911870054900646,
+        "down32_vs_original_MSE": 0.0614031295478344,
+        "down32_vs_original_MAE": 0.20226513981819152,
+        "down32_vs_target_MSE": 0.059569110870361326
+      },
+      "training_mean_image": {
+        "MSE": 0.05804238200187683,
+        "MAE": 0.19875225245952607,
+        "clipped_MSE": 0.05804238200187683,
+        "gradient_MAE": 0.007225460670888424,
+        "boundary_gradient_MAE": 0.008423482850193977,
+        "interior_gradient_MAE": 0.007150584682822228,
+        "boundary_excess": 0.0012728981673717499,
+        "down32_vs_original_MSE": 0.05876928687095642,
+        "down32_vs_original_MAE": 0.20024271011352537,
+        "down32_vs_target_MSE": 0.056937223672866834
+      },
+      "source_dependence": {
+        "mean_same_class_MSE_increase": 0.07497319815447553,
+        "fraction_correct_better": 1.0
+      }
+    }
+  }
+}

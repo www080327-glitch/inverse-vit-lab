@@ -1,0 +1,55 @@
+{
+  "status": "COMPLETE",
+  "pre_hook": "actual forward_pre_hook on Qwen3_5VisionModel.merger",
+  "actual_pre_shape_per_image": [
+    256,
+    768
+  ],
+  "actual_post_shape_per_image": [
+    64,
+    1024
+  ],
+  "pre_subset_count": 1200,
+  "pre_training": 1000,
+  "pre_dev": 200,
+  "post_dtype": "float32",
+  "pre_dtype": "float32",
+  "processor": {
+    "image_processor_type": "Qwen2VLImageProcessor",
+    "min_pixels": 65536,
+    "max_pixels": 16777216,
+    "size": {
+      "longest_edge": 16777216,
+      "shortest_edge": 65536
+    },
+    "do_resize": true,
+    "resample": 3,
+    "do_rescale": true,
+    "rescale_factor": 0.00392156862745098,
+    "do_normalize": true,
+    "image_mean": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "image_std": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "patch_size": 16,
+    "temporal_patch_size": 2,
+    "merge_size": 2,
+    "do_convert_rgb": true
+  },
+  "grid": [
+    1,
+    16,
+    16
+  ],
+  "order": "merge-group raster then sub_y,sub_x",
+  "normalization": "raw cached features, not yet standardized",
+  "encoder_eval": true,
+  "encoder_parameters_frozen": true,
+  "encoder_and_merger_sha256": "7c8c31f06432f8e9d402869e840b037e8d121503c51c236655f26fbaf9a7cb26"
+}

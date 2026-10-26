@@ -1,0 +1,12 @@
+{
+  "status": "COMPLETE_VERIFIED_AND_CLOSED",
+  "core_assets": 15,
+  "supplement_assets": 1,
+  "temporary_components_stopped": [
+    "write_only_receiver",
+    "temporary_tunnel"
+  ],
+  "temporary_credential_files_removed": true,
+  "GitHub_credentials_transferred_to_DCU": false,
+  "completed_unix": 1793039879.385227
+}

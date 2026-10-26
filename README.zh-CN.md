@@ -2,6 +2,8 @@
 
 # Inverse-ViT Lab
 
+新增独立的[冻结 Qwen 视觉特征镜像重建实验](experiments/night_vision_20261026_A_MIRROR/README.md)：实际训练了 12 层 full 解码器，并完成 tiny 公平比较及 pre/post-merger 对照。本轮固定 2,000/500/500 划分上，full 的最终像素 MSE 比 tiny 低约 6.0%，仍有模糊和格纹。这是依赖源图特征的重建，不是文字生图；P0/P1/P2 历史结果未改。[完整权重和恢复状态](https://github.com/www080327-glitch/inverse-vit-lab/releases/tag/night-vision-a-mirror-20261026)随 Release 单独保存。
+
 这是关于条件像素映射与自回归像素生成的三阶段开放研究记录。仓库提供代码和实验结论供审阅与协作，也如实保留了失败结果。
 
 ## 实验结果概览

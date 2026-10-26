@@ -1,0 +1,20 @@
+{
+  "step": 2037,
+  "dev_MSE": 0.021879932622114816,
+  "status": "COMPLETE_BEST_MODEL_ONLY",
+  "files": {
+    "config.json": {
+      "bytes": 518,
+      "sha256": "0ed1f44000b7f6a8926aef1eba75dd70ca379cd651336eac8e44230daffaedf4"
+    },
+    "model.safetensors": {
+      "bytes": 11310624,
+      "sha256": "85241578dca5d72c15ea0f62d730c92978388e6bca5123ee4e6a14fb220a152e"
+    },
+    "normalization.safetensors": {
+      "bytes": 8336,
+      "sha256": "958ec41b9cdf8178c8f8f5ca019fa847c2580c57daaeea10fbd62a64c91c2be6"
+    }
+  },
+  "optimizer_and_RNG_restore_in": "../last/restore.pt"
+}

@@ -1,0 +1,12 @@
+{
+  "stage": "training",
+  "unix": 1793036173.3724394,
+  "total_elapsed_seconds": 3196.0776357650757,
+  "name": "post_shallow",
+  "step": 2000,
+  "train_batch_MSE": 0.008799071423709393,
+  "dev_MSE": 0.02493273059527079,
+  "best_dev_MSE": 0.023019124666849772,
+  "elapsed_seconds": 49.17414903640747,
+  "lr": 2.050471361370043e-10
+}

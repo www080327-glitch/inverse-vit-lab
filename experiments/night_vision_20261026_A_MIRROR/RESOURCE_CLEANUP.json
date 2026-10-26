@@ -1,0 +1,10 @@
+{
+  "status": "STOPPED_CONFIRMED_IN_PROVIDER_UI",
+  "course_start_buttons_restored": true,
+  "own_model_processes_stopped": true,
+  "DCU_utilization_percent_at_stop": 0,
+  "DCU_memory_use_percent_at_stop": 0,
+  "all_artifacts_saved_and_SHA256_verified": true,
+  "temporary_receiver_closed": true,
+  "temporary_credentials_removed": true
+}

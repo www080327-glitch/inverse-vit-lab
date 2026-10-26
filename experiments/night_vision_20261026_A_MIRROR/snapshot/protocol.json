@@ -1,0 +1,27 @@
+{
+  "schema": "night-vision-formal-v1",
+  "locked_before_training": true,
+  "data_plan": "fallback",
+  "train_count": 2000,
+  "dev_count": 500,
+  "final_count": 500,
+  "seed": 20261027,
+  "official_test": "never opened",
+  "final_scope": "this-round final only; not claimed historically unseen",
+  "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+  "target": "actual official processed 256x256 RGB [0,1]; interpolated from source32, no invented detail",
+  "target_storage": "uint8 exact RGB with inverse-normalization roundtrip max error <1.3e-7",
+  "decoder_initialization": "random, no transposed/copied encoder parameters",
+  "main_loss": "MSE only",
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 0.0003,
+    "weight_decay": 0.0001,
+    "warmup_fraction": 0.05,
+    "schedule": "cosine",
+    "clip_norm": 1
+  },
+  "same_effective_batch": 32,
+  "same_data_order": true,
+  "historical_32_heads_fair_ranking": false
+}

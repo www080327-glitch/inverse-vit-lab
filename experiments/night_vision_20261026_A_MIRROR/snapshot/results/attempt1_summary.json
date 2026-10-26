@@ -1,0 +1,22 @@
+{
+  "mirror_full": "NOT_RUN",
+  "mirror_tiny": {
+    "status": "TRAINED",
+    "steps": 16300,
+    "sample_presentations": 521600,
+    "wall_seconds": 203.5828857421875,
+    "parameters": 2827008,
+    "adapter_parameters": 1049600,
+    "peak_DCU_bytes": 1682899968,
+    "best_dev_MSE": 0.021879932622114816
+  },
+  "pre_post": "NOT_RUN",
+  "language_interface": {
+    "status": "NOT_RUN",
+    "reason": "Not checked until reconstruction is complete and resource/budget allow"
+  },
+  "status": "STOPPED_OR_BLOCKED",
+  "error": "RuntimeError('expand(torch.cuda.FloatTensor{[1, 3, 256, 256]}, size=[32, -1, -1]): the number of sizes provided (3) must be greater or equal to the number of dimensions in the tensor (4)')",
+  "traceback": "Traceback (most recent call last):\n  File \"${REMOTE_EXPERIMENT}/night_run.py\", line 282, in <module>\n    for split,lo,hi in [('train',0,ntr),('dev',ntr,ntr+nd)]:evaluate(name,model,FEATURES[lo:hi],TARGET[lo:hi],ORIGINAL[lo:hi],LAB[lo:hi],split,MEAN_FEATURE,MEAN)\n  File \"${REMOTE_EXPERIMENT}/night_run.py\", line 266, in evaluate\n    check(20);en=min(st+32,n);met=metrics_for(mean_image.expand(en-st,-1,-1),yy[st:en].float()/255,orig[st:en].float()/255)\nRuntimeError: expand(torch.cuda.FloatTensor{[1, 3, 256, 256]}, size=[32, -1, -1]): the number of sizes provided (3) must be greater or equal to the number of dimensions in the tensor (4)\n",
+  "wall_seconds": 550.2331409454346
+}

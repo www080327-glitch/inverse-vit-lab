@@ -1,0 +1,14 @@
+{
+  "pre_shallow": {
+    "maximum_MSE_difference": 3.725290298461914e-9,
+    "expected_mean": 0.0075997523963451385,
+    "replay_mean": 0.007599751465022564,
+    "passes": true
+  },
+  "post_shallow": {
+    "maximum_MSE_difference": 3.725290298461914e-9,
+    "expected_mean": 0.01730392314493656,
+    "replay_mean": 0.017303921282291412,
+    "passes": true
+  }
+}

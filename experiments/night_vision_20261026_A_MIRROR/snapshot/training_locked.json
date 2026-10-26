@@ -1,0 +1,57 @@
+{
+  "common_steps": 16300,
+  "effective_batch": 32,
+  "sample_presentations_each": 521600,
+  "policy": {
+    "autocast": "bfloat16",
+    "sdpa": "default",
+    "micro_batch": 16,
+    "effective_batch": 32
+  },
+  "locked_unix": 1793033056.2530954,
+  "benchmarks": {
+    "mirror_full": {
+      "step_seconds": 0.10766768455505371,
+      "all_step_seconds": [
+        0.19382429122924805,
+        0.10984921455383301,
+        0.10744929313659668,
+        0.10818862915039062,
+        0.10788607597351074,
+        0.10742354393005371
+      ],
+      "parameters": 88795392,
+      "peak_bytes": 4786152960,
+      "policy": {
+        "autocast": "bfloat16",
+        "sdpa": "default",
+        "micro_batch": 16,
+        "effective_batch": 32
+      }
+    },
+    "mirror_tiny": {
+      "step_seconds": 0.011823058128356934,
+      "all_step_seconds": [
+        0.018700361251831055,
+        0.012047290802001953,
+        0.011818170547485352,
+        0.011827945709228516,
+        0.011857032775878906,
+        0.011733531951904297
+      ],
+      "parameters": 2827008,
+      "peak_bytes": 1674510848,
+      "policy": {
+        "autocast": "bfloat16",
+        "sdpa": "default",
+        "micro_batch": 16,
+        "effective_batch": 32
+      }
+    }
+  },
+  "main_deadline_unix": 1793036415.0,
+  "dev_interval": 2037,
+  "dev_selection": "lowest full dev MSE",
+  "final_opened": true,
+  "final_opened_unix": 1793036031.899886
+}
