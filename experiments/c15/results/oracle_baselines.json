@@ -1,0 +1,146 @@
+[
+  {
+    "dimension": 1,
+    "seed": 2027,
+    "condition": 0,
+    "energy_u": -0.0038490163185931348
+  },
+  {
+    "dimension": 1,
+    "seed": 2027,
+    "condition": 1,
+    "energy_u": -0.0047040204553976395
+  },
+  {
+    "dimension": 1,
+    "seed": 2027,
+    "condition": 2,
+    "energy_u": -0.004909734886615613
+  },
+  {
+    "dimension": 1,
+    "seed": 2027,
+    "condition": 3,
+    "energy_u": -0.007754893938757945
+  },
+  {
+    "dimension": 1,
+    "seed": 2028,
+    "condition": 0,
+    "energy_u": -0.003426477577026521
+  },
+  {
+    "dimension": 1,
+    "seed": 2028,
+    "condition": 1,
+    "energy_u": -0.004316807345493334
+  },
+  {
+    "dimension": 1,
+    "seed": 2028,
+    "condition": 2,
+    "energy_u": -0.0073517615289371285
+  },
+  {
+    "dimension": 1,
+    "seed": 2028,
+    "condition": 3,
+    "energy_u": -0.005669861910470253
+  },
+  {
+    "dimension": 2,
+    "seed": 2027,
+    "condition": 0,
+    "energy_u": 0.01110237611203635
+  },
+  {
+    "dimension": 2,
+    "seed": 2027,
+    "condition": 1,
+    "energy_u": -0.0008063412520598057
+  },
+  {
+    "dimension": 2,
+    "seed": 2027,
+    "condition": 2,
+    "energy_u": -0.0031980785631051667
+  },
+  {
+    "dimension": 2,
+    "seed": 2027,
+    "condition": 3,
+    "energy_u": 0.004677872462932164
+  },
+  {
+    "dimension": 2,
+    "seed": 2028,
+    "condition": 0,
+    "energy_u": -0.004166316195599151
+  },
+  {
+    "dimension": 2,
+    "seed": 2028,
+    "condition": 1,
+    "energy_u": 0.002101595667005185
+  },
+  {
+    "dimension": 2,
+    "seed": 2028,
+    "condition": 2,
+    "energy_u": 0.008226156506734306
+  },
+  {
+    "dimension": 2,
+    "seed": 2028,
+    "condition": 3,
+    "energy_u": -0.001546526032620843
+  },
+  {
+    "dimension": 8,
+    "seed": 2027,
+    "condition": 0,
+    "energy_u": 0.005058586976665058
+  },
+  {
+    "dimension": 8,
+    "seed": 2027,
+    "condition": 1,
+    "energy_u": -0.0008995498804054147
+  },
+  {
+    "dimension": 8,
+    "seed": 2027,
+    "condition": 2,
+    "energy_u": -0.0017228991051922993
+  },
+  {
+    "dimension": 8,
+    "seed": 2027,
+    "condition": 3,
+    "energy_u": -0.004588933171887799
+  },
+  {
+    "dimension": 8,
+    "seed": 2028,
+    "condition": 0,
+    "energy_u": -0.003867786364473602
+  },
+  {
+    "dimension": 8,
+    "seed": 2028,
+    "condition": 1,
+    "energy_u": -0.0007063181076476521
+  },
+  {
+    "dimension": 8,
+    "seed": 2028,
+    "condition": 2,
+    "energy_u": -0.0020418258207379747
+  },
+  {
+    "dimension": 8,
+    "seed": 2028,
+    "condition": 3,
+    "energy_u": -0.002930986442414296
+  }
+]
